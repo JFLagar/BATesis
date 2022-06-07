@@ -3,21 +3,36 @@ Animations:
 	Walking Foward
 	Walking Backward
 	Standing2Crouch / Crouch2Standing
-	Crouching
+	X Crouching
 	JumpStart/Land
-	Jumping -> Going Up, Max height, Going Down
-	Dash Backwad
-	Dash/Run Foward
-	Block Low
-	Block Standing
-	Block Air
-	Damage Low -> half of the anime for light then carries on for Heavy
-	Damage Standing
-	Damage Air
-	Damage Launch Front
-	Damage Launch Back
-	Recovery Front
-	Recovery Back
+	Jumping -> Going Up, X Max height, Going Down
+	X Dash Backwad
+	X Dash/Run Foward
+	X Block Low
+	X Block Standing
+	X Block Air
+	Damage Low -> X half of the anime for light -> X carries on to Heavy
+	Damage Standing X -> X
+	Damage Air X
+	Damage Launch Front X
+ 	Damage Launch Back X 
+	Recovery Front X
+	Recovery Back X
+	
+	Standing Light
+	Standing Heavy
+	Foward Light
+	Foward Heavy
+	Crouching Light
+	Crouching Heavy
+	Jump Light
+	Jump Heavy
+	
+	Special Throw/FireBall
+	Special Projectile -> Charge Release
+	Special Divekick
+	Special Uppercut
+	Special Rekka
 	
 Interesting info:
 http://boxdox-bb.dantarion.com/#/viewer/bbcf_200/rg/NmlAtk2B
