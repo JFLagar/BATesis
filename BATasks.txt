@@ -1,0 +1,25 @@
+Animations:
+	Iddle
+	Walking Foward
+	Walking Backward
+	Standing2Crouch / Crouch2Standing
+	Crouching
+	JumpStart/Land
+	Jumping -> Going Up, Max height, Going Down
+	Dash Backwad
+	Dash/Run Foward
+	Block Low
+	Block Standing
+	Block Air
+	Damage Low -> half of the anime for light then carries on for Heavy
+	Damage Standing
+	Damage Air
+	Damage Launch Front
+	Damage Launch Back
+	Recovery Front
+	Recovery Back
+	
+Interesting info:
+http://boxdox-bb.dantarion.com/#/viewer/bbcf_200/rg/NmlAtk2B
+
+	
