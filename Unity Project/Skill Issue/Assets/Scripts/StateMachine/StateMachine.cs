@@ -7,7 +7,7 @@ namespace SkillIssue.StateMachine
     public enum ActionStates
     {
         None, // Default state
-        Attack, //Can go back to None or proper attacks
+        Attack, //Can go back to None or proper Attack, getting hit here will trigger counterhit
         Block, //Goes back to None
         Hit //King = Overrides all States and Goes back to None
     }
