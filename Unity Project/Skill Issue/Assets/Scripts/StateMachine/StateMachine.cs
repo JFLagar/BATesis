@@ -65,7 +65,10 @@ namespace SkillIssue.StateMachine
         public override void Update(InputHandler input)
         {
             if(Input.GetKeyDown(KeyCode.Space))
-            { Debug.Log("GroundState"); }
+            { 
+                Debug.Log("GroundState");
+                stateMachine.currentAction = ActionStates.Attack;
+            }
             if (input.movementInput.direction.y != 0)
             {
                 yvalue = input.movementInput.direction.y;

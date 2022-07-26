@@ -14,8 +14,8 @@ namespace SkillIssue.Inputs
         public MovementInput movementInput = new MovementInput();
         // Start is called before the first frame update
 
-        public ICommandInput movement;
-        public ICommandInput input;
+        public CommandInputs movement;
+        public CommandInputs input;
         // Update is called once per frame
         void Update()
         {
@@ -34,7 +34,7 @@ namespace SkillIssue.Inputs
 
         }
 
-        ICommandInput HandleAttackInput()
+        CommandInputs HandleAttackInput()
         {
             if (Input.GetKeyDown(inputs[0])) { return lightButton; }
             else if (Input.GetKeyDown(inputs[1])){ return heavyButton; }
@@ -42,7 +42,7 @@ namespace SkillIssue.Inputs
             else { return null; }
             
         }
-        ICommandInput HandleMovementInput()
+        CommandInputs HandleMovementInput()
         {
             if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) { return movementInput; }
             else { return null; }
