@@ -11,11 +11,11 @@ namespace SkillIssue.Inputs
         private LightInput lightButton = new LightInput();
         private HeavyInput heavyButton = new HeavyInput();
         private SpecialInput specialButton = new SpecialInput();
-        private MovementInput movementInput = new MovementInput();
+        public MovementInput movementInput = new MovementInput();
         // Start is called before the first frame update
 
-        private ICommandInput movement;
-        private ICommandInput input;
+        public ICommandInput movement;
+        public ICommandInput input;
         // Update is called once per frame
         void Update()
         {
