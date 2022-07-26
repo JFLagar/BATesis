@@ -30,3 +30,11 @@ namespace SkillIssue.Inputs
     public void InputReleased() { }
     public void InputHold(float time) { }
 }
+public class MovementInput : ICommandInput
+{
+    public Vector2 direction;
+    public void InputPressed() { Debug.Log("pos:" + direction); }
+    public void InputReleased() { }
+    public void InputHold(float time) { }
+}
+

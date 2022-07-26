@@ -7,28 +7,46 @@ namespace SkillIssue.Inputs
     {
         [SerializeField]
         public List<string> commands = new List<string>();
+        public KeyCode[] inputs;
         private LightInput lightButton = new LightInput();
         private HeavyInput heavyButton = new HeavyInput();
         private SpecialInput specialButton = new SpecialInput();
+        private MovementInput movementInput = new MovementInput();
         // Start is called before the first frame update
 
+        private ICommandInput movement;
+        private ICommandInput input;
         // Update is called once per frame
         void Update()
         {
-            ICommandInput input = HandleInput();
+            movement = HandleMovementInput();
+            if (movement != null)
+            {
+                movementInput.direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                movement.InputPressed();
+                commands.Add(movement.ToString());
+            }
+            input = HandleAttackInput();
             if (input != null)
             { input.InputPressed();
                 commands.Add(input.ToString());
             }
+
         }
 
-        ICommandInput HandleInput()
+        ICommandInput HandleAttackInput()
         {
-            if (Input.GetKeyDown(KeyCode.A)) { return lightButton; }
-            else if (Input.GetKeyDown(KeyCode.S)){ return heavyButton; }
-            else if (Input.GetKeyDown(KeyCode.D)) { return specialButton; }
+            if (Input.GetKeyDown(inputs[0])) { return lightButton; }
+            else if (Input.GetKeyDown(inputs[1])){ return heavyButton; }
+            else if (Input.GetKeyDown(inputs[2])) { return specialButton; }
             else { return null; }
             
+        }
+        ICommandInput HandleMovementInput()
+        {
+            if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical")) { return movementInput; }
+            else { return null; }
+
         }
     }
 }

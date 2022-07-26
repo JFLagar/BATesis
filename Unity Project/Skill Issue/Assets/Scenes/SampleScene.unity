@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commands: []
+  inputs: 6a0000006b0000006c000000
 --- !u!4 &677223734
 Transform:
   m_ObjectHideFlags: 0
