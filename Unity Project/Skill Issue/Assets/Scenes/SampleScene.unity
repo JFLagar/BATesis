@@ -201,6 +201,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine: {fileID: 677223735}
   inputHandler: {fileID: 677223733}
+  standingAttacks:
+  - {fileID: 11400000, guid: f6b2a54ddae839844ba013de6f1f6231, type: 2}
+  - {fileID: 11400000, guid: 541377dcf03bbb941ab57cfae40c74e3, type: 2}
+  - {fileID: 11400000, guid: 807e01f22098aa94c8adbe956930668c, type: 2}
+  - {fileID: 11400000, guid: a734c043ebde00c48830ad403e282477, type: 2}
+  crouchingAttacks:
+  - {fileID: 11400000, guid: 9ab3aa946879f9443b27f13754afd2d2, type: 2}
+  - {fileID: 11400000, guid: 80bdd1dc50251f74cb9eea42da9abc25, type: 2}
+  jumpAttacks:
+  - {fileID: 11400000, guid: 9cbdebe578f89ea4cb92cdc45ec96226, type: 2}
+  - {fileID: 11400000, guid: 87faf07684e07a54ea3ade46c148ef56, type: 2}
+  specialAttacks:
+  - {fileID: 11400000, guid: 21599fe186a1a64469fa326ec193c5f5, type: 2}
+  - {fileID: 11400000, guid: 165881236b4bcd14ab070ef19c67c2cf, type: 2}
+  - {fileID: 11400000, guid: fa9993516e6280d4d8da7ba01b3fa054, type: 2}
+  - {fileID: 11400000, guid: c70f79f26e7b46c4bbf69f91e1c90537, type: 2}
+  - {fileID: 11400000, guid: c71464cac25fd2b4da69dd8d68eb25ec, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,6 @@ namespace SkillIssue.Inputs
     {
         public override void InputPressed() 
         {
-            Debug.Log("Light");
             character.PerformAttack(AttackType.Light);
         }
         public override void InputReleased() { }
@@ -30,7 +29,6 @@ namespace SkillIssue.Inputs
     {
         public override void InputPressed() 
         { 
-            Debug.Log("Heavy");
             character.PerformAttack(AttackType.Heavy);
         }
         public override void InputReleased() { }
@@ -40,7 +38,6 @@ namespace SkillIssue.Inputs
     {
         public override void InputPressed() 
         {
-            Debug.Log("Special");
             character.PerformAttack(AttackType.Special);
         }
         public override void InputReleased() { }

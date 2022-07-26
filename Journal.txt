@@ -1,3 +1,7 @@
 26.07.2022
 -Created basic input reading, easy to re-map
 	-Needs to read when the button is being held and when it goes up
+-Created basic StateMachine
+	-Needs to add more implementation with the missing features from inputhandler
+	-Needs to apply the ActionStates
+-Created basic Character and Attacks
