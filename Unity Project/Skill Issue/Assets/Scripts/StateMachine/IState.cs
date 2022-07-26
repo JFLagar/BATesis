@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace SkillIssue.StateMachine
+namespace SkillIssue.StateMachineSpace
 {
     public interface IState
     {

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SkillIssue.Inputs;
-namespace SkillIssue.StateMachine
+using SkillIssue.CharacterSpace;
+namespace SkillIssue.StateMachineSpace
 {
     public enum ActionStates
     {
@@ -13,6 +14,8 @@ namespace SkillIssue.StateMachine
     }
     public class StateMachine : MonoBehaviour
     {
+        public Character character;
+
         public State standingState = new StandingState();
         public State crouchingState = new CrouchState();
         public State jumpState = new JumpState();

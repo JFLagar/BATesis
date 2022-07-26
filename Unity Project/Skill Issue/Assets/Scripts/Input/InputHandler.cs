@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SkillIssue.CharacterSpace;
 namespace SkillIssue.Inputs
 {
     public class InputHandler : MonoBehaviour
     {
+        public Character character;
         [SerializeField]
         public List<string> commands = new List<string>();
         public KeyCode[] inputs;
@@ -17,6 +19,13 @@ namespace SkillIssue.Inputs
         public CommandInputs movement;
         public CommandInputs input;
         // Update is called once per frame
+        private void Start()
+        {
+            movementInput.character = character;
+            lightButton.character = character;
+            heavyButton.character = character;
+            specialButton.character = character;
+        }
         void Update()
         {
             movement = HandleMovementInput();
