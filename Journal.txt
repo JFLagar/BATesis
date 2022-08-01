@@ -5,3 +5,6 @@
 	-Needs to add more implementation with the missing features from inputhandler
 	-Needs to apply the ActionStates
 -Created basic Character and Attacks
+
+01.08.2022
+-Polished Inputs
