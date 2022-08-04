@@ -5,7 +5,7 @@ using SkillIssue.Inputs;
 using SkillIssue.StateMachineSpace;
 namespace SkillIssue.CharacterSpace
 {
-    public class Character : MonoBehaviour
+    public class Character : MonoBehaviour, IPhysics
     {
         public StateMachine stateMachine;
         public InputHandler inputHandler;
@@ -13,6 +13,9 @@ namespace SkillIssue.CharacterSpace
         public AttackData[] crouchingAttacks;
         public AttackData[] jumpAttacks;
         public AttackData[] specialAttacks;
+        public bool applyGravity = false;
+        public bool isGrounded;
+        private float x;
         private void Awake()
         {
             inputHandler.character = this;
@@ -27,7 +30,7 @@ namespace SkillIssue.CharacterSpace
         // Update is called once per frame
         void Update()
         {
-
+            stateMachine.StateMachineUpdate();
         }
         public void PerformAttack(AttackType type)
         {
@@ -83,6 +86,36 @@ namespace SkillIssue.CharacterSpace
                         break;
                 }
             }
+        }
+
+        public void ApplyForce(Vector2 direction, float duration)
+        {
+            applyGravity = false;
+            StopCoroutine(ForceCoroutine(direction, duration));
+            StartCoroutine(ForceCoroutine(direction, duration));
+        }
+
+        public void ApllyGravity()
+        {
+            if (!applyGravity)
+                return;
+            transform.Translate(new Vector2(x, -1) * Time.deltaTime);
+        }
+        public IEnumerator ForceCoroutine(Vector2 direction, float duration)
+        {
+            x = direction.x;
+            float i = 0f;
+            while(i != duration)
+            {
+                transform.Translate(direction * Time.deltaTime);
+                yield return null;
+                i++;
+            }
+            applyGravity = true;
+        }
+        public void IsGrounded(bool check)
+        {
+            isGrounded = check;
         }
     }
 }

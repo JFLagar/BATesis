@@ -12,7 +12,7 @@ namespace SkillIssue.StateMachineSpace
         Block, //Goes back to None
         Hit //King = Overrides all States and Goes back to None
     }
-    public class StateMachine : MonoBehaviour
+    public class StateMachine: MonoBehaviour
     {
         public Character character;
 
@@ -29,15 +29,16 @@ namespace SkillIssue.StateMachineSpace
             crouchingState.stateMachine = this;
             jumpState.stateMachine = this;
         }
-        void Start()
-        {
 
-            currentState = standingState;
-            currentState.stateMachine = this;
-            currentState.EnterState();
-        }
+        private void Start()
+        {
+        currentState = standingState;
+        currentState.stateMachine = this;
+        currentState.EnterState();
+    }
+
         // Update is called once per frame
-        void Update()
+        public void StateMachineUpdate()
         {
             if(currentState.stateMachine == null)
             {
@@ -67,20 +68,27 @@ namespace SkillIssue.StateMachineSpace
         private float yvalue;
         public override void Update(InputHandler input)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
-            { 
-                Debug.Log("GroundState");
-                stateMachine.currentAction = ActionStates.Attack;
-            }
+  
             if (input.movementInput.direction.y != 0)
             {
                 yvalue = input.movementInput.direction.y;
-                ExitState(); }
+                if (yvalue > 0)
+                stateMachine.character.ApplyForce(input.movementInput.direction,400f);
+                ExitState();
+            }
+            if (!stateMachine.character.isGrounded)
+            {
+                yvalue = 1;
+                ExitState();
+            }
+            stateMachine.character.transform.Translate(new Vector3(input.movementInput.direction.x, 0, 0) * Time.deltaTime);
         }
         public override void EnterState() 
         { 
             Debug.Log("Entering GroundState");
             stateMachine.currentState = stateMachine.standingState;
+            stateMachine.character.isGrounded = true;
+            stateMachine.character.applyGravity = false;
         }
         public override void ExitState() { 
             Debug.Log("Exiting GroundState");
@@ -121,12 +129,16 @@ namespace SkillIssue.StateMachineSpace
     {
         public override void Update(InputHandler input)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            { Debug.Log("JumpState"); }
+           
+            stateMachine.character.ApllyGravity();
+            if (stateMachine.character.isGrounded)
+                ExitState();
+
         }
         public override void EnterState()
         {
             Debug.Log("Entering JumpState");
+            stateMachine.character.isGrounded = false;
             stateMachine.currentState = stateMachine.jumpState;
         }
         public override void ExitState() 

@@ -5,7 +5,7 @@ namespace SkillIssue.StateMachineSpace
 {
     public interface IState
     {
-    public void EnterState() { }
-    public void ExitState() { }
+        public void EnterState() { }
+        public void ExitState() { }
     }
 }
