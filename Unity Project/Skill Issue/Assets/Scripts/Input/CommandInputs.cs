@@ -92,16 +92,16 @@ namespace SkillIssue.Inputs
         public Vector2 direction;
         public override void InputPressed()
         {
-            Debug.Log("pos:" + direction); 
+
         }
         public override void InputReleased() 
         {
             direction.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            Debug.Log("pos" + direction);
+
         }
         public override void InputHold(float time)
         {
-            Debug.Log("Holding" + direction);
+
         }
     }
 }

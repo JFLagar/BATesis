@@ -14,7 +14,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         //Attack
     }
 
-    public void collisionedWith(Collider2D collider)
+    public void CollisionedWith(Collider2D collider)
     {
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
         hurtbox?.GetHitBy(data);

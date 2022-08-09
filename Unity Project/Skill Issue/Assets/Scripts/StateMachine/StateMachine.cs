@@ -68,12 +68,12 @@ namespace SkillIssue.StateMachineSpace
         private float yvalue;
         public override void Update(InputHandler input)
         {
-  
+
             if (input.movementInput.direction.y != 0)
             {
                 yvalue = input.movementInput.direction.y;
                 if (yvalue > 0)
-                stateMachine.character.ApplyForce(input.movementInput.direction,400f);
+                    stateMachine.character.ApplyForce(input.movementInput.direction, stateMachine.character.jumpPower) ;
                 ExitState();
             }
             if (!stateMachine.character.isGrounded)
@@ -81,14 +81,14 @@ namespace SkillIssue.StateMachineSpace
                 yvalue = 1;
                 ExitState();
             }
-            stateMachine.character.transform.Translate(new Vector3(input.movementInput.direction.x, 0, 0) * Time.deltaTime);
+            stateMachine.character.CharacterMove(input.movementInput.direction);
         }
         public override void EnterState() 
         { 
             Debug.Log("Entering GroundState");
             stateMachine.currentState = stateMachine.standingState;
-            stateMachine.character.isGrounded = true;
             stateMachine.character.applyGravity = false;
+            stateMachine.character.FixPosition();
         }
         public override void ExitState() { 
             Debug.Log("Exiting GroundState");

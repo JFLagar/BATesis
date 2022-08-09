@@ -7,6 +7,7 @@ namespace SkillIssue.Inputs
     public class InputHandler : MonoBehaviour
     {
         public Character character;
+        public bool player2;
         [SerializeField]
         public List<string> commands = new List<string>();
         public KeyCode[] inputs;
@@ -19,7 +20,9 @@ namespace SkillIssue.Inputs
 
         public CommandInputs movement;
         public CommandInputs input;
-        private Vector2 direction;
+        public Vector2 direction;
+        string horizontal = "Horizontal";
+        string vertical = "Vertical";
         // Update is called once per frame
         private void Start()
         {
@@ -27,6 +30,12 @@ namespace SkillIssue.Inputs
             lightButton.character = character;
             heavyButton.character = character;
             specialButton.character = character;
+            if (player2)
+            {
+                horizontal = "Horizontal2";
+                vertical = "Vertical2";
+            }
+
         }
         void Update()
         {
@@ -37,7 +46,7 @@ namespace SkillIssue.Inputs
             movement = HandleMovementInput();
             if (movement != null)
             {
-                movementInput.direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                movementInput.direction = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
                 movement.Activate(movementUp);
                 commands.Add(movement.ToString());
             }
@@ -95,13 +104,14 @@ namespace SkillIssue.Inputs
         }
         CommandInputs HandleMovementInput()
         {
-            if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical"))
+
+            if (Input.GetButtonDown(horizontal) || Input.GetButtonDown(vertical))
             {
                 movementUp = false;
                 return movementInput;
             }
 
-            if (Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical"))
+            if (Input.GetButtonUp(horizontal) || Input.GetButtonUp(vertical))
             {
                 movementUp = true;
                 return movementInput;

@@ -34,7 +34,7 @@ namespace SkillIssue
             for (int i = 0; i < colliders.Length; i++)
             {
                 Collider2D aCollider = colliders[i];
-                responder?.collisionedWith(aCollider);
+                responder?.CollisionedWith(aCollider);
             }
 
             state = colliders.Length > 0 ? ColliderState.Colliding : ColliderState.Open;
