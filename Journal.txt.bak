@@ -12,4 +12,4 @@
 04.08.2022
 -Added 2D basics Package
 -Created Hitbox behaviour with help of this blog post: https://strangewire.blogspot.com/2018/05/hitboxes-and-hurtboxes-in-unity.html
--Created basic gravity
+-Created basic physics

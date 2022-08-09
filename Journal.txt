@@ -13,3 +13,7 @@
 -Added 2D basics Package
 -Created Hitbox behaviour with help of this blog post: https://strangewire.blogspot.com/2018/05/hitboxes-and-hurtboxes-in-unity.html
 -Created basic physics
+
+09.08.2022
+-Created basic collision detection
+-Player on player push detection needs polish
