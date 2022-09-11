@@ -34,6 +34,8 @@ Animations:
 	Special Uppercut
 	Special Rekka
 	
+Advisor's requests:
+Visual FrameData
 Interesting info:
 http://boxdox-bb.dantarion.com/#/viewer/bbcf_200/rg/NmlAtk2B
 
