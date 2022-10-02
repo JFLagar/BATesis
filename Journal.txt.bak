@@ -1,3 +1,16 @@
+IMPLEMENTED features:
+1st Iteration of StateMachine
+1st Iteration of Movement
+Button Mapping: Directions, Attacks, Attacks+Directions
+1st Iteration of attack information
+1st Iteration of physics (gravity, pushing characters)
+1st Iteration of hitboxes
+MISSING features:
+Assets
+Animations
+Attacks Implementation
+State Machine Action/Block/Hurt
+------
 26.07.2022
 -Created basic input reading, easy to re-map
 	-Needs to read when the button is being held and when it goes up
@@ -13,3 +26,7 @@
 -Added 2D basics Package
 -Created Hitbox behaviour with help of this blog post: https://strangewire.blogspot.com/2018/05/hitboxes-and-hurtboxes-in-unity.html
 -Created basic physics
+
+09.08.2022
+-Created basic collision detection
+-Player on player push detection needs polish
