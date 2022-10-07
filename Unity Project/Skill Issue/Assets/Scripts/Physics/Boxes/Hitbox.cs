@@ -40,11 +40,11 @@ namespace SkillIssue
             state = colliders.Length > 0 ? ColliderState.Colliding : ColliderState.Open;
 
         }
-        void OnDrawGizmos()
+        void OnDrawGizmosSelected()
         {
             CheckGizmoColor();
             Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
-            Gizmos.DrawCube(Vector3.zero, new Vector3(hitboxSize.x * 2, hitboxSize.y * 2, hitboxSize.z * 2)); // Because size is halfExtents
+            Gizmos.DrawWireCube(Vector3.zero, new Vector3(hitboxSize.x * 2, hitboxSize.y * 2, hitboxSize.z * 2)); // Because size is halfExtents
         }
         void CheckGizmoColor()
         {

@@ -6,11 +6,15 @@ using SkillIssue;
 public class AttackClass : MonoBehaviour, IHitboxResponder
 {
     public AttackData data;
-    public Hitbox hitbox;
+    public Hitbox[] hitboxes;
 
     public void Attack()
     {
-        hitbox.setResponder(this);
+        foreach (Hitbox hitbox in hitboxes)
+        { 
+            //turn the collision to closed for inactive hitboxes
+            hitbox.setResponder(this);
+        }       
         //Attack
     }
 

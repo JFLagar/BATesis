@@ -40,11 +40,11 @@ public class Pushbox : MonoBehaviour
         }
 
     }
-    void OnDrawGizmos()
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = color;
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
-        Gizmos.DrawCube(Vector3.zero, new Vector3(hitboxSize.x * 2, hitboxSize.y * 2, hitboxSize.z * 2)); // Because size is halfExtents
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(hitboxSize.x * 2, hitboxSize.y * 2, hitboxSize.z * 2)); // Because size is halfExtents
     }
     public void setResponder(IHitboxResponder hitboxResponder)
     {

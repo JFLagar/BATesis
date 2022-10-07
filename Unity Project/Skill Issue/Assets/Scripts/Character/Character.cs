@@ -143,8 +143,7 @@ namespace SkillIssue.CharacterSpace
 
                 StopAllCoroutines();
                 StartCoroutine(ForceCoroutine(direction, duration));
-
-        
+    
         }
 
         public void ApllyGravity()

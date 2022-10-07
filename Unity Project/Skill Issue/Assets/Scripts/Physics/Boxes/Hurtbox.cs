@@ -7,7 +7,7 @@ namespace SkillIssue
     public class Hurtbox : MonoBehaviour
     {
         public Collider2D hurtboxCollider;
-        private ColliderState state = ColliderState.Open;
+        public ColliderState state = ColliderState.Open;
 
         public Vector3 hitboxSize = Vector3.one;
         public float radius = 0.5f;
@@ -17,14 +17,14 @@ namespace SkillIssue
 
         public void GetHitBy(AttackData data)
         {
-            // Do something with the damage and the state
+            Debug.Log("Got hit by:" + data.name);
         }
 
-        void OnDrawGizmos()
+        void OnDrawGizmosSelected()
         {
             CheckGizmoColor();
             Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
-            Gizmos.DrawCube(Vector3.zero, new Vector3(hitboxSize.x * 2, hitboxSize.y * 2, hitboxSize.z * 2)); // Because size is halfExtents
+            Gizmos.DrawWireCube(Vector3.zero, new Vector3(hitboxSize.x * 2, hitboxSize.y * 2, hitboxSize.z * 2)); // Because size is halfExtents
         }
         void CheckGizmoColor()
         {
