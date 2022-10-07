@@ -10,6 +10,7 @@ namespace SkillIssue.CharacterSpace
         public Character oponent;
         public float faceDir;
         public float xDiff;
+        public SpriteRenderer render;
         public StateMachine stateMachine;
         public InputHandler inputHandler;
         public AttackData[] standingAttacks;
@@ -47,10 +48,12 @@ namespace SkillIssue.CharacterSpace
             if ( xDiff < 0)
             {
                 faceDir = 1;
+               if(render !=null) render.flipX = false;
             }
             else
             {
                 faceDir = -1;
+                if (render != null) render.flipX = true;
             }
         }
         public void PerformAttack(AttackType type)

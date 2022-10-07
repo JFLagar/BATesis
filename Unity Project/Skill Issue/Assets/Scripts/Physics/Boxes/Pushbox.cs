@@ -11,6 +11,7 @@ public enum PushType
 }
 public class Pushbox : MonoBehaviour
 {
+    public Collider2D m_collider;
     public LayerMask mask;
     public bool useSphere = false;
     public Vector3 hitboxSize = Vector3.one;
@@ -35,12 +36,15 @@ public class Pushbox : MonoBehaviour
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            Collider2D aCollider = colliders[i];
-            responder?.CollisionedWith(aCollider);
+            if (colliders[i] != m_collider)
+            {
+                Collider2D aCollider = colliders[i];
+                responder?.CollisionedWith(aCollider);
+            }
         }
 
     }
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Gizmos.color = color;
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, transform.localScale);
@@ -55,6 +59,7 @@ public class Pushbox : MonoBehaviour
         switch (type)
         {
             case PushType.Character:
+                Debug.Log("Collided with:" + pushbox.character.gameObject.name.ToString());
                 if (character.wall)
                 {
                     pushbox.character.wall = true;
