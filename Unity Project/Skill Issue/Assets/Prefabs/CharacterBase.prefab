@@ -76,13 +76,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   useSphere: 0
-  hitboxSize: {x: 0.5, y: 1, z: 1}
-  radius: 0.5
+  hitboxSize: {x: 1, y: 1, z: 1}
   color: {r: 1, g: 0.9830491, b: 0, a: 0.25490198}
   character: {fileID: 1957316337047856815}
   type: 0
   wall: 0
-  push: 600
+  push: 30
 --- !u!1 &1957316336856834439
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +165,6 @@ MonoBehaviour:
     m_Bits: 128
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
@@ -219,7 +217,6 @@ MonoBehaviour:
   hurtboxCollider: {fileID: 1957316336879209681}
   state: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 1, g: 1, b: 1, a: 0}
   collisionOpenColor: {r: 0, g: 0.559567, b: 1, a: 0.5372549}
   collidingColor: {r: 1, g: 0, b: 0.089137554, a: 1}
@@ -414,7 +411,6 @@ MonoBehaviour:
     m_Bits: 128
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
@@ -468,7 +464,6 @@ MonoBehaviour:
     m_Bits: 128
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
@@ -522,7 +517,6 @@ MonoBehaviour:
     m_Bits: 128
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
@@ -575,7 +569,6 @@ MonoBehaviour:
   hurtboxCollider: {fileID: 1957316337619632510}
   state: 1
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 1, g: 1, b: 1, a: 0}
   collisionOpenColor: {r: 0, g: 0.559567, b: 1, a: 0.5372549}
   collidingColor: {r: 1, g: 0, b: 0.089137554, a: 1}
@@ -653,7 +646,6 @@ MonoBehaviour:
   hurtboxCollider: {fileID: 1957316337695270608}
   state: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 1, g: 1, b: 1, a: 0}
   collisionOpenColor: {r: 0, g: 0.559567, b: 1, a: 0.5372549}
   collidingColor: {r: 1, g: 0, b: 0.089137554, a: 1}
@@ -896,7 +888,6 @@ MonoBehaviour:
     m_Bits: 128
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
@@ -986,7 +977,6 @@ MonoBehaviour:
   hurtboxCollider: {fileID: 1957316338371722608}
   state: 1
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 1, g: 1, b: 1, a: 0}
   collisionOpenColor: {r: 0, g: 0.559567, b: 1, a: 0.5372549}
   collidingColor: {r: 1, g: 0, b: 0.089137554, a: 1}
@@ -1065,7 +1055,6 @@ MonoBehaviour:
     m_Bits: 128
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
@@ -1118,7 +1107,6 @@ MonoBehaviour:
   hurtboxCollider: {fileID: 1957316338597541693}
   state: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 1, g: 1, b: 1, a: 0}
   collisionOpenColor: {r: 0, g: 0.559567, b: 1, a: 0.5372549}
   collidingColor: {r: 1, g: 0, b: 0.089137554, a: 1}
@@ -1196,7 +1184,6 @@ MonoBehaviour:
   hurtboxCollider: {fileID: 1957316338671554541}
   state: 1
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
-  radius: 0.5
   inactiveColor: {r: 1, g: 1, b: 1, a: 0}
   collisionOpenColor: {r: 0, g: 0.559567, b: 1, a: 0.5372549}
   collidingColor: {r: 1, g: 0, b: 0.089137554, a: 1}

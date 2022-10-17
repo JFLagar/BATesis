@@ -14,7 +14,6 @@ namespace SkillIssue
         public LayerMask mask;
         public bool useSphere = false;
         public Vector3 hitboxSize = Vector3.one;
-        public float radius = 0.5f;
         public Color inactiveColor;
         public Color collisionOpenColor;
         public Color collidingColor;

@@ -15,7 +15,6 @@ public class Pushbox : MonoBehaviour
     public LayerMask mask;
     public bool useSphere = false;
     public Vector3 hitboxSize = Vector3.one;
-    public float radius = 0.5f;
     public Color color;
 
     private IHitboxResponder responder = null;
@@ -29,8 +28,6 @@ public class Pushbox : MonoBehaviour
     }
     void CheckCollision()
     {
-        if (type != PushType.Character)
-            return;
 
         Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitboxSize, 0, (mask));
 
@@ -59,7 +56,6 @@ public class Pushbox : MonoBehaviour
         switch (type)
         {
             case PushType.Character:
-                Debug.Log("Collided with:" + pushbox.character.gameObject.name.ToString());
                 if (character.wall)
                 {
                     pushbox.character.wall = true;
@@ -73,6 +69,7 @@ public class Pushbox : MonoBehaviour
                     character.CharacterPush(pushbox.character.faceDir * push * Time.deltaTime);
                 else
                 character.CharacterPush(pushbox.character.x * push * Time.deltaTime);
+                Debug.Log("Moving" + character.name);
                 break;
             case PushType.Ground:
                 pushbox.character.isGrounded = true;
