@@ -24,4 +24,19 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         hurtbox?.GetHitBy(data);
 
     }
+    public void StartCheckingCollisions()
+    { 
+        foreach (Hitbox hitbox in hitboxes)
+        {
+            hitbox.StartCheckingCollision();
+        }
+    }
+    public void StopCheckingCollisions()
+    {
+        foreach (Hitbox hitbox in hitboxes)
+        {
+            hitbox.StopCheckingCollision();
+        }
+    }
+
 }

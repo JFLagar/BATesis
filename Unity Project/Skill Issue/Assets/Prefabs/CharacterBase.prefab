@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8097f255315b8124d8456c871d98095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1957316337047856815}
   hurtboxCollider: {fileID: 1957316336879209681}
   state: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
@@ -292,6 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957316337047856814}
   - component: {fileID: 1957316337047856815}
+  - component: {fileID: 7515142340994233024}
   m_Layer: 0
   m_Name: CharacterBase
   m_TagString: Untagged
@@ -363,6 +365,20 @@ MonoBehaviour:
   jumpPower: 200
   forceSpeed: 4
   forceLeftOver: 0
+--- !u!114 &7515142340994233024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957316337047856784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78af738bfd124a4ab72fa8e6df4ce28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  hitboxes: []
 --- !u!1 &1957316337217944717
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8097f255315b8124d8456c871d98095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1957316337047856815}
   hurtboxCollider: {fileID: 1957316337619632510}
   state: 1
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
@@ -644,6 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8097f255315b8124d8456c871d98095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1957316337047856815}
   hurtboxCollider: {fileID: 1957316337695270608}
   state: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
@@ -686,6 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957316337702257280}
   - component: {fileID: 1957316337702257311}
+  - component: {fileID: 7967908785454648187}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -760,6 +779,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7967908785454648187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957316337702257281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: New Category
+    m_Hash: 0
+    m_CategoryList:
+    - m_Name: Entry
+      m_Hash: 0
+      m_Sprite: {fileID: 1203842375, guid: a64371975947b54438f66b4db3273335, type: 3}
+  m_SpriteLibraryAsset: {fileID: 0}
 --- !u!1 &1957316337707236127
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +808,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1957316337707236126}
-  - component: {fileID: 1957316337707236125}
   - component: {fileID: 1957316337707236124}
   - component: {fileID: 1957316337707236123}
   m_Layer: 0
@@ -794,20 +832,6 @@ Transform:
   m_Father: {fileID: 1957316337047856814}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1957316337707236125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957316337707236127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78af738bfd124a4ab72fa8e6df4ce28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 0}
-  hitboxes: []
 --- !u!114 &1957316337707236124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8097f255315b8124d8456c871d98095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1957316337047856815}
   hurtboxCollider: {fileID: 1957316338371722608}
   state: 1
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
@@ -1105,6 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8097f255315b8124d8456c871d98095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1957316337047856815}
   hurtboxCollider: {fileID: 1957316338597541693}
   state: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
@@ -1182,6 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8097f255315b8124d8456c871d98095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1957316337047856815}
   hurtboxCollider: {fileID: 1957316338671554541}
   state: 1
   hitboxSize: {x: 0.5, y: 0.5, z: 1}

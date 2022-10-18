@@ -28,15 +28,20 @@ namespace SkillIssue
         void CheckCollision()
         {
             if (state == ColliderState.Closed) { return; }
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitboxSize, 0, mask);
 
-            for (int i = 0; i < colliders.Length; i++)
+            Collider2D collider = Physics2D.OverlapBox(transform.position, hitboxSize, 0, mask);
+            if (collider)
             {
-                Collider2D aCollider = colliders[i];
-                responder?.CollisionedWith(aCollider);
+                state = ColliderState.Colliding;
+
+                responder?.CollisionedWith(collider);
+            }
+            else
+            {
+                state = ColliderState.Open;
             }
 
-            state = colliders.Length > 0 ? ColliderState.Colliding : ColliderState.Open;
+            
 
         }
         void OnDrawGizmosSelected()

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SkillIssue.CharacterSpace;
 
 namespace SkillIssue
 {
     public class Hurtbox : MonoBehaviour
     {
+        public Character character;
         public Collider2D hurtboxCollider;
         public ColliderState state = ColliderState.Open;
 
