@@ -23,9 +23,15 @@ namespace SkillIssue.CharacterSpace
         public float wallx;
         public bool isGrounded;
         public float x;
-        public float jumpPower;
-        public float forceLeftOver;
         public float y;
+
+        [Space]
+
+        public float movementspeed;
+        public float jumpPower;
+        public float forceSpeed;
+        public float forceLeftOver;
+   
         private void Awake()
         {
             inputHandler.character = this;
@@ -119,19 +125,24 @@ namespace SkillIssue.CharacterSpace
         }
         public void CharacterMove(Vector2 direction)
         {
+            float speed;
             x = direction.x;
+            if (x != faceDir)
+                speed = movementspeed / 2;
+            else
+                speed = movementspeed;
             if (wall)
             {
                 if (direction.x == 0 || direction.x == wallx)
-                    transform.Translate(new Vector2(0, 0) * Time.deltaTime);
+                    transform.Translate(new Vector2(0, 0) * speed * Time.deltaTime);
                 else
                 {
                     wall = false;
-                    transform.Translate(new Vector2(direction.x, 0) * Time.deltaTime);
+                    transform.Translate(new Vector2(direction.x, 0) * speed * Time.deltaTime);
                 }
             }    
            else
-            transform.Translate(new Vector2(direction.x, 0) * Time.deltaTime);
+            transform.Translate(new Vector2(direction.x, 0) * speed * Time.deltaTime);
 
         }
         public void CharacterPush(float x)
@@ -153,7 +164,7 @@ namespace SkillIssue.CharacterSpace
         {
             if (!applyGravity)
                 return;
-            transform.Translate(new Vector2(x, -1) * Time.deltaTime);
+            transform.Translate(new Vector2(x, -1) * (forceSpeed/2) * Time.deltaTime);
         }
         public IEnumerator ForceCoroutine(Vector2 direction, float duration)
         {
@@ -163,7 +174,7 @@ namespace SkillIssue.CharacterSpace
                 if (wall)
                 direction.x = 0;
                 x = direction.x;
-                transform.Translate(direction * Time.deltaTime);
+                transform.Translate(direction * forceSpeed* Time.deltaTime);
                 yield return null;
                 i++;
                 forceLeftOver = duration - i;
@@ -181,6 +192,12 @@ namespace SkillIssue.CharacterSpace
                 return;
             Pushbox collidedbox = collider.GetComponent<Pushbox>();
             collidedbox?.HandleCollision(pushbox);
+        
+        }
+        public void SetWall(bool isWall, int x)
+        {
+            wall = isWall;
+            wallx = x;
         }
      
     }

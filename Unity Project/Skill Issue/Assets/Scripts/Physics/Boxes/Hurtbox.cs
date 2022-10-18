@@ -9,7 +9,7 @@ namespace SkillIssue
         public Collider2D hurtboxCollider;
         public ColliderState state = ColliderState.Open;
 
-        public Vector3 hitboxSize = Vector3.one;
+        public Vector3 hitboxSize;
         public Color inactiveColor;
         public Color collisionOpenColor;
         public Color collidingColor;

@@ -78,10 +78,9 @@ MonoBehaviour:
   useSphere: 0
   hitboxSize: {x: 1, y: 1, z: 1}
   color: {r: 1, g: 0.9830491, b: 0, a: 0.25490198}
+  state: 1
   character: {fileID: 1957316337047856815}
-  type: 0
-  wall: 0
-  push: 30
+  push: 600
 --- !u!1 &1957316336856834439
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,14 +353,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa9993516e6280d4d8da7ba01b3fa054, type: 2}
   - {fileID: 11400000, guid: c71464cac25fd2b4da69dd8d68eb25ec, type: 2}
   pushbox: {fileID: 1957316336796792431}
-  applyGravity: 0
+  applyGravity: 1
   wall: 0
   wallx: 0
   isGrounded: 0
   x: 0
-  jumpPower: 600
-  forceLeftOver: 0
   y: 0
+  movementspeed: 2
+  jumpPower: 200
+  forceSpeed: 4
+  forceLeftOver: 0
 --- !u!1 &1957316337217944717
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,7 +96,6 @@ namespace SkillIssue.Inputs
         }
         public override void InputReleased() 
         {
-            direction.Set(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         }
         public override void InputHold(float time)

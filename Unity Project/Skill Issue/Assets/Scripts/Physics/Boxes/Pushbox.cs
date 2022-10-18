@@ -14,23 +14,29 @@ public class Pushbox : MonoBehaviour
     public Collider2D m_collider;
     public LayerMask mask;
     public bool useSphere = false;
-    public Vector3 hitboxSize = Vector3.one;
+    public Vector3 hitboxSize;
     public Color color;
+    public ColliderState state;
 
     private IHitboxResponder responder = null;
     public SkillIssue.CharacterSpace.Character character = null;
-    public PushType type;
-    public float wall;
     public float push = 60;
-    void Update()
+    void FixedUpdate()
     {
         CheckCollision();
+        if (state == ColliderState.Colliding)
+        {
+            character.CharacterPush(0);
+        }
     }
     void CheckCollision()
     {
-
+        
         Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitboxSize, 0, (mask));
-
+        if(colliders.Length <= 1)
+        {
+            state = ColliderState.Open;
+        }
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i] != m_collider)
@@ -39,7 +45,7 @@ public class Pushbox : MonoBehaviour
                 responder?.CollisionedWith(aCollider);
             }
         }
-
+    
     }
     void OnDrawGizmos()
     {
@@ -53,31 +59,33 @@ public class Pushbox : MonoBehaviour
     }
     public void HandleCollision(Pushbox pushbox)
     {
-        switch (type)
+   
+        
+            state = ColliderState.Colliding;
+        if (character.wall)
         {
-            case PushType.Character:
-                if (character.wall)
-                {
-                    pushbox.character.wall = true;
-                    pushbox.character.wallx = character.wallx;
-                    if(pushbox.character.applyGravity)
-                    {
-                        pushbox.character.CharacterPush(character.wallx);
-                    }
-                }
-                if (pushbox.character.applyGravity)
-                    character.CharacterPush(pushbox.character.faceDir * push * Time.deltaTime);
-                else
-                character.CharacterPush(pushbox.character.x * push * Time.deltaTime);
-                Debug.Log("Moving" + character.name);
-                break;
-            case PushType.Ground:
-                pushbox.character.isGrounded = true;
-                break;
-            case PushType.Wall:
-                pushbox.character.wall = true;
-                pushbox.character.wallx = wall;
-                break;
+            pushbox.character.wall = true;
+            pushbox.character.wallx = character.wallx;
+            if (pushbox.character.applyGravity)
+            {
+                pushbox.character.CharacterPush(character.wallx);
+            }
         }
+        if (character.x != 0 && character.x == character.faceDir)
+        {
+            if (character.applyGravity)
+            {
+                pushbox.character.CharacterPush(character.faceDir/2 * push * Time.deltaTime);
+            }
+            else
+            {
+                pushbox.character.CharacterPush(character.x/2 * push * Time.deltaTime);
+            }
+        }
+        else
+        {
+            pushbox.character.CharacterPush(0);
+        }
+
     }
 }

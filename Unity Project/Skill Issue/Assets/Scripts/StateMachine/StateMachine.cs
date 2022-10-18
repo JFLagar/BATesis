@@ -32,7 +32,7 @@ namespace SkillIssue.StateMachineSpace
 
         private void Start()
         {
-        currentState = standingState;
+        currentState = jumpState;
         currentState.stateMachine = this;
         currentState.EnterState();
     }
