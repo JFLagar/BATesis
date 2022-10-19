@@ -51,6 +51,8 @@ namespace SkillIssue.Inputs
                 commands.Add(movement.ToString());
             }
 
+            if (inputs.Length == 0)
+                return;
             //attack
             input = HandleAttackInput();
             if (input != null)

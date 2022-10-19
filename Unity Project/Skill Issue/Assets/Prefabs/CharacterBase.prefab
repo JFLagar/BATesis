@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 1957316337047856814}
   - component: {fileID: 1957316337047856815}
   - component: {fileID: 7515142340994233024}
+  - component: {fileID: 1611576696514641200}
   m_Layer: 0
   m_Name: CharacterBase
   m_TagString: Untagged
@@ -354,6 +355,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 165881236b4bcd14ab070ef19c67c2cf, type: 2}
   - {fileID: 11400000, guid: fa9993516e6280d4d8da7ba01b3fa054, type: 2}
   - {fileID: 11400000, guid: c71464cac25fd2b4da69dd8d68eb25ec, type: 2}
+  attack: {fileID: 7515142340994233024}
   pushbox: {fileID: 1957316336796792431}
   applyGravity: 1
   wall: 0
@@ -377,8 +379,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78af738bfd124a4ab72fa8e6df4ce28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
-  hitboxes: []
+  hitboxes:
+  - {fileID: 1957316337498685954}
+  - {fileID: 1957316338129269631}
+  - {fileID: 1957316338392394420}
+  - {fileID: 1957316336859665581}
+  - {fileID: 1957316337217944715}
+  - {fileID: 1957316337416723197}
+  m_animation: {fileID: 1611576696514641200}
+--- !u!95 &1611576696514641200
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957316337047856784}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6dd36d50ce2caf4ab9439982ac2e041, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1957316337217944717
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
@@ -478,7 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
@@ -531,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
@@ -910,7 +938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1078,7 +1106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}

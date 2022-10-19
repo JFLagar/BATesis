@@ -17,6 +17,7 @@ namespace SkillIssue.CharacterSpace
         public AttackData[] crouchingAttacks;
         public AttackData[] jumpAttacks;
         public AttackData[] specialAttacks;
+        public AttackClass attack;
         public Pushbox pushbox;
         public bool applyGravity = false;
         public bool wall;
@@ -76,7 +77,7 @@ namespace SkillIssue.CharacterSpace
                         }
                         else
                         {
-                            Debug.Log(standingAttacks[((int)type)].ToString());
+                            attack.Attack(standingAttacks[((int)type)]);
                         }
                         break;
                     case CrouchState:

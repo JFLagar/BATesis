@@ -5,23 +5,27 @@ using SkillIssue;
 
 public class AttackClass : MonoBehaviour, IHitboxResponder
 {
-    public AttackData data;
+    private AttackData m_data;
     public Hitbox[] hitboxes;
+    public Animator m_animation;
 
-    public void Attack()
+    public void Attack(AttackData data)
     {
+        m_data = data;
+        
+        
         foreach (Hitbox hitbox in hitboxes)
         { 
-            //turn the collision to closed for inactive hitboxes
             hitbox.setResponder(this);
-        }       
+        }
+        m_animation.Play("Base Layer." + data.animation.name);
         //Attack
     }
 
     public void CollisionedWith(Collider2D collider)
     {
         Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
-        hurtbox?.GetHitBy(data);
+        hurtbox?.GetHitBy(m_data);
 
     }
     public void StartCheckingCollisions()
