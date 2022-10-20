@@ -18,6 +18,7 @@ namespace SkillIssue.CharacterSpace
         public AttackData[] jumpAttacks;
         public AttackData[] specialAttacks;
         public AttackClass attack;
+        public Animator animator;
         public Pushbox pushbox;
         public bool applyGravity = false;
         public bool wall;
@@ -165,6 +166,10 @@ namespace SkillIssue.CharacterSpace
         {
             if (!applyGravity)
                 return;
+            if(stateMachine.currentAction == ActionStates.None)
+            {
+                animator.SetTrigger("JumpEnd");
+            }
             transform.Translate(new Vector2(x, -1) * (forceSpeed/2) * Time.deltaTime);
         }
         public IEnumerator ForceCoroutine(Vector2 direction, float duration)
@@ -201,5 +206,9 @@ namespace SkillIssue.CharacterSpace
             wallx = x;
         }
      
+        public void CheckState()
+        {
+            Debug.Log(animator.GetCurrentAnimatorClipInfo(0));
+        }
     }
 }

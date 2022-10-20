@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SkillIssue;
+using SkillIssue.CharacterSpace;
 
 public class AttackClass : MonoBehaviour, IHitboxResponder
 {
     private AttackData m_data;
     public Hitbox[] hitboxes;
-    public Animator m_animation;
+    public Character character;
 
     public void Attack(AttackData data)
     {
@@ -18,7 +19,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         { 
             hitbox.setResponder(this);
         }
-        m_animation.Play("Base Layer." + data.animation.name);
+        character.animator.Play(data.animation.name);
         //Attack
     }
 
