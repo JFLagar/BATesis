@@ -127,12 +127,26 @@ namespace SkillIssue.CharacterSpace
         }
         public void CharacterMove(Vector2 direction)
         {
-            float speed;
+            float speed = movementspeed;
             x = direction.x;
-            if (x != faceDir)
-                speed = movementspeed / 2;
+            if (x != 0)
+            {
+                if (x != faceDir)
+                {
+                    animator.SetInteger("X", -1);
+                    speed = movementspeed / 2;
+                }
+
+                else
+                {
+                    animator.SetInteger("X", 1);
+                    speed = movementspeed;
+                }
+            }
             else
-                speed = movementspeed;
+                animator.SetInteger("X", 0);           
+
+         
             if (wall)
             {
                 if (direction.x == 0 || direction.x == wallx)

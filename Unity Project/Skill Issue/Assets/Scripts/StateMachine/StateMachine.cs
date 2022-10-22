@@ -122,6 +122,7 @@ namespace SkillIssue.StateMachineSpace
         {
             Debug.Log("Entering CrouchState");
             stateMachine.currentState = stateMachine.crouchingState;
+            character.animator.Play("StandToCrouch");
             character.animator.SetBool("Crouching", true);
         }
         public override void ExitState() 
@@ -146,6 +147,7 @@ namespace SkillIssue.StateMachineSpace
             Debug.Log("Entering JumpState");
             stateMachine.character.isGrounded = false;
             stateMachine.currentState = stateMachine.jumpState;
+            character.animator.Play("JumpStart");
             character.animator.SetBool("Jumping", true);
         }
         public override void ExitState() 
