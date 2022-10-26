@@ -34,7 +34,10 @@ namespace SkillIssue
             {
                 state = ColliderState.Colliding;
 
-                responder?.CollisionedWith(colliders[0]); 
+                foreach(Collider2D collider in colliders)
+                {
+                    responder.CollisionedWith(collider);
+                }
             }
             else
             {

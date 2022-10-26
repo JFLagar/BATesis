@@ -18,6 +18,11 @@ namespace SkillIssue
 
         public void GetHitBy(AttackData data)
         {
+            if (state == ColliderState.Closed)
+            {
+                Debug.Log("Got hit by but closed");
+            }
+            else
             Debug.Log("Got hit by:" + data.name);
         }
 

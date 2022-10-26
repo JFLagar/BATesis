@@ -4,13 +4,15 @@ Animations:
 	O-Walking Backward
 	Standing2Crouch / Crouch2Standing
 	OX Crouching
-	JumpStart/Land
-	Jumping -> Going Up, OX Max height, Going Down
+	O-JumpStart/Land
+	OOO-Jumping -> Going Up, OX Max height, Going Down
 	X Dash Backward
 	X Dash/Run Foward
+	
 	X Block Low
 	X Block Standing
 	X Block Air
+	
 	Damage Low -> X half of the anime for light -> X carries on to Heavy
 	Damage Standing X -> X
 	Damage Air X
@@ -34,9 +36,15 @@ Animations:
 	Special Uppercut
 	Special Rekka
 	
-Advisor's requests:
-Visual FrameData
 Interesting info:
 http://boxdox-bb.dantarion.com/#/viewer/bbcf_200/rg/NmlAtk2B
 
-	
+---
+
+### TODO###
+Ver. 0.1:
+Introduce HealthBar
+Introduce Damage and Block Reaction
+Introduce Button Mapping
+FIX JUMP
+Bug: Boxes Fix for Player2
