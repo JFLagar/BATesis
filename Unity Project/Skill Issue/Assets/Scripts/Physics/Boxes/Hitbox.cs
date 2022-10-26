@@ -29,12 +29,12 @@ namespace SkillIssue
         {
             if (state == ColliderState.Closed) { return; }
 
-            Collider2D collider = Physics2D.OverlapBox(transform.position, hitboxSize, 0, mask);
-            if (collider)
+            Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitboxSize, 0, mask);
+            if (colliders.Length!= 0)
             {
                 state = ColliderState.Colliding;
 
-                responder?.CollisionedWith(collider);
+                responder?.CollisionedWith(colliders[0]); 
             }
             else
             {
