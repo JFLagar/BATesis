@@ -161,14 +161,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
-  m_hurtboxes: []
 --- !u!1 &1957316336879209683
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +294,7 @@ GameObject:
   - component: {fileID: 1957316337047856814}
   - component: {fileID: 1957316337047856815}
   - component: {fileID: 7515142340994233024}
-  - component: {fileID: 1611576696514641200}
+  - component: {fileID: 3090942852897552484}
   m_Layer: 0
   m_Name: CharacterBase
   m_TagString: Untagged
@@ -357,7 +356,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa9993516e6280d4d8da7ba01b3fa054, type: 2}
   - {fileID: 11400000, guid: c71464cac25fd2b4da69dd8d68eb25ec, type: 2}
   attack: {fileID: 7515142340994233024}
-  animator: {fileID: 1611576696514641200}
+  animator: {fileID: 3090942852897552484}
   pushbox: {fileID: 1957316336796792431}
   applyGravity: 1
   wall: 0
@@ -389,7 +388,7 @@ MonoBehaviour:
   - {fileID: 1957316337217944715}
   - {fileID: 1957316337416723197}
   character: {fileID: 1957316337047856815}
---- !u!95 &1611576696514641200
+--- !u!95 &3090942852897552484
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -455,14 +454,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
-  m_hurtboxes: []
 --- !u!1 &1957316337416723199
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,14 +507,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
-  m_hurtboxes: []
 --- !u!1 &1957316337498685956
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,14 +560,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
-  m_hurtboxes: []
 --- !u!1 &1957316337619632480
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,14 +918,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
-  m_hurtboxes: []
 --- !u!1 &1957316338143150644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,14 +1086,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
   useSphere: 0
   hitboxSize: {x: 0.5, y: 0.5, z: 1}
   inactiveColor: {r: 0, g: 0, b: 0, a: 0}
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
-  m_hurtboxes: []
 --- !u!1 &1957316338597541695
 GameObject:
   m_ObjectHideFlags: 0
