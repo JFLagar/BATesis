@@ -82,10 +82,10 @@ namespace SkillIssue.CharacterSpace
                         }
                         break;
                     case CrouchState:
-                        Debug.Log(crouchingAttacks[((int)type)].ToString());
+                        attack.Attack(crouchingAttacks[((int)type)]);
                         break;
                     case JumpState:
-                        Debug.Log(jumpAttacks[((int)type)].ToString());
+                        attack.Attack(jumpAttacks[((int)type)]);
                         break;
                 }
             }

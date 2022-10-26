@@ -281,7 +281,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -760,6 +760,10 @@ PrefabInstance:
       propertyPath: oponent
       value: 
       objectReference: {fileID: 699230785}
+    - target: {fileID: 1957316337498685954, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: state
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: player2
       value: 1

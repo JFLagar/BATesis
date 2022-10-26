@@ -168,6 +168,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
+  m_hurtboxes: []
 --- !u!1 &1957316336879209683
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +462,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
+  m_hurtboxes: []
 --- !u!1 &1957316337416723199
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +516,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
+  m_hurtboxes: []
 --- !u!1 &1957316337498685956
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +570,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
+  m_hurtboxes: []
 --- !u!1 &1957316337619632480
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +801,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2038836060, guid: 8dcbb99cb97c6384a80a170130b86f16, type: 3}
-  m_Color: {r: 1, g: 0.981134, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -925,6 +929,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
+  m_hurtboxes: []
 --- !u!1 &1957316338143150644
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +994,7 @@ Transform:
   m_GameObject: {fileID: 1957316338371722610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.016, y: -0.404, z: 0}
-  m_LocalScale: {x: 0.47249997, y: 0.165625, z: 1}
+  m_LocalScale: {x: 0.4725, y: 0.165625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1957316338143150643}
@@ -1093,6 +1098,7 @@ MonoBehaviour:
   collisionOpenColor: {r: 1, g: 0, b: 0, a: 1}
   collidingColor: {r: 1, g: 0.7463412, b: 0, a: 1}
   state: 0
+  m_hurtboxes: []
 --- !u!1 &1957316338597541695
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,8 +19,9 @@ MonoBehaviour:
   blockstun: 0
   proratio: 0
   launcher: 0
+  dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 0
   cancelableTypes: 
-  animation: {fileID: 0}
+  animation: {fileID: 7400000, guid: 772c39770cfeada45bbe3731f3999933, type: 2}
   message: 
