@@ -46,6 +46,7 @@ Ver. 0.1:
 Introduce HealthBar
 Introduce Damage and Block Reaction
 Introduce Button Mapping
-CameraFollow
-FIX JUMP
-Bug: Boxes Fix for Player2
+CameraFollow - missing: Camera EDges
+-
+BUGS:
+Camera: Edges
