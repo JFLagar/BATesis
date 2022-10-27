@@ -33,6 +33,10 @@ namespace SkillIssue.CharacterSpace
         public float jumpPower;
         public float forceSpeed;
         public float forceLeftOver;
+
+        [Space]
+
+        public Transform collisions;
    
         private void Awake()
         {
@@ -56,12 +60,16 @@ namespace SkillIssue.CharacterSpace
             if ( xDiff < 0)
             {
                 faceDir = 1;
-               if(render !=null) render.flipX = false;
+                if (render != null)
+                 render.flipX = false;
+                collisions.eulerAngles = new Vector3(0, 0, 0);
+                         
             }
             else
             {
                 faceDir = -1;
                 if (render != null) render.flipX = true;
+                collisions.eulerAngles = new Vector3(0, 180, 0);
             }
         }
         public void PerformAttack(AttackType type)
@@ -168,6 +176,8 @@ namespace SkillIssue.CharacterSpace
         }
         public void ApplyForce(Vector2 direction, float duration)
         {
+            if (wall && direction.x == wallx)
+                direction.x = 0;
             y = direction.y;
             applyGravity = false;
 
@@ -184,7 +194,10 @@ namespace SkillIssue.CharacterSpace
             {
                 animator.SetTrigger("JumpEnd");
             }
+            if (!wall)
             transform.Translate(new Vector2(x, -1) * (forceSpeed/2) * Time.deltaTime);
+            else
+            transform.Translate(new Vector2(0, -1) * (forceSpeed / 2) * Time.deltaTime);
         }
         public IEnumerator ForceCoroutine(Vector2 direction, float duration)
         {

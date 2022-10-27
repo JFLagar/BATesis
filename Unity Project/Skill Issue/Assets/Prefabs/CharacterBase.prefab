@@ -365,9 +365,10 @@ MonoBehaviour:
   x: 0
   y: 0
   movementspeed: 2
-  jumpPower: 100
+  jumpPower: 20
   forceSpeed: 3
   forceLeftOver: 0
+  collisions: {fileID: 1957316336856834438}
 --- !u!114 &7515142340994233024
 MonoBehaviour:
   m_ObjectHideFlags: 0
