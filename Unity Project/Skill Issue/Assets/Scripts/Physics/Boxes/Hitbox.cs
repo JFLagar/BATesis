@@ -32,12 +32,23 @@ namespace SkillIssue
             Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitboxSize, 0, mask);
             if (colliders.Length!= 0)
             {
-                state = ColliderState.Colliding;
-
-                foreach(Collider2D collider in colliders)
+                if (state == ColliderState.Colliding)
+                    return;
+              
+                for (int i = 0; i < colliders.Length; i++)
                 {
-                    responder.CollisionedWith(collider);
+                    Collider2D aCollider = colliders[i];
+                    Hurtbox collidedbox = aCollider.GetComponent<Hurtbox>();
+                    if(collidedbox?.state == ColliderState.Open)
+                        {
+                            state = ColliderState.Colliding;
+                            responder.CollisionedWith(aCollider);                       
+                            return;
+                    }
+                  
                 }
+                    
+               
             }
             else
             {

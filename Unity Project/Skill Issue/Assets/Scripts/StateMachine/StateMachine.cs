@@ -12,6 +12,12 @@ namespace SkillIssue.StateMachineSpace
         Block, //Goes back to None
         Hit //King = Overrides all States and Goes back to None
     }
+    public enum States
+    {
+        Standing,
+        Crouching,
+        Jumping
+    }
     public class StateMachine: MonoBehaviour
     {
         public Character character;
@@ -72,11 +78,12 @@ namespace SkillIssue.StateMachineSpace
         private float yvalue;
         public override void Update(InputHandler input)
         {
-
+        
             if (input.movementInput.direction.y != 0)
             {
                 yvalue = input.movementInput.direction.y;
                 if (yvalue > 0)
+                    //jump
                     stateMachine.character.ApplyForce(input.movementInput.direction, stateMachine.character.jumpPower) ;
                 ExitState();
             }
@@ -91,6 +98,7 @@ namespace SkillIssue.StateMachineSpace
         { 
             Debug.Log("Entering StandingState");
             stateMachine.currentState = stateMachine.standingState;
+            stateMachine.character.currentState = States.Standing;
             stateMachine.character.applyGravity = false;
             stateMachine.character.FixPosition();
         }
@@ -122,6 +130,7 @@ namespace SkillIssue.StateMachineSpace
         {
             Debug.Log("Entering CrouchState");
             stateMachine.currentState = stateMachine.crouchingState;
+            stateMachine.character.currentState = States.Crouching;
             character.animator.Play("StandToCrouch");
             character.animator.SetBool("Crouching", true);
         }
@@ -147,6 +156,7 @@ namespace SkillIssue.StateMachineSpace
             Debug.Log("Entering JumpState");
             stateMachine.character.isGrounded = false;
             stateMachine.currentState = stateMachine.jumpState;
+            stateMachine.character.currentState = States.Jumping;
             character.animator.Play("JumpStart");
             character.animator.SetBool("Jumping", true);
         }

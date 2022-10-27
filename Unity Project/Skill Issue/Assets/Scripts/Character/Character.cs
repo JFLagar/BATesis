@@ -26,17 +26,20 @@ namespace SkillIssue.CharacterSpace
         public bool isGrounded;
         public float x;
         public float y;
-
+        public States currentState;
         [Space]
 
         public float movementspeed;
         public float jumpPower;
         public float forceSpeed;
         public float forceLeftOver;
+        private bool gotHit = false;
 
         [Space]
 
         public Transform collisions;
+        private Coroutine currentHitCoroutine;
+        private Coroutine currentMovementCoroutine;
    
         private void Awake()
         {
@@ -74,7 +77,7 @@ namespace SkillIssue.CharacterSpace
         }
         public void PerformAttack(AttackType type)
         {
-            stateMachine.currentAction = ActionStates.Attack;
+           
             if ((int)type != 2)
             {
                 switch (stateMachine.currentState)
@@ -126,6 +129,34 @@ namespace SkillIssue.CharacterSpace
                         break;
                 }
             }
+            stateMachine.currentAction = ActionStates.Attack;
+        }
+        public void GetHit(AttackData data)
+        {
+            //if (gotHit)
+            //    return;
+            gotHit = true;
+            //block
+            if (x == -faceDir)
+            {
+                stateMachine.currentAction = ActionStates.Block;
+                animator.Play(currentState.ToString() + "Block");               
+                Debug.Log("Blocked");
+                if (currentHitCoroutine != null)
+                    StopCoroutine(currentHitCoroutine);
+                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun));
+            }
+            else
+            {
+                stateMachine.currentAction = ActionStates.Hit;
+                animator.Play(currentState.ToString() + "Hit");
+                Debug.Log("Got HIT");
+                if (currentHitCoroutine != null)
+                StopCoroutine(currentHitCoroutine);
+                    currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
+            }
+            
+           
         }
         public void FixPosition()
         {
@@ -137,6 +168,9 @@ namespace SkillIssue.CharacterSpace
         {
             float speed = movementspeed;
             x = direction.x;
+            if (stateMachine.currentAction != ActionStates.None || currentState != States.Standing)
+                return;
+        
             if (x != 0)
             {
                 if (x != faceDir)
@@ -181,8 +215,9 @@ namespace SkillIssue.CharacterSpace
             y = direction.y;
             applyGravity = false;
 
-                StopAllCoroutines();
-                StartCoroutine(ForceCoroutine(direction, duration));
+            if(currentMovementCoroutine != null)
+                StopCoroutine(currentMovementCoroutine);
+               currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction, duration));
     
         }
 
@@ -236,6 +271,28 @@ namespace SkillIssue.CharacterSpace
         public void CheckState()
         {
             Debug.Log(animator.GetCurrentAnimatorClipInfo(0));
+        }
+        public void AnimEnd()
+        {
+            stateMachine.currentAction = ActionStates.None;
+        }
+        public void HitRecover()
+        {
+            Debug.Log("Recovered");
+            animator.SetTrigger("Recovery");
+            animator.SetBool("Blocking", false);
+            stateMachine.currentAction = ActionStates.None;
+            gotHit = false;
+        }
+        public IEnumerator RecoveryFramesCoroutines(int frames)
+        {
+            int i = 0;
+                while(i != frames)
+            {
+                yield return null;
+                i++;
+            }
+            HitRecover();
         }
     }
 }

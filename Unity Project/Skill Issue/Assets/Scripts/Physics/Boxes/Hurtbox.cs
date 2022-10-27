@@ -24,6 +24,7 @@ namespace SkillIssue
             }
             else
             Debug.Log("Got hit by:" + data.name);
+            character.GetHit(data);
         }
 
         void OnDrawGizmosSelected()

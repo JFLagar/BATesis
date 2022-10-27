@@ -1016,7 +1016,7 @@ AnimatorStateMachine:
     m_Position: {x: -40, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 483984493164629533}
-    m_Position: {x: -210, y: 270, z: 0}
+    m_Position: {x: -260, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8075966168489029695}
     m_Position: {x: 250, y: 110, z: 0}
@@ -1070,7 +1070,7 @@ AnimatorStateMachine:
     m_Position: {x: 800, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2839892962490158180}
-    m_Position: {x: 1020, y: 1180, z: 0}
+    m_Position: {x: 450, y: 600, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 8975344926926915878}
@@ -1437,7 +1437,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JumpHit
+  m_Name: JumpingHit
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1466,7 +1466,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: JumpHitFall
+  m_Name: JumpingHitFall
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

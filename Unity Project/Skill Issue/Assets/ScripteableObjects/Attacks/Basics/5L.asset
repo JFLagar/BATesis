@@ -15,8 +15,8 @@ MonoBehaviour:
   attackAttribute: 0
   attackType: 0
   damage: 20
-  hitstun: 0
-  blockstun: 0
+  hitstun: 300
+  blockstun: 7
   proratio: 2
   launcher: 0
   dashCancel: 0
