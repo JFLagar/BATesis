@@ -241,21 +241,6 @@ namespace SkillIssue.CharacterSpace
             else
             transform.Translate(new Vector2(0, -1) * (forceSpeed / 2) * Time.deltaTime);
         }
-        public IEnumerator ForceCoroutine(Vector2 direction, float duration)
-        {
-            float i = 0f;
-            while(i != duration)
-            {
-                if (wall)
-                direction.x = 0;
-                x = direction.x;
-                transform.Translate(direction * forceSpeed* Time.deltaTime);
-                yield return null;
-                i++;
-                forceLeftOver = duration - i;
-            }
-            applyGravity = true;
-        }
         public void IsGrounded(bool check)
         {
             isGrounded = check;
@@ -283,6 +268,13 @@ namespace SkillIssue.CharacterSpace
         {
             stateMachine.currentAction = ActionStates.None;
         }
+        public void OpenHitboxes(int number)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                attack.hitboxes[i].state = ColliderState.Open;
+            }
+        }
         public void HitRecover()
         {
             Debug.Log("Recovered");
@@ -290,6 +282,21 @@ namespace SkillIssue.CharacterSpace
             animator.SetBool("Blocking", false);
             stateMachine.currentAction = ActionStates.None;
             gotHit = false;
+        }
+        public IEnumerator ForceCoroutine(Vector2 direction, float duration)
+        {
+            float i = 0f;
+            while (i != duration)
+            {
+                if (wall)
+                    direction.x = 0;
+                x = direction.x;
+                transform.Translate(direction * forceSpeed * Time.deltaTime);
+                yield return null;
+                i++;
+                forceLeftOver = duration - i;
+            }
+            applyGravity = true;
         }
         public IEnumerator RecoveryFramesCoroutines(int frames)
         {
