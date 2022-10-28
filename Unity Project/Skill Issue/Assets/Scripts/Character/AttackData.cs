@@ -26,6 +26,7 @@ namespace SkillIssue
         public int hitstun;
         public int blockstun;
         public int proratio;
+        public float push;
         [Space]
         public bool launcher;
         public bool dashCancel;

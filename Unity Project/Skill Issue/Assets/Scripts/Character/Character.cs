@@ -160,6 +160,7 @@ namespace SkillIssue.CharacterSpace
                 StopCoroutine(currentHitCoroutine);
                     currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
                 currentHealth = currentHealth - data.damage;
+                ApplyForce(new Vector2(data.push, 0f),1f);
             }
             
            
