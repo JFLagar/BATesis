@@ -44,9 +44,10 @@ http://boxdox-bb.dantarion.com/#/viewer/bbcf_200/rg/NmlAtk2B
 ### TODO###
 Ver. 0.1:
 Introduce HealthBar
-Introduce Damage and Block Reaction
+Introduce Damage and Block Reaction 
 Introduce Button Mapping
 CameraFollow - missing: Camera EDges
 -
 BUGS:
 Camera: Edges
+Damage Block: Recognize block, prevent state from changing, repeat animation with several hits
