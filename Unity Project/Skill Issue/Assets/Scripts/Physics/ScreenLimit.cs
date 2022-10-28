@@ -14,12 +14,39 @@ public class ScreenLimit : MonoBehaviour
     public Color color;
     public bool cameraWall = false;
     private Pushbox previousCollision;
-
+    public CameraManager cam;
 
     // Update is called once per frame
     void FixedUpdate()
     {
         CheckCollisions();
+    }
+    private void Update()
+    {
+        if (!isWall)
+            return;
+      if(GetComponent<Renderer>().isVisible)
+        {
+            if(x < 0)
+            {
+                cam.check = true;
+            }
+            else
+            {
+                cam.check2 = true;
+            }
+        }
+      else
+        {
+            if (x < 0)
+            {
+                cam.check = false;
+            }
+            else
+            {
+                cam.check2 = false;
+            }
+        }
     }
 
     private void CheckCollisions()
@@ -43,7 +70,7 @@ public class ScreenLimit : MonoBehaviour
             else
             {
                 previousCollision = collidedbox;
-                collidedbox?.character.SetWall(true, x);
+                collidedbox?.character.SetWall(true, x, true);
             }
 
 

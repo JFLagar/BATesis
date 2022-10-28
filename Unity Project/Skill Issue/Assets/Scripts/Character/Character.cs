@@ -22,6 +22,7 @@ namespace SkillIssue.CharacterSpace
         public Pushbox pushbox;
         public bool applyGravity = false;
         public bool wall;
+        public bool cameraWall = false;
         public float wallx;
         public bool isGrounded;
         public float x;
@@ -254,10 +255,11 @@ namespace SkillIssue.CharacterSpace
             collidedbox?.HandleCollision(pushbox);
         
         }
-        public void SetWall(bool isWall, int x)
+        public void SetWall(bool isWall, int x, bool isCamera = false)
         {
             wall = isWall;
             wallx = x;
+            cameraWall = isCamera;
         }
      
         public void CheckState()

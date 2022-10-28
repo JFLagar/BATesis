@@ -10,7 +10,8 @@ public class CameraManager : MonoBehaviour
     public Vector3 pos = new Vector3(0,0,-10);
     public float distance;
     public float testmiddle;
-    public bool check;
+    public bool check = false;
+    public bool check2 = false;
     private void Awake()
     {
         cam = GetComponent<Camera>();
@@ -18,45 +19,36 @@ public class CameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pos.y = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
+      
+        distance = Mathf.Abs(characters[0].transform.position.x - characters[1].transform.position.x);
+        cam.orthographicSize = distance / 2;
+        if (cam.orthographicSize < 1.25)
+        {
+            cam.orthographicSize = 1.25f;
+        }
+        if (cam.orthographicSize > 1.75)
+        {
+            cam.orthographicSize = 1.75f;
+        }
         testmiddle = characters[0].transform.position.x + (characters[1].transform.position.x - characters[0].transform.position.x) / 2;
-        check = CheckForWalls();
         pos.x = testmiddle;
-        if (!CheckForWalls())
-
+        if (Check())
+            return;
         gameObject.transform.position = pos;
     }
-    bool CheckForWalls()
+    public bool Check()
     {
-        if (characters[0].x == characters[1].x)
-        {
-            foreach (Character character in characters)
-            {
-                if (character.wallx == character.x)
-                {
-                    character.x = -character.wallx;
-                }
-            }
-                return false;
-        }
-            
-        foreach (Character character in characters)
-        {
-            if (character.wall && character.x == character.wallx)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
+        if (!check && !check2)
+            return false;
        
-        return false;
+        return true;
     }
+
 }
