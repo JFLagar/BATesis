@@ -29,6 +29,11 @@ namespace SkillIssue.CharacterSpace
         public States currentState;
         [Space]
 
+        public int maxHealth;
+        public int currentHealth;
+
+        [Space]
+
         public float movementspeed;
         public float jumpPower;
         public float forceSpeed;
@@ -154,6 +159,7 @@ namespace SkillIssue.CharacterSpace
                 if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);
                     currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
+                currentHealth = currentHealth - data.damage;
             }
             
            

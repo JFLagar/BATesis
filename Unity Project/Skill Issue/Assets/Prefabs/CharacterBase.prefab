@@ -364,6 +364,9 @@ MonoBehaviour:
   isGrounded: 0
   x: 0
   y: 0
+  currentState: 0
+  maxHealth: 100
+  currentHealth: 100
   movementspeed: 2
   jumpPower: 20
   forceSpeed: 3
