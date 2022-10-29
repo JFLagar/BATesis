@@ -38,8 +38,8 @@ public class CameraManager : MonoBehaviour
         }
         testmiddle = characters[0].transform.position.x + (characters[1].transform.position.x - characters[0].transform.position.x) / 2;
         pos.x = testmiddle;
-        if (Check())
-            return;
+        //if (Check())
+        //    return;
         gameObject.transform.position = pos;
     }
     public bool Check()
