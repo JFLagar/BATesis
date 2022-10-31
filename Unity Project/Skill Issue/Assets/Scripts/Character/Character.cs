@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using SkillIssue.Inputs;
 using SkillIssue.StateMachineSpace;
@@ -11,6 +10,7 @@ namespace SkillIssue.CharacterSpace
         public float faceDir;
         public float xDiff;
         public SpriteRenderer render;
+        public SpriteRenderer screenCheck;
         public StateMachine stateMachine;
         public InputHandler inputHandler;
         public AttackData[] standingAttacks;
@@ -39,7 +39,7 @@ namespace SkillIssue.CharacterSpace
         public float jumpPower;
         public float forceSpeed;
         public float forceLeftOver;
-        private bool gotHit = false;
+        bool gotHit;
 
         [Space]
 
@@ -80,6 +80,11 @@ namespace SkillIssue.CharacterSpace
                 if (render != null) render.flipX = true;
                 collisions.eulerAngles = new Vector3(0, 180, 0);
             }
+            if (!screenCheck.isVisible)
+            {
+                wallx = -faceDir;
+            }
+            cameraWall = !screenCheck.isVisible;
         }
         public void PerformAttack(AttackType type)
         {
@@ -139,8 +144,8 @@ namespace SkillIssue.CharacterSpace
         }
         public void GetHit(AttackData data)
         {
-            //if (gotHit)
-            //    return;
+            if (gotHit)
+                return;
             gotHit = true;
             //block
             if (x == -faceDir)
@@ -197,7 +202,7 @@ namespace SkillIssue.CharacterSpace
                 animator.SetInteger("X", 0);           
 
          
-            if (wall)
+            if (wall || cameraWall)
             {
                 if (direction.x == 0 || direction.x == wallx)
                     transform.Translate(new Vector2(0, 0) * speed * Time.deltaTime);
@@ -255,11 +260,10 @@ namespace SkillIssue.CharacterSpace
             collidedbox?.HandleCollision(pushbox);
         
         }
-        public void SetWall(bool isWall, int x, bool isCamera = false)
+        public void SetWall(bool isWall, int x)
         {
             wall = isWall;
             wallx = x;
-            cameraWall = isCamera;
         }
      
         public void CheckState()

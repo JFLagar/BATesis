@@ -9,9 +9,11 @@ public class CameraManager : MonoBehaviour
     public Character[] characters;
     public Vector3 pos = new Vector3(0,0,-10);
     public float distance;
-    public float testmiddle;
+    public float middle;
+    private float center;
     public bool check = false;
     public bool check2 = false;
+    public float currentScreenEdge = 5;
     private void Awake()
     {
         cam = GetComponent<Camera>();
@@ -25,7 +27,35 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        middle = characters[0].transform.position.x + (characters[1].transform.position.x - characters[0].transform.position.x) / 2;
+        if (Check())
+        {
+            center = transform.position.x;
+        }
+        else
+        {
+            center = middle;
+        }     
+        CameraZoom();
+        CameraMove();
+        
+    }
+    public bool Check()
+    {
+        if (!check && !check2)
+            return false;
+        if (check && center < middle)
+            return false;
+        if (check2 && center > middle)
+            return false;
+        return true;
+    }
+    void CameraZoom()
+    {
+        if (Check())
+        {
+            return;
+        }
         distance = Mathf.Abs(characters[0].transform.position.x - characters[1].transform.position.x);
         cam.orthographicSize = distance / 2;
         if (cam.orthographicSize < 1.25)
@@ -36,19 +66,11 @@ public class CameraManager : MonoBehaviour
         {
             cam.orthographicSize = 1.75f;
         }
-        testmiddle = characters[0].transform.position.x + (characters[1].transform.position.x - characters[0].transform.position.x) / 2;
-        pos.x = testmiddle;
-        //if (Check())
-        //    return;
-        gameObject.transform.position = pos;
     }
-    public bool Check()
-    {
-
-        if (!check && !check2)
-            return false;
-       
-        return true;
+    void CameraMove()
+    {  
+        pos.x = center;
+        gameObject.transform.position = pos;
     }
 
 }

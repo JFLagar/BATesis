@@ -35,6 +35,17 @@ namespace SkillIssue.Inputs
                 horizontal = "Horizontal2";
                 vertical = "Vertical2";
             }
+            if (DataManagment.instance != null)
+            {
+                if (!player2)
+                { 
+                    inputs = DataManagment.instance.data.inputsP1; 
+                }
+                else
+                {
+                    //inputs = DataManagment.instance.data.inputsP2;
+                }
+            }
 
         }
         void Update()

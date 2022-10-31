@@ -169,16 +169,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48db6dc2dc260f6498c20fe3a40a6329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 64
   useSphere: 0
   hitboxSize: {x: 1, y: 1, z: 1}
-  radius: 0.5
   color: {r: 0, g: 0, b: 0, a: 0}
+  state: 0
   character: {fileID: 0}
-  type: 1
-  wall: 1
   push: 30
 --- !u!61 &228600734
 BoxCollider2D:
@@ -386,6 +385,8 @@ MonoBehaviour:
   oponent: {fileID: 1436212938}
   faceDir: 0
   xDiff: 0
+  render: {fileID: 0}
+  screenCheck: {fileID: 0}
   stateMachine: {fileID: 677223735}
   inputHandler: {fileID: 677223733}
   standingAttacks:
@@ -405,15 +406,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa9993516e6280d4d8da7ba01b3fa054, type: 2}
   - {fileID: 11400000, guid: c70f79f26e7b46c4bbf69f91e1c90537, type: 2}
   - {fileID: 11400000, guid: c71464cac25fd2b4da69dd8d68eb25ec, type: 2}
+  attack: {fileID: 0}
+  animator: {fileID: 0}
   pushbox: {fileID: 677223739}
   applyGravity: 0
   wall: 0
+  cameraWall: 0
   wallx: 0
   isGrounded: 0
   x: 0
-  jumpPower: 50
-  forceLeftOver: 0
   y: 0
+  currentState: 0
+  maxHealth: 0
+  currentHealth: 0
+  movementspeed: 0
+  jumpPower: 50
+  forceSpeed: 0
+  forceLeftOver: 0
+  collisions: {fileID: 0}
 --- !u!61 &677223737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -504,16 +514,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48db6dc2dc260f6498c20fe3a40a6329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 64
   useSphere: 0
   hitboxSize: {x: 1, y: 1, z: 1}
-  radius: 0.5
   color: {r: 1, g: 0.8701892, b: 0, a: 1}
+  state: 0
   character: {fileID: 677223736}
-  type: 0
-  wall: 0
   push: 30
 --- !u!1 &705507993
 GameObject:
@@ -851,16 +860,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48db6dc2dc260f6498c20fe3a40a6329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 64
   useSphere: 0
   hitboxSize: {x: 1, y: 1, z: 1}
-  radius: 0.5
   color: {r: 0, g: 0, b: 0, a: 0}
+  state: 0
   character: {fileID: 0}
-  type: 2
-  wall: 1
   push: 0
 --- !u!1 &1436212934
 GameObject:
@@ -896,16 +904,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48db6dc2dc260f6498c20fe3a40a6329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_collider: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 64
   useSphere: 0
   hitboxSize: {x: 1, y: 1, z: 1}
-  radius: 0.5
   color: {r: 1, g: 0.8701892, b: 0, a: 1}
+  state: 0
   character: {fileID: 1436212938}
-  type: 0
-  wall: 0
   push: 30
 --- !u!212 &1436212936
 SpriteRenderer:
@@ -1000,6 +1007,8 @@ MonoBehaviour:
   oponent: {fileID: 677223736}
   faceDir: 0
   xDiff: 0
+  render: {fileID: 0}
+  screenCheck: {fileID: 0}
   stateMachine: {fileID: 1436212939}
   inputHandler: {fileID: 1436212940}
   standingAttacks:
@@ -1019,15 +1028,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa9993516e6280d4d8da7ba01b3fa054, type: 2}
   - {fileID: 11400000, guid: c70f79f26e7b46c4bbf69f91e1c90537, type: 2}
   - {fileID: 11400000, guid: c71464cac25fd2b4da69dd8d68eb25ec, type: 2}
+  attack: {fileID: 0}
+  animator: {fileID: 0}
   pushbox: {fileID: 1436212935}
   applyGravity: 0
   wall: 0
+  cameraWall: 0
   wallx: 0
   isGrounded: 0
   x: 0
-  jumpPower: 50
-  forceLeftOver: 0
   y: 0
+  currentState: 0
+  maxHealth: 0
+  currentHealth: 0
+  movementspeed: 0
+  jumpPower: 50
+  forceSpeed: 0
+  forceLeftOver: 0
+  collisions: {fileID: 0}
 --- !u!114 &1436212939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,7 +1222,6 @@ MonoBehaviour:
     m_Bits: 768
   useSphere: 0
   hitboxSize: {x: 1, y: 1, z: 1}
-  radius: 0.5
   inactiveColor: {r: 1, g: 0.7464502, b: 0, a: 1}
   collisionOpenColor: {r: 0, g: 0.17254902, b: 1, a: 1}
   collidingColor: {r: 1, g: 0, b: 0.09163618, a: 1}

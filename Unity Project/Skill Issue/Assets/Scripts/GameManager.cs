@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,17 @@ public class GameManager : MonoBehaviour
         {
             RestartRound();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            BackToMenu();
+        }
     }
+
+    private void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     public void RestartRound()
     {
         //for now

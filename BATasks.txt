@@ -49,5 +49,5 @@ Introduce Button Mapping - Missing
 CameraFollow DONE
 -
 BUGS:
-Camera: Edges - needs to stop after corner but move away from corner 
+Camera: Zoom - find smooth transition (MINOR)
 Damage Block: Recognize block, prevent state from changing, repeat animation with several hits

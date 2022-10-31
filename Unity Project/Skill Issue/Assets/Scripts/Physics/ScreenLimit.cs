@@ -30,6 +30,7 @@ public class ScreenLimit : MonoBehaviour
             if(x < 0)
             {
                 cam.check = true;
+
             }
             else
             {
@@ -66,11 +67,6 @@ public class ScreenLimit : MonoBehaviour
                 {
                     collidedbox?.character.SetWall(true, x);
                 }
-            }
-            else
-            {
-                previousCollision = collidedbox;
-                collidedbox?.character.SetWall(true, x, true);
             }
 
 
