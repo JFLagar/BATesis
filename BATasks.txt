@@ -50,4 +50,5 @@ CameraFollow DONE
 -
 BUGS:
 Camera: Zoom - find smooth transition (MINOR)
+Button Mapping - Add Controller support
 Damage Block: Recognize block, prevent state from changing, repeat animation with several hits
