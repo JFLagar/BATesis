@@ -33,8 +33,10 @@ public class DataManagment : MonoBehaviour
     }
     public void ReWriteData(UserData m_data)
     {
-        string data = JsonUtility.ToJson(m_data);
-        File.WriteAllText(saveData, data);
+        string json = JsonUtility.ToJson(m_data);
+        File.WriteAllText(saveData, json);
+        data = JsonUtility.FromJson<UserData>(json);
+
 
     }
     public bool CheckData()

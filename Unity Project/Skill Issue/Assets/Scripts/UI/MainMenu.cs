@@ -4,16 +4,34 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using System;
 
 public class MainMenu : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public RectTransform[] uiElements;
+    public bool buttonPressed = true;
+    Event e;
+    public KeyCode lightButton;
+    public bool waitingforButton = false;
     private void Start()
     {
         if (!DataManagment.instance.CheckData())
             OpenUIElement(1);
+    }
+
+    private void Update()
+    {
+        if(!buttonPressed)
+        {
+            GetInput();
+        }
+        foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKeyDown(kcode))
+                Debug.Log("KeyCode down: " + kcode);
+        }
+
     }
     public void OpenUIElement(int id)
     { 
@@ -24,23 +42,26 @@ public class MainMenu : MonoBehaviour
         uiElements[id].gameObject.SetActive(true);
         if (id == 1)
         {
-            GetInput();
+            buttonPressed = false;
         }
     }
     public void GetInput()
     {
+        waitingforButton = false;
         text.text = "Press the Key for Light Attack.";
-        Event e = Event.current;
-        if (e.isKey)
+        if(Input.anyKeyDown)
         {
-            UserData data = new UserData();
-            KeyCode lightButton = e.keyCode;
-            data.inputsP1[0] = lightButton;
-            data.inputsP1[1] = KeyCode.None;
-            data.inputsP1[2] = KeyCode.None;
-            DataManagment.instance.ReWriteData(data);
+            waitingforButton = true;
+        
+            buttonPressed = true;
         }
-        OpenUIElement(0);
+        if (lightButton != KeyCode.None)
+        {
+       
+            OpenUIElement(0);
+
+        }
+
     }
     public void StartButton()
     {
@@ -49,5 +70,13 @@ public class MainMenu : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
+    }
+    public void SendData()
+    {
+        UserData data = new UserData();
+        data.inputsP1[0] = lightButton;
+        data.inputsP1[1] = KeyCode.None;
+        data.inputsP1[2] = KeyCode.None;
+        DataManagment.instance.ReWriteData(data);
     }
 }
