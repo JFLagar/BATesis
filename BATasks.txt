@@ -44,11 +44,14 @@ http://boxdox-bb.dantarion.com/#/viewer/bbcf_200/rg/NmlAtk2B
 ### TODO###
 Ver. 0.1:
 Introduce HealthBar DONE
-Introduce Damage and Block Reaction -Missing Block
-Introduce Button Mapping - Missing
+Introduce Damage and Block Reaction DONE
+Introduce Button Mapping - Missing / Moved to next iteration (Change to new input system)
 CameraFollow DONE
 -
 BUGS:
 Camera: Zoom - find smooth transition (MINOR)
-Button Mapping - Add Controller support
-Damage Block: Recognize block, prevent state from changing, repeat animation with several hits
+Button Mapping - Add Controller support -> Moved to next iteration
+Damage Block: polish prevent state from changing - repeat animation with several hits
+
+Currently:
+Damange Block polish

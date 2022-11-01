@@ -10,10 +10,11 @@ public class MainMenu : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public RectTransform[] uiElements;
-    public bool buttonPressed = true;
-    Event e;
-    public KeyCode lightButton;
-    public bool waitingforButton = false;
+
+    public InputMapping inputMapping;
+
+
+
     private void Start()
     {
         if (!DataManagment.instance.CheckData())
@@ -22,16 +23,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if(!buttonPressed)
-        {
-            GetInput();
-        }
-        foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
-        {
-            if (Input.GetKeyDown(kcode))
-                Debug.Log("KeyCode down: " + kcode);
-        }
-
+     
     }
     public void OpenUIElement(int id)
     { 
@@ -40,27 +32,12 @@ public class MainMenu : MonoBehaviour
             transform.gameObject.SetActive(false);
         }
         uiElements[id].gameObject.SetActive(true);
-        if (id == 1)
-        {
-            buttonPressed = false;
-        }
+
     }
     public void GetInput()
     {
-        waitingforButton = false;
-        text.text = "Press the Key for Light Attack.";
-        if(Input.anyKeyDown)
-        {
-            waitingforButton = true;
-        
-            buttonPressed = true;
-        }
-        if (lightButton != KeyCode.None)
-        {
-       
+        text.text = "Press the Key for Light Attack.";      
             OpenUIElement(0);
-
-        }
 
     }
     public void StartButton()
@@ -71,12 +48,5 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    public void SendData()
-    {
-        UserData data = new UserData();
-        data.inputsP1[0] = lightButton;
-        data.inputsP1[1] = KeyCode.None;
-        data.inputsP1[2] = KeyCode.None;
-        DataManagment.instance.ReWriteData(data);
-    }
+
 }

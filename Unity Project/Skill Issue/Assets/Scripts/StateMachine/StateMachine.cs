@@ -75,10 +75,15 @@ namespace SkillIssue.StateMachineSpace
 
     public class StandingState : State
     {
+        bool action;
         private float yvalue;
         public override void Update(InputHandler input)
         {
-        
+            action = character.stateMachine.currentAction == ActionStates.None;
+            if (!action)
+            {
+                return;
+            }
             if (input.movementInput.direction.y != 0)
             {
                 yvalue = input.movementInput.direction.y;
@@ -116,15 +121,22 @@ namespace SkillIssue.StateMachineSpace
     }
     public class CrouchState : State
     {
-
+        bool action;
         public override void Update(InputHandler input)
         {
+            action = character.stateMachine.currentAction == ActionStates.None;
+            if (!action)
+            {
+                return;
+            }
             if (Input.GetKeyDown(KeyCode.Space))
             { Debug.Log("CrouchState"); }
             if (input.movementInput.direction.y != -1)
             { 
                 ExitState();
             }
+            //Gets Input for blocking
+            stateMachine.character.CharacterMove(input.movementInput.direction);
         }
         public override void EnterState() 
         {

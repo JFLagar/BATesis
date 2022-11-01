@@ -285,7 +285,6 @@ namespace SkillIssue.CharacterSpace
         {
             Debug.Log("Recovered");
             animator.SetTrigger("Recovery");
-            animator.SetBool("Blocking", false);
             stateMachine.currentAction = ActionStates.None;
             gotHit = false;
         }

@@ -58,4 +58,6 @@ public class UserData
 {
     public KeyCode[] inputsP1;
     public KeyCode[] inputsP2;
+    public KeyCode[] controllerP1;
+    public KeyCode[] controllerP2;
 }
