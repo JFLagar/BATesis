@@ -15,11 +15,12 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
 
     public void Attack(AttackData data, AttackData previousattack = null)
     {
-        m_data = data;
+      
         if (character.stateMachine.currentAction != ActionStates.None)
         {
             return;      
         }
+        m_data = data;
         Debug.Log("Cancelable");
         hit = false;
         currentAttack = null;
