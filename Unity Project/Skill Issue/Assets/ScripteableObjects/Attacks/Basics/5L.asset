@@ -21,8 +21,8 @@ MonoBehaviour:
   push: 0.25
   launcher: 0
   dashCancel: 0
-  jumpCancel: 1
-  canceleableSelf: 1
-  cancelableTypes: 000000000100000002000000
+  jumpCancel: 0
+  canceleableSelf: 0
+  cancelableTypes: 00000000
   animation: {fileID: 7400000, guid: b78d4160e3e8f6a4fbad853b3e8a9a22, type: 2}
   message: 

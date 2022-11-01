@@ -15,10 +15,14 @@ MonoBehaviour:
   attackAttribute: 0
   attackType: 1
   damage: 50
+  hitstun: 0
+  blockstun: 0
   proratio: 1
+  push: 0
   launcher: 1
+  dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 0
   cancelableTypes: 0100000002000000
-  animation: {fileID: 0}
+  animation: {fileID: 7400000, guid: d043cd42ff5a7a640ba10f4b01eef08e, type: 2}
   message: 5H

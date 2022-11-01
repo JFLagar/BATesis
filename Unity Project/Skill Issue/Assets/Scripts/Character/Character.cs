@@ -27,6 +27,7 @@ namespace SkillIssue.CharacterSpace
         public bool isGrounded;
         public float x;
         public float y;
+        public ActionStates currentAction;
         public States currentState;
         [Space]
 
@@ -46,6 +47,7 @@ namespace SkillIssue.CharacterSpace
         public Transform collisions;
         private Coroutine currentHitCoroutine;
         private Coroutine currentMovementCoroutine;
+        private AttackData previousAttack = null;
    
         private void Awake()
         {
@@ -62,6 +64,7 @@ namespace SkillIssue.CharacterSpace
         // Update is called once per frame
         void Update()
         {
+            currentAction = stateMachine.currentAction;
             stateMachine.StateMachineUpdate();
             if (oponent == null)
                 return;
@@ -85,9 +88,15 @@ namespace SkillIssue.CharacterSpace
                 wallx = -faceDir;
             }
             cameraWall = !screenCheck.isVisible;
+            if(previousAttack != null)
+            {
+                if (stateMachine.currentAction != ActionStates.Attack)
+                    previousAttack = null;
+            }
         }
         public void PerformAttack(AttackType type)
         {
+            //here comes the canceable attack
            
             if ((int)type != 2)
             {
@@ -96,18 +105,18 @@ namespace SkillIssue.CharacterSpace
                     case StandingState:
                         if (inputHandler.movementInput.direction.x > 0)
                         {
-                            Debug.Log(standingAttacks[((int)type + (int)inputHandler.movementInput.direction.x) + 1].ToString());
+                            Debug.Log(standingAttacks[((int)type + (int)inputHandler.movementInput.direction.x) + 1].ToString(), previousAttack);
                         }
                         else
                         {
-                            attack.Attack(standingAttacks[((int)type)]);
+                            attack.Attack(standingAttacks[((int)type)], previousAttack);
                         }
                         break;
                     case CrouchState:
-                        attack.Attack(crouchingAttacks[((int)type)]);
+                        attack.Attack(crouchingAttacks[((int)type)], previousAttack);
                         break;
                     case JumpState:
-                        attack.Attack(jumpAttacks[((int)type)]);
+                        attack.Attack(jumpAttacks[((int)type)], previousAttack);
                         break;
                 }
             }
@@ -272,6 +281,8 @@ namespace SkillIssue.CharacterSpace
         }
         public void AnimEnd()
         {
+            if (stateMachine.currentAction == ActionStates.None)
+                return;
             stateMachine.currentAction = ActionStates.None;
         }
         public void OpenHitboxes(int number)
