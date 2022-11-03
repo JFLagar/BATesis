@@ -18,8 +18,8 @@ MonoBehaviour:
   hitstun: 10
   blockstun: 10
   proratio: 2
-  push: 0.25
-  launcher: 0
+  push: 0.5
+  launcher: 1
   dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 0

@@ -3,18 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public TextMeshProUGUI frameDisplay;
+    float deltaTime;
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 60;   
+     
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        float fps = 1.0f / deltaTime;
+        frameDisplay.text = Mathf.Ceil(fps).ToString();
+
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             RestartRound();

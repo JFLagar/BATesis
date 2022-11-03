@@ -79,6 +79,11 @@ namespace SkillIssue.StateMachineSpace
         private float yvalue;
         public override void Update(InputHandler input)
         {
+            if (!stateMachine.character.isGrounded)
+            {
+                yvalue = 1;
+                ExitState();
+            }
             action = character.stateMachine.currentAction == ActionStates.None;
             if (!action)
             {
@@ -88,15 +93,11 @@ namespace SkillIssue.StateMachineSpace
             {
                 yvalue = input.movementInput.direction.y;
                 if (yvalue > 0)
-                    //jump
-                    stateMachine.character.ApplyForce(input.movementInput.direction, stateMachine.character.jumpPower) ;
+                    stateMachine.character.ApplyForce(input.movementInput.direction, stateMachine.character.jumpPower);
+                //jump
                 ExitState();
             }
-            if (!stateMachine.character.isGrounded)
-            {
-                yvalue = 1;
-                ExitState();
-            }
+         
             stateMachine.character.CharacterMove(input.movementInput.direction);
         }
         public override void EnterState() 
@@ -169,7 +170,8 @@ namespace SkillIssue.StateMachineSpace
             stateMachine.character.isGrounded = false;
             stateMachine.currentState = stateMachine.jumpState;
             stateMachine.character.currentState = States.Jumping;
-            character.animator.Play("JumpStart");
+            if(stateMachine.currentAction == ActionStates.None)
+                character.animator.Play("JumpStart");
             character.animator.SetBool("Jumping", true);
         }
         public override void ExitState() 

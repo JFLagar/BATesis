@@ -36,7 +36,7 @@ public class CameraManager : MonoBehaviour
         {
             center = middle;
         }     
-        CameraZoom();
+
         CameraMove();
         
     }

@@ -48,12 +48,31 @@ Introduce Damage and Block Reaction DONE
 Introduce Button Mapping - Missing / Moved to next iteration (Change to new input system)
 CameraFollow DONE
 -
+Ver. O.2:
+Introduce High/Low Attacks
+Introduce Combos and Combo Display
+-Introduce Special Attacks-
+
 BUGS:
 Camera: Zoom - find smooth transition (MINOR)
-Button Mapping - Add Controller support -> Moved to next iteration
-Damage Block: polish prevent state from changing - repeat animation with several hits
-Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value)
-Currently:
-Damange Block polish
+Button Mapping - Add Controller support -> Moved to FUTURE iteration
+Damage/Block: polish prevent state from changing - repeat animation with several hits recovery hits not working properly
+Backwards Jump doesnt respect cameraWall
+
+Fixed:
+Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
+
 Goal:
 Combos and combo display
+
+
+Feedback:
+Jump not working in somemachines -> Create Jump Recovery (can do any action but not movement)
+Character on wall can swap places with other character (has to push)
+Camera Zoom is too big
+Stage is too big.
+Jump Floating
+Frame counter
+Can't Move when blocking
+add blockstun/hitstun
+Add Block range

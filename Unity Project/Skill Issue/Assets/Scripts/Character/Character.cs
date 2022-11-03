@@ -106,6 +106,7 @@ namespace SkillIssue.CharacterSpace
                         if (inputHandler.movementInput.direction.x > 0)
                         {
                             Debug.Log(standingAttacks[((int)type + (int)inputHandler.movementInput.direction.x) + 1].ToString(), previousAttack);
+                            stateMachine.currentAction = ActionStates.None;
                         }
                         else
                         {
@@ -169,13 +170,20 @@ namespace SkillIssue.CharacterSpace
             else
             {
                 stateMachine.currentAction = ActionStates.Hit;
-                animator.Play(currentState.ToString() + "Hit");
+                if(data.launcher)
+                {
+                    animator.Play("JumpingHit");
+                }
+                else
+                {
+                    animator.Play(currentState.ToString() + "Hit");
+                }     
                 Debug.Log("Got HIT");
                 if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);
                     currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
                 currentHealth = currentHealth - data.damage;
-                ApplyForce(new Vector2(data.push, 0f),1f);
+                ApplyForce(new Vector2(data.push, 10f),3f);
             }
             
            
@@ -232,7 +240,7 @@ namespace SkillIssue.CharacterSpace
         }
         public void ApplyForce(Vector2 direction, float duration)
         {
-            if (wall && direction.x == wallx)
+            if (wall && direction.x == wallx || cameraWall && direction.x == wallx)
                 direction.x = 0;
             y = direction.y;
             applyGravity = false;
@@ -252,9 +260,9 @@ namespace SkillIssue.CharacterSpace
                 animator.SetTrigger("JumpEnd");
             }
             if (!wall)
-            transform.Translate(new Vector2(x, -1) * (forceSpeed/2) * Time.deltaTime);
+            transform.Translate(new Vector2(x, -1) * (forceSpeed) * Time.deltaTime);
             else
-            transform.Translate(new Vector2(0, -1) * (forceSpeed / 2) * Time.deltaTime);
+            transform.Translate(new Vector2(0, -1) * (forceSpeed) * Time.deltaTime);
         }
         public void IsGrounded(bool check)
         {
@@ -296,7 +304,6 @@ namespace SkillIssue.CharacterSpace
         {
             Debug.Log("Recovered");
             animator.SetTrigger("Recovery");
-            stateMachine.currentAction = ActionStates.None;
             gotHit = false;
         }
         public IEnumerator ForceCoroutine(Vector2 direction, float duration)
@@ -323,6 +330,10 @@ namespace SkillIssue.CharacterSpace
                 i++;
             }
             HitRecover();
+        }
+        public void TestAction()
+        {
+            isGrounded = false;
         }
     }
 }
