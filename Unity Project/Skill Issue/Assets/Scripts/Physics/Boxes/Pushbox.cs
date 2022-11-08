@@ -32,7 +32,7 @@ public class Pushbox : MonoBehaviour
     void CheckCollision()
     {
         
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitboxSize, 0, (mask));
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, hitboxSize/2, 0, (mask));
         if(colliders.Length <= 1)
         {
             state = ColliderState.Open;
@@ -62,6 +62,10 @@ public class Pushbox : MonoBehaviour
    
         
             state = ColliderState.Colliding;
+        if(pushbox.character.wall && character.x == pushbox.character.wallx)
+        {
+            return;
+        }
         if (character.wall)
         {
             pushbox.character.wall = true;

@@ -76,7 +76,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   useSphere: 0
-  hitboxSize: {x: 0.25, y: 0.5, z: 1}
+  hitboxSize: {x: 0.5, y: 0.5, z: 1}
   color: {r: 1, g: 0.9830491, b: 0, a: 0.25490198}
   state: 1
   character: {fileID: 1957316337047856815}
@@ -367,6 +367,7 @@ MonoBehaviour:
   isGrounded: 0
   x: 0
   y: 0
+  currentAction: 0
   currentState: 0
   maxHealth: 100
   currentHealth: 100

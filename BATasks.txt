@@ -54,10 +54,10 @@ Introduce Combos and Combo Display
 -Introduce Special Attacks-
 
 BUGS:
-Camera: Zoom - find smooth transition (MINOR)
 Button Mapping - Add Controller support -> Moved to FUTURE iteration
-Damage/Block: polish prevent state from changing - repeat animation with several hits recovery hits not working properly
-Backwards Jump doesnt respect cameraWall
+Damage/Block: polish prevent state from changing - repeat animation with several hits recovery hits not working properly >
+Backwards Jump doesnt respect cameraWall/Wall >> FIXED
+Character on wall can swap places with other character (has to push) > FIXED
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
@@ -66,13 +66,12 @@ Goal:
 Combos and combo display
 
 
-Feedback:
+Feedback v0.1:
 Jump not working in somemachines -> Create Jump Recovery (can do any action but not movement)
-Character on wall can swap places with other character (has to push)
-Camera Zoom is too big
-Stage is too big.
-Jump Floating
-Frame counter
-Can't Move when blocking
-add blockstun/hitstun
-Add Block range
+Camera Zoom is too big - fixed
+Stage is too big - fixed
+Jump Floating- fixed
+Frame counter (not need)
+[Can't Move when blocking 
+add blockstun/hitstun 
+Add Block range] Block Stun

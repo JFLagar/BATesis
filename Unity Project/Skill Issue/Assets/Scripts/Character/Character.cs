@@ -64,8 +64,14 @@ namespace SkillIssue.CharacterSpace
         // Update is called once per frame
         void Update()
         {
+    
             currentAction = stateMachine.currentAction;
             stateMachine.StateMachineUpdate();
+            cameraWall = !screenCheck.isVisible;
+            if (!screenCheck.isVisible)
+            {
+                wallx = -faceDir;
+            }
             if (oponent == null)
                 return;
             xDiff = transform.position.x - oponent.transform.position.x;
@@ -83,11 +89,8 @@ namespace SkillIssue.CharacterSpace
                 if (render != null) render.flipX = true;
                 collisions.eulerAngles = new Vector3(0, 180, 0);
             }
-            if (!screenCheck.isVisible)
-            {
-                wallx = -faceDir;
-            }
-            cameraWall = !screenCheck.isVisible;
+
+
             if(previousAttack != null)
             {
                 if (stateMachine.currentAction != ActionStates.Attack)
@@ -235,8 +238,10 @@ namespace SkillIssue.CharacterSpace
         }
         public void CharacterPush(float x)
         {
-            if(!wall)
+            if (wall && x == wallx || x == 0)
+                return;
             transform.Translate(new Vector2(x, 0) * Time.deltaTime);
+            wall = false;
         }
         public void ApplyForce(Vector2 direction, float duration)
         {
@@ -259,7 +264,7 @@ namespace SkillIssue.CharacterSpace
             {
                 animator.SetTrigger("JumpEnd");
             }
-            if (!wall)
+            if (!wall || !cameraWall)
             transform.Translate(new Vector2(x, -1) * (forceSpeed) * Time.deltaTime);
             else
             transform.Translate(new Vector2(0, -1) * (forceSpeed) * Time.deltaTime);
@@ -311,7 +316,7 @@ namespace SkillIssue.CharacterSpace
             float i = 0f;
             while (i != duration)
             {
-                if (wall)
+                if (wall || cameraWall)
                     direction.x = 0;
                 x = direction.x;
                 transform.Translate(direction * forceSpeed * Time.deltaTime);
