@@ -3283,9 +3283,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2778317043147861549, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515142340994233024, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: hitboxes.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7521530600963527740, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8000705704795435064, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: hitboxSize.x
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}

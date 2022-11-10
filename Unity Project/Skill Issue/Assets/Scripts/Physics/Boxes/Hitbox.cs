@@ -40,7 +40,8 @@ namespace SkillIssue
                     Collider2D aCollider = colliders[i];
                     Hurtbox collidedbox = aCollider.GetComponent<Hurtbox>();
                     if(collidedbox?.state == ColliderState.Open)
-                        {
+                    {
+                        if(collidedbox?.blockCheck == false)
                             state = ColliderState.Colliding;
                             responder.CollisionedWith(aCollider);                       
                             return;

@@ -109,7 +109,7 @@ namespace SkillIssue.CharacterSpace
                         if (inputHandler.movementInput.direction.x > 0)
                         {
                             Debug.Log(standingAttacks[((int)type + (int)inputHandler.movementInput.direction.x) + 1].ToString(), previousAttack);
-                            stateMachine.currentAction = ActionStates.None;
+                            return;
                         }
                         else
                         {
@@ -155,11 +155,9 @@ namespace SkillIssue.CharacterSpace
             }
             stateMachine.currentAction = ActionStates.Attack;
         }
-        public void GetHit(AttackData data)
+        public void GetHit(AttackData data, bool blockCheck = false)
         {
-            if (gotHit)
-                return;
-            gotHit = true;
+      
             //block
             if (x == -faceDir)
             {
@@ -168,9 +166,12 @@ namespace SkillIssue.CharacterSpace
                 Debug.Log("Blocked");
                 if (currentHitCoroutine != null)
                     StopCoroutine(currentHitCoroutine);
+                if (blockCheck)
+                    currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun/2));
+                else
                 currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun));
             }
-            else
+            else if(!blockCheck)
             {
                 stateMachine.currentAction = ActionStates.Hit;
                 if(data.launcher)
@@ -186,7 +187,7 @@ namespace SkillIssue.CharacterSpace
                 StopCoroutine(currentHitCoroutine);
                     currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
                 currentHealth = currentHealth - data.damage;
-                ApplyForce(new Vector2(data.push, 10f),3f);
+                ApplyForce(data.push,3f);
             }
             
            

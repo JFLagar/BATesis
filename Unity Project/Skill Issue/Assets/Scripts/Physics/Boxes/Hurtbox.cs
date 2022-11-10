@@ -15,16 +15,29 @@ namespace SkillIssue
         public Color inactiveColor;
         public Color collisionOpenColor;
         public Color collidingColor;
+        public bool blockCheck = false;
 
         public void GetHitBy(AttackData data)
         {
             if (state == ColliderState.Closed)
             {
-                Debug.Log("Got hit by but closed");
+                return;
             }
             else
-            Debug.Log("Got hit by:" + data.name);
-            character.GetHit(data);
+            {
+
+                if (!blockCheck)
+                {
+                    character.GetHit(data);
+                    Debug.Log("Got hit by:" + data.name);
+                }     
+                else
+                {
+                    character.GetHit(data, true);
+                    Debug.Log("Blocking Zone");
+                }
+                
+            }
         }
 
         void OnDrawGizmosSelected()
