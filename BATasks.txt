@@ -67,11 +67,11 @@ Combos and combo display
 
 
 Feedback v0.1:
-Jump not working in somemachines -> Create Jump Recovery (can do any action but not movement)
+Jump not working in somemachines -> Create Jump Recovery (can do any action but not movement) -work awating new feedback-
 Camera Zoom is too big - fixed
 Stage is too big - fixed
 Jump Floating- fixed
 Frame counter (not need)
 [Can't Move when blocking 
 add blockstun/hitstun 
-Add Block range] Block Stun
+Add Block range] Block Stun - fixed

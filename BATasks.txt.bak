@@ -57,7 +57,7 @@ BUGS:
 Button Mapping - Add Controller support -> Moved to FUTURE iteration
 Damage/Block: polish prevent state from changing - repeat animation with several hits recovery hits not working properly >
 Backwards Jump doesnt respect cameraWall/Wall >> FIXED
-Character on wall can swap places with other character (has to push) >
+Character on wall can swap places with other character (has to push) > FIXED
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
