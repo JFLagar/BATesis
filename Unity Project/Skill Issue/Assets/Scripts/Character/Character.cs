@@ -177,6 +177,7 @@ namespace SkillIssue.CharacterSpace
                 if(data.launcher)
                 {
                     animator.Play("JumpingHit");
+                    stateMachine.currentState = stateMachine.jumpState;
                 }
                 else
                 {
@@ -195,7 +196,7 @@ namespace SkillIssue.CharacterSpace
         public void FixPosition()
         {
             
-            transform.position.Set(transform.position.x, 0, 0);
+            transform.position.Set(transform.position.x, 0.39f, 0);
 
         }
         public void CharacterMove(Vector2 direction)

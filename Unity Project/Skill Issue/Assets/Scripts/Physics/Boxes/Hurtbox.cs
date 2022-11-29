@@ -17,6 +17,19 @@ namespace SkillIssue
         public Color collidingColor;
         public bool blockCheck = false;
 
+        public void Update()
+        {
+            if (!blockCheck)
+                return;
+            if (character.x == character.wallx)
+            {
+                state = ColliderState.Open;
+            }
+            else
+            {
+                state = ColliderState.Closed;
+            }
+        }
         public void GetHitBy(AttackData data)
         {
             if (state == ColliderState.Closed)

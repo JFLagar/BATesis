@@ -59,6 +59,11 @@ Damage/Block: polish prevent state from changing - repeat animation with several
 Backwards Jump doesnt respect cameraWall/Wall >> FIXED
 Character on wall can swap places with other character (has to push) > FIXED
 
+->
+Blocking Detection overrides damage
+Launchers go back to standing
+Fix jumping or ground detection for same height everytime
+
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
 

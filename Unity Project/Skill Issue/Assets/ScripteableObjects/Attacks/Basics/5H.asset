@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackAttribute: 0
   attackType: 1
-  damage: 50
-  hitstun: 0
-  blockstun: 0
+  damage: 0
+  hitstun: 20
+  blockstun: 20
   proratio: 1
-  push: 0
-  launcher: 1
+  push: {x: 0.5, y: 0}
+  launcher: 0
   dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 0
   cancelableTypes: 0100000002000000
-  animation: {fileID: 7400000, guid: d043cd42ff5a7a640ba10f4b01eef08e, type: 2}
+  animation: {fileID: 7400000, guid: f11e36ab14a8d6c41acd4f71907d40a5, type: 2}
   message: 5H

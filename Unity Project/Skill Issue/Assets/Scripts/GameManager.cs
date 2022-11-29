@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI frameDisplay;
     float deltaTime;
+    public bool testing;
 
     private void Awake()
     {
@@ -23,7 +24,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (testing)
+            return;
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
         frameDisplay.text = Mathf.Ceil(fps).ToString();
