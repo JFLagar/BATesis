@@ -53,22 +53,23 @@ Introduce High/Low Attacks
 Introduce Combos and Combo Display
 -Introduce -Special- Heavy Attacks-
 
-BUGS:
+Missing Features:
 Button Mapping - Add Controller support -> Moved to FUTURE iteration
-Damage/Block: polish prevent state from changing - repeat animation with several hits recovery hits not working properly >
-Backwards Jump doesnt respect cameraWall/Wall >> FIXED
-Character on wall can swap places with other character (has to push) > FIXED
+Combos -> Animation Cancel -> Combo Display
+Special Attacks
 
-->
-Blocking Detection overrides damage > Fixed
-Launchers go back to standing > has to do with ground detection
-Fix jumping or ground detection for same height everytime -> Fixed
-
-->
-Animation Knockdown doesnt consider hitstun
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
+Blocking Detection overrides damage > Fixed
+Launchers go back to standing > has to do with ground detection
+Fix jumping or ground detection for same height everytime -> Fixed
+Animation Knockdown doesnt consider hitstun -> Fixed
+Backwards Jump doesnt respect cameraWall/Wall >> FIXED
+Character on wall can swap places with other character (has to push) > FIXED
+Damage/Block: polish prevent state from changing - repeat animation with several hits recovery hits not working properly >
+-> Can't Block after being knockeddown -> FIXED
+
 
 Goal:
 Combos and combo display

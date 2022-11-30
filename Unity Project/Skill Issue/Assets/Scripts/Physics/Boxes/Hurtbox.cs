@@ -42,7 +42,7 @@ namespace SkillIssue
                 if (!blockCheck)
                 {
                     character.GetHit(data);
-                    Debug.Log("Got hit by:" + data.name);
+                    Debug.Log("Got hit by:" + data.name + "/" + name);
                 }     
                 else
                 {

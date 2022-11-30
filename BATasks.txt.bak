@@ -51,7 +51,7 @@ CameraFollow DONE
 Ver. O.2:
 Introduce High/Low Attacks
 Introduce Combos and Combo Display
--Introduce Special Attacks-
+-Introduce -Special- Heavy Attacks-
 
 BUGS:
 Button Mapping - Add Controller support -> Moved to FUTURE iteration
@@ -60,9 +60,12 @@ Backwards Jump doesnt respect cameraWall/Wall >> FIXED
 Character on wall can swap places with other character (has to push) > FIXED
 
 ->
-Blocking Detection overrides damage
-Launchers go back to standing
-Fix jumping or ground detection for same height everytime
+Blocking Detection overrides damage > Fixed
+Launchers go back to standing > has to do with ground detection
+Fix jumping or ground detection for same height everytime -> Fixed
+
+->
+Animation Knockdown doesnt consider hitstun -> Fixed
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED

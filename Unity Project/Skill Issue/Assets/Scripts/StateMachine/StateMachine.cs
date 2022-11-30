@@ -102,16 +102,13 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void EnterState() 
         {
-            Debug.Log("Entering StandingState");
             stateMachine.character.applyGravity = false;
-            stateMachine.character.FixPosition();
             stateMachine.currentState = stateMachine.standingState;
             stateMachine.character.currentState = States.Standing;
           
         }
         public override void ExitState() {
 
-            Debug.Log("Exiting StandingState");
             if (yvalue == 1)
             {
                 stateMachine.jumpState.EnterState();
@@ -132,8 +129,6 @@ namespace SkillIssue.StateMachineSpace
             {
                 return;
             }
-            if (Input.GetKeyDown(KeyCode.Space))
-            { Debug.Log("CrouchState"); }
             if (input.movementInput.direction.y != -1)
             { 
                 ExitState();
@@ -143,7 +138,7 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void EnterState() 
         {
-            Debug.Log("Entering CrouchState");
+
             stateMachine.currentState = stateMachine.crouchingState;
             stateMachine.character.currentState = States.Crouching;
             character.animator.Play("StandToCrouch");
@@ -151,7 +146,7 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void ExitState() 
         {
-            Debug.Log("Exiting CrouchState");
+
             stateMachine.standingState.EnterState();
             character.animator.SetBool("Crouching", false);
         }
@@ -168,7 +163,6 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void EnterState()
         {
-            Debug.Log("Entering JumpState");
             stateMachine.character.isGrounded = false;
             stateMachine.currentState = stateMachine.jumpState;
             stateMachine.character.currentState = States.Jumping;
@@ -178,8 +172,7 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void ExitState() 
         {
-
-            Debug.Log("Exiting JumpState");
+            stateMachine.character.FixPosition();
             stateMachine.standingState.EnterState();
             character.animator.SetBool("Jumping", false);
         }

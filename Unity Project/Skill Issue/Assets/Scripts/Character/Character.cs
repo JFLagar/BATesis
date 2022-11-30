@@ -41,6 +41,7 @@ namespace SkillIssue.CharacterSpace
         public float forceSpeed;
         public float forceLeftOver;
         bool gotHit;
+        bool landed;
 
         [Space]
 
@@ -195,9 +196,14 @@ namespace SkillIssue.CharacterSpace
         }
         public void FixPosition()
         {
-            
-            transform.position = new Vector3(transform.position.x, 0.39f, 0);
-            Debug.Log("PosFix");
+            if (!landed)
+            {
+                transform.position = new Vector3(transform.position.x, 0.39f, 0);
+                Debug.Log("PosFix");
+                landed = true;
+            }
+         
+           
 
         }
         public void CharacterMove(Vector2 direction)
@@ -263,6 +269,7 @@ namespace SkillIssue.CharacterSpace
         {
             if (!applyGravity)
                 return;
+            landed = false;
             if(stateMachine.currentAction == ActionStates.None)
             {
                 animator.SetTrigger("JumpEnd");
@@ -313,6 +320,7 @@ namespace SkillIssue.CharacterSpace
             Debug.Log("Recovered");
             animator.SetTrigger("Recovery");
             gotHit = false;
+            stateMachine.currentAction = ActionStates.None;
         }
         public IEnumerator ForceCoroutine(Vector2 direction, float duration)
         {
