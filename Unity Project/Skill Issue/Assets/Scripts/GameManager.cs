@@ -24,8 +24,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (testing)
-            return;
+   
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
         frameDisplay.text = Mathf.Ceil(fps).ToString();
@@ -47,6 +46,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartRound()
     {
+        if (testing)
+            return;
         //for now
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

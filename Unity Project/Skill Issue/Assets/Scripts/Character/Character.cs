@@ -196,7 +196,8 @@ namespace SkillIssue.CharacterSpace
         public void FixPosition()
         {
             
-            transform.position.Set(transform.position.x, 0.39f, 0);
+            transform.position = new Vector3(transform.position.x, 0.39f, 0);
+            Debug.Log("PosFix");
 
         }
         public void CharacterMove(Vector2 direction)

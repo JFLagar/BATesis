@@ -101,14 +101,16 @@ namespace SkillIssue.StateMachineSpace
             stateMachine.character.CharacterMove(input.movementInput.direction);
         }
         public override void EnterState() 
-        { 
+        {
             Debug.Log("Entering StandingState");
-            stateMachine.currentState = stateMachine.standingState;
-            stateMachine.character.currentState = States.Standing;
             stateMachine.character.applyGravity = false;
             stateMachine.character.FixPosition();
+            stateMachine.currentState = stateMachine.standingState;
+            stateMachine.character.currentState = States.Standing;
+          
         }
-        public override void ExitState() { 
+        public override void ExitState() {
+
             Debug.Log("Exiting StandingState");
             if (yvalue == 1)
             {
@@ -175,7 +177,8 @@ namespace SkillIssue.StateMachineSpace
             character.animator.SetBool("Jumping", true);
         }
         public override void ExitState() 
-        { 
+        {
+
             Debug.Log("Exiting JumpState");
             stateMachine.standingState.EnterState();
             character.animator.SetBool("Jumping", false);
