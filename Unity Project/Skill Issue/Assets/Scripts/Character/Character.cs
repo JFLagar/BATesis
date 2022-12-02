@@ -41,7 +41,6 @@ namespace SkillIssue.CharacterSpace
         public float jumpPower;
         public float forceSpeed;
         public float forceLeftOver;
-        bool gotHit;
         bool landed;
 
         [Space]
@@ -49,7 +48,7 @@ namespace SkillIssue.CharacterSpace
         public Transform collisions;
         private Coroutine currentHitCoroutine;
         private Coroutine currentMovementCoroutine;
-        private AttackData previousAttack = null;
+        public AttackData storedAttack = null;
    
         private void Awake()
         {
@@ -92,18 +91,12 @@ namespace SkillIssue.CharacterSpace
                 collisions.eulerAngles = new Vector3(0, 180, 0);
             }
 
-
-            if(previousAttack != null)
-            {
-                if (stateMachine.currentAction != ActionStates.Attack)
-                    previousAttack = null;
-            }
-
             if(oponent != null)
             {
                 if (oponent.currentAction != ActionStates.Hit)
                 {
                     comboHit = 0;
+                   // storedAttack = null;
                 }
             }
         }
@@ -116,21 +109,41 @@ namespace SkillIssue.CharacterSpace
                 switch (stateMachine.currentState)
                 {
                     case StandingState:
-                        if (inputHandler.movementInput.direction.x > 0)
+                        //if (inputHandler.movementInput.direction.x > 0)
+                        //{
+                        //    Debug.Log(standingAttacks[((int)type + (int)inputHandler.movementInput.direction.x) + 1].ToString());
+                        //    return;
+                        //}
+                        //else
                         {
-                            Debug.Log(standingAttacks[((int)type + (int)inputHandler.movementInput.direction.x) + 1].ToString(), previousAttack);
-                            return;
-                        }
-                        else
-                        {
-                            attack.Attack(standingAttacks[((int)type)], previousAttack);
+                            switch (inputHandler.movementInput.direction.y)
+                            {
+                                case 0f:
+                                    attack.Attack(standingAttacks[((int)type)]);
+                                    break;
+                                case 1f:
+                                    attack.Attack(jumpAttacks[((int)type)]);
+                                    break;
+                                case -1f:
+                                    attack.Attack(crouchingAttacks[((int)type)]);
+                                    break;
+                            }
+                            
                         }
                         break;
                     case CrouchState:
-                        attack.Attack(crouchingAttacks[((int)type)], previousAttack);
+                        switch (inputHandler.movementInput.direction.y)
+                        {
+                            case 0f:
+                                attack.Attack(standingAttacks[((int)type)]);
+                                break;
+                            case -1f:
+                                attack.Attack(crouchingAttacks[((int)type)]);
+                                break;
+                        }
                         break;
                     case JumpState:
-                        attack.Attack(jumpAttacks[((int)type)], previousAttack);
+                        attack.Attack(jumpAttacks[((int)type)]);
                         break;
                 }
             }
@@ -169,7 +182,7 @@ namespace SkillIssue.CharacterSpace
         {
             Vector2 dir = new Vector2(data.push.x * -faceDir, data.push.y);
             //block
-            if (x == -faceDir)
+            if (x == -faceDir && currentAction != ActionStates.Hit)
             {
                 Vector2 blockDir = new Vector2(dir.x, 0);
                 stateMachine.currentAction = ActionStates.Block;
@@ -272,15 +285,18 @@ namespace SkillIssue.CharacterSpace
         }
         public void ApplyCounterPush(Vector2 direction, float duration)
         {
-            Debug.Log(direction);
+            oponent.wall = false;
             oponent.ApplyForce(direction, duration, true);
         }
         public void ApplyForce(Vector2 direction, float duration, bool counterforce = false)
         {
+            bool m_bool = false;
             if (counterforce)
             {
                 y = 0;
+                m_bool = counterforce;
             }
+            
             else
             {
                 if (wall && direction.x == wallx || cameraWall && direction.x == wallx)
@@ -293,7 +309,7 @@ namespace SkillIssue.CharacterSpace
             if(currentMovementCoroutine != null)
                 StopCoroutine(currentMovementCoroutine);
               
-            currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction, duration));
+            currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction, duration, m_bool));
     
         }
 
@@ -350,15 +366,17 @@ namespace SkillIssue.CharacterSpace
         public void HitRecover()
         {
             animator.SetTrigger("Recovery");
-            gotHit = false;
         }
-        public IEnumerator ForceCoroutine(Vector2 direction, float duration)
+        public IEnumerator ForceCoroutine(Vector2 direction, float duration, bool counterForce)
         {
             float i = 0f;
             while (i != duration)
             {
-                if (wall || cameraWall)
-                    direction.x = 0;
+                if(!counterForce)
+                {
+                    if (wall || cameraWall)
+                        direction.x = 0;
+                }               
                 x = direction.x;
                 transform.Translate(direction * forceSpeed * Time.deltaTime);
                 yield return null;

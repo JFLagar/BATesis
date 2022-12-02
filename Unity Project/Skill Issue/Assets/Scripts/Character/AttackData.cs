@@ -15,10 +15,16 @@ namespace SkillIssue
         Low,
         High
     }
+    public enum AttackState
+    {
+        Standing,
+        Crouching,
+        Jumping
+    }
     [CreateAssetMenu(fileName = "AttackData", menuName = "ScriptableObjects/Attacks", order = 1)]
     public class AttackData : ScriptableObject
     {
-        [Space]
+        public AttackState attackState;
         public AttackAttribute attackAttribute;
         public AttackType attackType;
         [Space]

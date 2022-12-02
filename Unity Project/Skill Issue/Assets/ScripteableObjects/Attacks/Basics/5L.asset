@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8c0269a5515054f88d0d58df109046, type: 3}
   m_Name: 5L
   m_EditorClassIdentifier: 
+  attackState: 0
   attackAttribute: 0
   attackType: 0
   damage: 0
   hitstun: 10
   blockstun: 10
   proratio: 2
-  push: {x: 0.1, y: 0}
+  push: {x: 0.5, y: 0}
   launcher: 0
   dashCancel: 0
   jumpCancel: 1
   canceleableSelf: 1
-  cancelableTypes: 00000000
+  cancelableTypes: 000000000100000002000000
   animation: {fileID: 7400000, guid: b78d4160e3e8f6a4fbad853b3e8a9a22, type: 2}
   message: 

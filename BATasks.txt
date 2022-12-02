@@ -54,9 +54,19 @@ Introduce Combos and Combo Display
 -Introduce -Special- Heavy Attacks-
 
 Missing Features:
+
+>Combos -> Animation Cancel -> Combo Display
+>> Add Proratio
+> Add smoother transition (store input)
 Button Mapping - Add Controller support -> Moved to FUTURE iteration
-Combos -> Animation Cancel -> Combo Display
+
 Special Attacks
+
+BUGS:
+
+Close to wall doesn't get push back (if both characters are walled)
+Character can't change state (Standing Crouching Jumping) for combos. -> Fixed
+Jump and Attack at the same time sometimes bug.
 
 
 Fixed:
