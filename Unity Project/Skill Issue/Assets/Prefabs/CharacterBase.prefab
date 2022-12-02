@@ -372,11 +372,14 @@ MonoBehaviour:
   currentState: 0
   maxHealth: 100
   currentHealth: 100
+  comboHit: 0
   movementspeed: 2
   jumpPower: 20
   forceSpeed: 3
   forceLeftOver: 0
   collisions: {fileID: 1957316336856834438}
+  storedAttack: {fileID: 0}
+  currentCombo: []
 --- !u!114 &7515142340994233024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +400,7 @@ MonoBehaviour:
   - {fileID: 1957316337217944715}
   - {fileID: 1957316337416723197}
   character: {fileID: 1957316337047856815}
+  repeatedAttack: 0
 --- !u!95 &3090942852897552484
 Animator:
   serializedVersion: 4
@@ -829,6 +833,7 @@ GameObject:
   - component: {fileID: 1957316337707236126}
   - component: {fileID: 1957316337707236124}
   - component: {fileID: 1957316337707236123}
+  - component: {fileID: 2000404767772000394}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -865,6 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1957316337047856815}
   player2: 0
+  ai: {fileID: 2000404767772000394}
   commands: []
   inputs: 6a0000006b0000006c000000
   direction: {x: 0, y: 0}
@@ -883,6 +889,18 @@ MonoBehaviour:
   character: {fileID: 1957316337047856815}
   currentAction: 0
   inputHandler: {fileID: 1957316337707236124}
+--- !u!114 &2000404767772000394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957316337707236127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c171dd6f4555f0c4d894230240b820cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1957316338129269601
 GameObject:
   m_ObjectHideFlags: 0

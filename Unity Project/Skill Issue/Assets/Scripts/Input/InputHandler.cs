@@ -8,6 +8,8 @@ namespace SkillIssue.Inputs
     {
         public Character character;
         public bool player2;
+        public CharacterAI ai;
+        public bool aiControl = false;
         [SerializeField]
         public List<string> commands = new List<string>();
         public KeyCode[] inputs;
@@ -24,6 +26,11 @@ namespace SkillIssue.Inputs
         string horizontal = "Horizontal";
         string vertical = "Vertical";
         // Update is called once per frame
+        private void Awake()
+        {
+            if (aiControl)
+                ai.Initiate(this);
+        }
         private void Start()
         {
             movementInput.character = character;
@@ -46,24 +53,27 @@ namespace SkillIssue.Inputs
                     //inputs = DataManagment.instance.data.inputsP2;
                 }
             }
+          
 
         }
         void Update()
         {
+            
             lightButton.Update();
             heavyButton.Update();
             specialButton.Update();
-            //movement
-            movement = HandleMovementInput();
+                //movement
+                movement = HandleMovementInput();
             if (movement != null)
             {
-                movementInput.direction = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
+                if (!aiControl)
+                    movementInput.direction = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
+                else
+                    movementInput.direction = ai.dir;
                 movement.Activate(movementUp);
                 commands.Add(movement.ToString());
             }
 
-            if (inputs.Length == 0)
-                return;
             //attack
             input = HandleAttackInput();
             if (input != null)
@@ -74,8 +84,23 @@ namespace SkillIssue.Inputs
             direction = movementInput.direction;
         }
 
-        CommandInputs HandleAttackInput()
+       public CommandInputs HandleAttackInput()
         {
+            if (aiControl)
+            {
+                switch(ai.attackInput)
+                {
+                    case 0:
+                            return null;
+                    case 1:
+                        lightUp = ai.buttonUp;
+                        return lightButton;
+                    case 2:
+                        heavyUp = ai.buttonUp;
+                        return heavyButton;
+                }
+            }
+
             //Light
             if (Input.GetKeyDown(inputs[0]))
             {
@@ -115,9 +140,15 @@ namespace SkillIssue.Inputs
                 return null; 
             }          
         }
-        CommandInputs HandleMovementInput()
+        public CommandInputs HandleMovementInput()
         {
-
+            if(aiControl)
+            {
+                if (ai.dir != Vector2.zero)
+                    return movementInput;
+                else
+                    return null;
+            }
             if (Input.GetButtonDown(horizontal) || Input.GetButtonDown(vertical))
             {
                 movementUp = false;
