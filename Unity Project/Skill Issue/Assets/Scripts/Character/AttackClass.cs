@@ -12,6 +12,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     public Character character;
     private AttackData currentAttack;
     private bool hit = false;
+    public int repeatedAttack = 0;
 
     public void Attack(AttackData data)
     {
@@ -21,6 +22,8 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             if(!Cancelable(data))
             return;      
         }
+        if (repeatedAttack >= 3)
+            repeatedAttack = 0;
         hit = false;
         m_data = data;
         currentAttack = null;
@@ -40,19 +43,16 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     {
         if (currentAttack != m_data)
         {
-          
             currentAttack = m_data;
             Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
             hurtbox?.GetHitBy(m_data);           
             character.comboHit++;
+            character.currentCombo.Add(m_data);
             hit = true;
         }
         if (character.storedAttack != null)
         {
-            Attack(character.storedAttack);
-            Debug.Log("Late cancel into:" + character.storedAttack);
-
-           
+            Attack(character.storedAttack);         
         }
     }
     public void StartCheckingCollisions()
@@ -71,17 +71,28 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     }
     private bool Cancelable(AttackData data)
     {
+
         if (!hit)
             return false;
+        if (character.currentCombo.Count >= 3)
+        {
+            for (int i = character.currentCombo.Count - 1; i == character.currentCombo.Count - 3; i--)
+            {
+                if (data != character.currentCombo[i])
+                    break;
+            }
+            Debug.Log("Reached Capacity");
+            return false;
+        }
+
+
         if (data == character.storedAttack)
         {
-            Debug.Log("Trying stored Attack");
             character.storedAttack = null;
         }
         if(character.oponent.currentAction == ActionStates.None || character.oponent.currentAction == ActionStates.Attack)
         {
             character.storedAttack = data;
-            Debug.Log("Can't cancelel " + m_data.name + "into " + data.name + ",whiffed");
             return false;
         }
         if(data.attackState == AttackState.Jumping)
@@ -90,19 +101,24 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         }
         if (!data.canceleableSelf && data == m_data)
         {
-                Debug.Log("Can't cancel" + m_data.name + "into " + data.name + ", can't cancel into self");
                 return false;
 
+        }
+        if (data.canceleableSelf && data == m_data)
+        {
+            repeatedAttack++;
+        }
+        if (data != m_data)
+        {
+            repeatedAttack = 0;
         }
             foreach (AttackType canceltype in m_data.cancelableTypes)
         {
             if (data.attackType == canceltype)
             {
-                Debug.Log("Canceled " + m_data.name + "into " + data.name);
                 return true;
             }
         }
-        Debug.Log("Can't cancel " + m_data.name + "into " + data.name + ", not proper cancel type");
         return false;
     }
 

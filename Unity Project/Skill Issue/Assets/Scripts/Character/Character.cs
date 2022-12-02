@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using SkillIssue.Inputs;
 using SkillIssue.StateMachineSpace;
@@ -49,6 +50,7 @@ namespace SkillIssue.CharacterSpace
         private Coroutine currentHitCoroutine;
         private Coroutine currentMovementCoroutine;
         public AttackData storedAttack = null;
+        public List<AttackData> currentCombo = new List<AttackData>();
    
         private void Awake()
         {
@@ -96,7 +98,8 @@ namespace SkillIssue.CharacterSpace
                 if (oponent.currentAction != ActionStates.Hit)
                 {
                     comboHit = 0;
-                   // storedAttack = null;
+                   storedAttack = null;
+                    currentCombo.Clear();
                 }
             }
         }
