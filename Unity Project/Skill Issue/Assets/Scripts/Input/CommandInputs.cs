@@ -50,11 +50,9 @@ namespace SkillIssue.Inputs
         }
         public override void InputReleased() 
         {
-            Debug.Log("LightReleased");
         }
         public override void InputHold(float time)
         {
-            Debug.Log("LightHold");
         }
     }
     public class HeavyInput : CommandInputs
@@ -65,11 +63,9 @@ namespace SkillIssue.Inputs
         }
         public override void InputReleased() 
         {
-            Debug.Log("HeavyReleased");
         }
         public override void InputHold(float time) 
         {
-            Debug.Log("HeavyHold");
         }
     }
     public class SpecialInput : CommandInputs

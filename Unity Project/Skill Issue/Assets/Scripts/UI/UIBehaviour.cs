@@ -10,6 +10,7 @@ public class UIBehaviour : MonoBehaviour
     public GameManager manager;
     public Character[] characters;
     public Slider[] sliders;
+    public TextMeshProUGUI[] comboDisplays;
     public TextMeshProUGUI timerText;
     public float timer = 99;
     // Start is called before the first frame update
@@ -25,6 +26,17 @@ public class UIBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < comboDisplays.Length; i++)
+        {
+            if (characters[i].comboHit <= 1)
+            {
+                comboDisplays[i].text = "";
+            }
+            else
+            {
+                comboDisplays[i].text = characters[i].comboHit + " HIT";
+            }
+        }
         for (int i = 0; i < sliders.Length; i++)
         {
             sliders[i].value = characters[i].currentHealth;

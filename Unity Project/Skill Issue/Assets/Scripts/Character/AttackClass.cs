@@ -15,14 +15,13 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
 
     public void Attack(AttackData data, AttackData previousattack = null)
     {
-      
+      //check if can cancel
         if (character.stateMachine.currentAction != ActionStates.None)
         {
+            if(!Cancelable(data))
             return;      
         }
         m_data = data;
-        Debug.Log("Cancelable");
-        hit = false;
         currentAttack = null;
         foreach (Hitbox hitbox in hitboxes)
         { 
@@ -43,6 +42,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
             hurtbox?.GetHitBy(m_data);
             hit = true;
+            character.comboHit++;
         }
     }
     public void StartCheckingCollisions()
@@ -59,13 +59,22 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             hitbox.StopCheckingCollision();
         }
     }
-    private bool Cancelable(AttackType type)
+    private bool Cancelable(AttackData data)
     {
-
-        foreach (AttackType canceltype in m_data.cancelableTypes)
+        if(character.oponent.currentAction == ActionStates.None || character.oponent.currentAction == ActionStates.Attack)
         {
-            if (type == canceltype)
+            return false;
+        }
+        if(!data.canceleableSelf)
+        {
+            if (data == m_data)
+                return false;
+        }
+            foreach (AttackType canceltype in m_data.cancelableTypes)
+        {
+            if (data.attackType == canceltype)
             {
+                Debug.Log("Canceled " + m_data.name + "into " + data.name);
                 return true;
             }
         }

@@ -34,21 +34,20 @@ namespace SkillIssue
             {
                 if (state == ColliderState.Colliding)
                     return;
-              
+
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     Collider2D aCollider = colliders[i];
                     Hurtbox collidedbox = aCollider.GetComponent<Hurtbox>();
-                    if(collidedbox?.state == ColliderState.Open)
+                    if (collidedbox?.state == ColliderState.Open)
                     {
-                        if(collidedbox?.blockCheck == false)
+                        if (collidedbox?.blockCheck == false)
                             state = ColliderState.Colliding;
-                            responder.CollisionedWith(aCollider);                       
-                            return;
+                        responder.CollisionedWith(aCollider);
+                        return;
                     }
-                  
-                }
-                    
+
+                }                  
                
             }
             else

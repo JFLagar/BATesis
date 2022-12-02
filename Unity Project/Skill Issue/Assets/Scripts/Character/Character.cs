@@ -33,6 +33,7 @@ namespace SkillIssue.CharacterSpace
 
         public int maxHealth;
         public int currentHealth;
+        public int comboHit;
 
         [Space]
 
@@ -97,6 +98,14 @@ namespace SkillIssue.CharacterSpace
                 if (stateMachine.currentAction != ActionStates.Attack)
                     previousAttack = null;
             }
+
+            if(oponent != null)
+            {
+                if (oponent.currentAction != ActionStates.Hit)
+                {
+                    comboHit = 0;
+                }
+            }
         }
         public void PerformAttack(AttackType type)
         {
@@ -158,10 +167,11 @@ namespace SkillIssue.CharacterSpace
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
-      
+            Vector2 dir = new Vector2(data.push.x * -faceDir, data.push.y);
             //block
             if (x == -faceDir)
             {
+                Vector2 blockDir = new Vector2(dir.x, 0);
                 stateMachine.currentAction = ActionStates.Block;
                 animator.Play(currentState.ToString() + "Block");               
                 Debug.Log("Blocked");
@@ -170,7 +180,16 @@ namespace SkillIssue.CharacterSpace
                 if (blockCheck)
                     currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun/2));
                 else
-                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun));
+                {
+                    currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun));
+                    if (wall)
+                    {
+                        ApplyCounterPush(-blockDir, 3f);
+                    }
+                    else
+                        ApplyForce(blockDir, 3f);
+                }
+                
             }
             else if(!blockCheck)
             {
@@ -184,27 +203,26 @@ namespace SkillIssue.CharacterSpace
                 {
                     animator.Play(currentState.ToString() + "Hit");
                 }     
-                Debug.Log("Got HIT");
                 if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);
                     currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
                 currentHealth = currentHealth - data.damage;
-                ApplyForce(data.push,3f);
-            }
-            
-           
+                if(wall)
+                {
+                    ApplyCounterPush(-dir,3f);
+                }
+                else
+                ApplyForce(dir,3f);
+
+            }                     
         }
         public void FixPosition()
         {
             if (!landed)
             {
                 transform.position = new Vector3(transform.position.x, 0.39f, 0);
-                Debug.Log("PosFix");
                 landed = true;
             }
-         
-           
-
         }
         public void CharacterMove(Vector2 direction)
         {
@@ -252,16 +270,30 @@ namespace SkillIssue.CharacterSpace
             transform.Translate(new Vector2(x, 0) * Time.deltaTime);
             wall = false;
         }
-        public void ApplyForce(Vector2 direction, float duration)
+        public void ApplyCounterPush(Vector2 direction, float duration)
         {
-            if (wall && direction.x == wallx || cameraWall && direction.x == wallx)
-                direction.x = 0;
-            y = direction.y;
-            applyGravity = false;
+            Debug.Log(direction);
+            oponent.ApplyForce(direction, duration, true);
+        }
+        public void ApplyForce(Vector2 direction, float duration, bool counterforce = false)
+        {
+            if (counterforce)
+            {
+                y = 0;
+            }
+            else
+            {
+                if (wall && direction.x == wallx || cameraWall && direction.x == wallx)
+                    direction.x = 0;
+                y = direction.y;
+                applyGravity = false;
+            }
+       
 
             if(currentMovementCoroutine != null)
                 StopCoroutine(currentMovementCoroutine);
-               currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction, duration));
+              
+            currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction, duration));
     
         }
 
@@ -317,10 +349,8 @@ namespace SkillIssue.CharacterSpace
         }
         public void HitRecover()
         {
-            Debug.Log("Recovered");
             animator.SetTrigger("Recovery");
             gotHit = false;
-            stateMachine.currentAction = ActionStates.None;
         }
         public IEnumerator ForceCoroutine(Vector2 direction, float duration)
         {
