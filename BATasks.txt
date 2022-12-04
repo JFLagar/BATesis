@@ -50,15 +50,19 @@ CameraFollow DONE
 -
 Ver. O.2:
 Introduce High/Low Attacks
-Introduce Combos and Combo Display
+Introduce Combos and Combo Display DONE
 -Introduce -Special- Heavy Attacks-
+
+Currently Working on:
+
+Basic AI -> Need fixing condition and chances
 
 Missing Features:
 
 >Combos -> Animation Cancel -> Combo Display > Done
 >> Add Proratio
 > Add smoother transition (store input) > Done
-> Add Limit to normal cancels
+> Add Limit to normal cancels > Done
 Button Mapping - Add Controller support -> Moved to FUTURE iteration
 
 Special Attacks

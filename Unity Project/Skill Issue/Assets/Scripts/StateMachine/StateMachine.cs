@@ -93,12 +93,12 @@ namespace SkillIssue.StateMachineSpace
             {
                 yvalue = input.movementInput.direction.y;
                 if (yvalue > 0)
-                    stateMachine.character.ApplyForce(input.movementInput.direction, stateMachine.character.jumpPower);
+                    stateMachine.character.ApplyForce(input.direction, stateMachine.character.jumpPower);
                 //jump
                 ExitState();
             }
          
-            stateMachine.character.CharacterMove(input.movementInput.direction);
+            stateMachine.character.CharacterMove(input.direction);
         }
         public override void EnterState() 
         {
