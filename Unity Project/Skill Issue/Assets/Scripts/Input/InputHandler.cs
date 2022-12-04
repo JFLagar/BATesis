@@ -69,7 +69,7 @@ namespace SkillIssue.Inputs
                 if (!aiControl)
                     movementInput.direction = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
                 else
-                    movementInput.direction = ai.dir * character.faceDir;
+                    movementInput.direction = new Vector2(ai.dir.x * character.faceDir, ai.dir.y);
                 movement.Activate(movementUp);
                 commands.Add(movement.ToString());
             }

@@ -49,9 +49,14 @@ Introduce Button Mapping - Missing / Moved to next iteration (Change to new inpu
 CameraFollow DONE
 -
 Ver. O.2:
-Introduce High/Low Attacks
+Introduce High/Low Attacks Moved to next version
 Introduce Combos and Combo Display DONE
--Introduce -Special- Heavy Attacks-
+-Introduce  Heavy Attacks- DONE
+
+Ver. 0.3:
+Introduce Rounds
+Player vs Player
+Introduce High/Low 
 
 Currently Working on:
 
@@ -68,10 +73,16 @@ Button Mapping - Add Controller support -> Moved to FUTURE iteration
 Special Attacks
 
 BUGS:
-
+Jump and Attack at the same time sometimes bug. (Animation)
 Close to wall doesn't get push back (if both characters are walled) -> Fixed
 Character can't change state (Standing Crouching Jumping) for combos. -> Fixed
-Jump and Attack at the same time sometimes bug.
+MAJOR AI BUG: It can jump down the stage (Disabling crouch)
+MAJOR BUG: Sometimes Recovery doesn't trigger
+
+Can jump backwards outside camera. > Fixed
+Can block when whiffing attacks -> Not apparent on build
+
+Saw momentary: Jump and attack cause position override
 
 Light canceling into self don't cancel the animation. -> Fixed
 
@@ -101,3 +112,14 @@ Frame counter (not need)
 [Can't Move when blocking 
 add blockstun/hitstun 
 Add Block range] Block Stun - fixed
+
+Feedback v0.2:
+
+AI too aggressive (Should not hit when far from opponent)
+AI should always close distance first
+Add round end
+(Maybe add walkstart up)
+BUG: Jumping and getting attacked  can cause that the player is considered standing
+Sometimes Damage get done even when blocked
+jL hitbox is too broken (hitbox is too low)
+jumping arc should be more curve

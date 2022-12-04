@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameDisplay: {fileID: 1339393046}
-  testing: 1
+  testing: 0
 --- !u!1 &961373056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,7 +2413,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306619305}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3525,15 +3525,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: inputs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: commands.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: inputs.Array.data[0]
-      value: 108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: inputs.Array.data[1]
-      value: 108
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: inputs.Array.data[2]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1957316338129269631, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: mask.m_Bits

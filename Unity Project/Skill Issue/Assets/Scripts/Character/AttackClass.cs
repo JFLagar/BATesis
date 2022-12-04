@@ -22,6 +22,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             if(!Cancelable(data))
             return;      
         }
+        character.stateMachine.currentAction = ActionStates.Attack;
         if (repeatedAttack >= 3)
             repeatedAttack = 0;
         hit = false;

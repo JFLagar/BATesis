@@ -373,7 +373,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   comboHit: 0
-  movementspeed: 2
+  movementspeed: 1.5
   jumpPower: 20
   forceSpeed: 3
   forceLeftOver: 0
@@ -871,6 +871,7 @@ MonoBehaviour:
   character: {fileID: 1957316337047856815}
   player2: 0
   ai: {fileID: 2000404767772000394}
+  aiControl: 0
   commands: []
   inputs: 6a0000006b0000006c000000
   direction: {x: 0, y: 0}
@@ -901,6 +902,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c171dd6f4555f0c4d894230240b820cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aIAction: 0
+  initiated: 0
+  dir: {x: 0, y: 0}
+  attackInput: 0
+  buttonUp: 0
+  directionBool: 0
+  x: 0
+  distance: 0
+  generatedNumber: 0
+  isMoving: 0
+  numberOfFrames: 0
 --- !u!1 &1957316338129269601
 GameObject:
   m_ObjectHideFlags: 0

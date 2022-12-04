@@ -21,7 +21,7 @@ namespace SkillIssue
         {
             if (!blockCheck)
                 return;
-            if (character.x == character.wallx)
+            if (character.x == character.wallx && character.currentAction == StateMachineSpace.ActionStates.None)
             {
                 state = ColliderState.Open;
             }

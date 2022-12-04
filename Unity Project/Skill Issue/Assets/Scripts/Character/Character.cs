@@ -73,7 +73,9 @@ namespace SkillIssue.CharacterSpace
             cameraWall = !screenCheck.isVisible;
             if (!screenCheck.isVisible)
             {
+                x = 0;
                 wallx = -faceDir;
+
             }
             if (oponent == null)
                 return;
@@ -102,11 +104,15 @@ namespace SkillIssue.CharacterSpace
                     currentCombo.Clear();
                 }
             }
+            //Safety messure against stunlock
+            if(currentHitCoroutine == null && currentAction == ActionStates.Hit)
+            {
+                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(10));
+            }
         }
         public void PerformAttack(AttackType type)
         {
             //here comes the canceable attack
-           
             if ((int)type != 2)
             {
                 switch (stateMachine.currentState)
@@ -179,13 +185,37 @@ namespace SkillIssue.CharacterSpace
                         break;
                 }
             }
-            stateMachine.currentAction = ActionStates.Attack;
+          
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
             Vector2 dir = new Vector2(data.push.x * -faceDir, data.push.y);
+            
+            if (currentAction == ActionStates.Attack)
+            {
+                stateMachine.currentAction = ActionStates.Hit;
+                if (data.launcher)
+                {
+                    animator.Play("JumpingHit");
+                    stateMachine.currentState = stateMachine.jumpState;
+                }
+                else
+                {
+                    animator.Play(currentState.ToString() + "Hit");
+                }
+                if (currentHitCoroutine != null)
+                    StopCoroutine(currentHitCoroutine);
+                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
+                currentHealth = currentHealth - data.damage;
+                if (wall)
+                {
+                    ApplyCounterPush(-dir, 3f);
+                }
+                else
+                    ApplyForce(dir, 3f);
+            }
             //block
-            if (x == -faceDir && currentAction != ActionStates.Hit)
+            else if (x == -faceDir && currentAction != ActionStates.Hit && currentState != States.Jumping )
             {
                 Vector2 blockDir = new Vector2(dir.x, 0);
                 stateMachine.currentAction = ActionStates.Block;
@@ -210,7 +240,7 @@ namespace SkillIssue.CharacterSpace
             else if(!blockCheck)
             {
                 stateMachine.currentAction = ActionStates.Hit;
-                if(data.launcher)
+                if (data.launcher)
                 {
                     animator.Play("JumpingHit");
                     stateMachine.currentState = stateMachine.jumpState;
@@ -218,17 +248,17 @@ namespace SkillIssue.CharacterSpace
                 else
                 {
                     animator.Play(currentState.ToString() + "Hit");
-                }     
+                }
                 if (currentHitCoroutine != null)
-                StopCoroutine(currentHitCoroutine);
-                    currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
+                    StopCoroutine(currentHitCoroutine);
+                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
                 currentHealth = currentHealth - data.damage;
-                if(wall)
+                if (wall)
                 {
-                    ApplyCounterPush(-dir,3f);
+                    ApplyCounterPush(-dir, 3f);
                 }
                 else
-                ApplyForce(dir,3f);
+                    ApplyForce(dir, 3f);
 
             }                     
         }
@@ -252,7 +282,7 @@ namespace SkillIssue.CharacterSpace
                 if (x != faceDir)
                 {
                     animator.SetInteger("X", -1);
-                    speed = movementspeed / 2;
+                    speed = movementspeed / 1.3f;
                 }
 
                 else
@@ -326,9 +356,12 @@ namespace SkillIssue.CharacterSpace
                 animator.SetTrigger("JumpEnd");
             }
             if (!wall || !cameraWall)
-            transform.Translate(new Vector2(x, -1) * (forceSpeed) * Time.deltaTime);
+                transform.Translate(new Vector2(x, -1) * (forceSpeed) * Time.deltaTime);
             else
-            transform.Translate(new Vector2(0, -1) * (forceSpeed) * Time.deltaTime);
+            {
+                transform.Translate(new Vector2(0, -1) * (forceSpeed) * Time.deltaTime);
+            }
+            
         }
         public void IsGrounded(bool check)
         {
@@ -377,7 +410,7 @@ namespace SkillIssue.CharacterSpace
             {
                 if(!counterForce)
                 {
-                    if (wall || cameraWall)
+                    if (direction.x != 0 && (wall || cameraWall))
                         direction.x = 0;
                 }               
                 x = direction.x;

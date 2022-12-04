@@ -5,23 +5,33 @@ using UnityEngine;
 using SkillIssue.Inputs;
 using SkillIssue.CharacterSpace;
 
+public enum AIAction
+{
+    None,
+    Move,
+    Attack
+}
 public class CharacterAI : MonoBehaviour
 {
+    public AIAction aIAction;
     InputHandler handler;
     Character character;
     public bool initiated = false;
-    public Vector2 dir;
+    public Vector2 dir = Vector2.zero;
     public int attackInput;
     public bool buttonUp;
-    private int directionMaxRange;
-    private int attackMaxRange;
     public bool directionBool;
     public int x;
     public float distance;
+    public int generatedNumber;
+    Coroutine movementTime;
+    public bool isMoving;
+    public int numberOfFrames;
+    int randomTime = 30;
     // Start is called before the first frame update
     void Start()
     {
-        
+        movementTime = StartCoroutine(MovementTimeCoroutine());
     }
 
     // Update is called once per frame
@@ -29,7 +39,15 @@ public class CharacterAI : MonoBehaviour
     {
         if (!initiated)
             return;
-        CheckGameState();    
+        CheckGameState();
+        if (movementTime != null)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
     }
 
     public void Initiate(InputHandler inputHandler)
@@ -43,35 +61,65 @@ public class CharacterAI : MonoBehaviour
     {
         //Check Distance Between them
         distance = ((character.xDiff + character.xDiff) / 2) * character.xDiff;
+        generatedNumber = Random.Range(1, 11);
         switch(distance)
         {
+            //Choices Move, Attack and Do Nothing
             //close by should move more away and less often and attack more often
+
             case <= 0.5f:
-                directionMaxRange = 50;
-                attackMaxRange = 8;
+                ActionSwitch(AIAction.None, AIAction.Attack,AIAction.Move);
                 directionBool = false;
                 break;
             case >= 1.5f:
-                directionMaxRange = 2;
-                attackMaxRange = 50;
+                ActionSwitch(AIAction.None, AIAction.Move,AIAction.Attack);
                 directionBool = true;
                 break;
             default:
-                directionMaxRange = 16;
-                attackMaxRange = 50;
+                ActionSwitch(AIAction.None, AIAction.Move,AIAction.Attack);
                 directionBool = true;
                 break;
         }
-        SimulateAttackInput();
-        SimulateMovementInput();
       
     }
-    void SimulateAttackInput()
+    void ActionSwitch(AIAction highChance, AIAction mediumChance, AIAction lowChance)
     {
-        float attackRange = Random.Range(0, 101);
-        if (attackRange <= 100 / attackMaxRange)
+        switch (generatedNumber)
         {
-            attackInput = Random.Range(0, 3);
+            case <= 1:
+                PerfomSimulatedAction(lowChance);
+                break;
+            case <= 2:
+                PerfomSimulatedAction(mediumChance);
+                break;
+            case <= 5:
+                PerfomSimulatedAction(highChance);
+                break;
+        }
+    }
+    void PerfomSimulatedAction(AIAction action)
+    {
+        aIAction = action;
+        switch (action)
+        {
+            case AIAction.None:                
+                SimulateNothing();
+                break;
+            case AIAction.Move:
+                SimulateMovementInput();
+                break;
+            case AIAction.Attack:
+                SimulateAttackInput();
+                break;
+        }
+    }
+    void SimulateAttackInput()
+    {       
+        if(movementTime != null)
+        {
+            StopCoroutine(movementTime);
+        }
+            attackInput = Random.Range(1, 3);
             int isButtonUp = Random.Range(0, 2);
             if (isButtonUp == 0)
             {
@@ -80,55 +128,74 @@ public class CharacterAI : MonoBehaviour
             else
             {
                 buttonUp = true;
-            }
-        }
-     
+            }    
     }
     void SimulateMovementInput()
     {
+        randomTime = Random.Range(15, 101);
         int randomX = 0;
-       
-        int dirRange = Random.Range(0, 101);
-        if (dirRange <= 100 / directionMaxRange)
-        {
+
             if (directionBool)
             {
-                randomX = Random.Range(-100, 401);
+                randomX = Random.Range(-1, 4);
             }
             else
             {
-                randomX = Random.Range(-300, 201);
+                randomX = Random.Range(-4, 2);
             }
             switch (randomX)
             {
-                case < -200:
+                case < 0:
                     x = -1;
                     break;
-                case > 300:
+                case > 0:
                     x = 1;
-                    break;
-                default:
-                    x = 0;
                     break;
             }
             //check if jump
-            int randomY = Random.Range(-1000, 1000);
+            int randomY = Random.Range(0, 101);
             int y = 0;
             switch (randomY)
             {
-                //case > 900:
-                //    y = 1;
+                //case > 95:
+                //   y = 1;
                 //    break;
-                //case < -800:
+                //case < 10:
                 //    y = -1;
-                //    break;
+                //   break;
                 default:
                     y = 0;
                     break;
             }
-            dir = new Vector2(x,y);
+        if(movementTime != null && x == dir.x)
+        {
+            numberOfFrames += randomTime / 2;
         }
+        else
+        {
+            numberOfFrames = randomTime;
+            movementTime = StartCoroutine(MovementTimeCoroutine());
+        }
+        dir = new Vector2(x, y);
 
-    
+
+    }
+    void SimulateNothing()
+    {
+        if (movementTime != null)
+            numberOfFrames = numberOfFrames / 2;
+        else
+        dir = Vector2.zero;
+    }
+    IEnumerator MovementTimeCoroutine()
+    {
+        int i = 0;
+        while (i < numberOfFrames)
+        {
+            Debug.Log("Frame " + i + "out of" + numberOfFrames);
+            i++;
+            yield return null;
+        }
+        movementTime = null;
     }
 }
