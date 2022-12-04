@@ -115,9 +115,11 @@ Add Block range] Block Stun - fixed
 
 Feedback v0.2:
 
-AI too aggressive
+AI too aggressive (Should not hit when far from opponent)
+AI should always close distance first
 Add round end
 (Maybe add walkstart up)
 BUG: Jumping and getting attacked  can cause that the player is considered standing
 Sometimes Damage get done even when blocked
 jL hitbox is too broken (hitbox is too low)
+jumping arc should be more curve

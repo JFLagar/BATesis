@@ -123,3 +123,4 @@ BUG: Jumping and getting attacked  can cause that the player is considered stand
 Sometimes Damage get done even when blocked
 jL hitbox is too broken (hitbox is too low)
 jumping arc should be more curve
+add shadows to characters
