@@ -189,7 +189,7 @@ namespace SkillIssue.CharacterSpace
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
-            Vector2 dir = new Vector2(data.push.x * -faceDir, data.push.y);
+            Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
             
             if (currentAction == ActionStates.Attack)
             {
@@ -198,6 +198,7 @@ namespace SkillIssue.CharacterSpace
                 {
                     animator.Play("JumpingHit");
                     stateMachine.currentState = stateMachine.jumpState;
+                    dir.y = data.push.y;
                 }
                 else
                 {
@@ -244,6 +245,7 @@ namespace SkillIssue.CharacterSpace
                 {
                     animator.Play("JumpingHit");
                     stateMachine.currentState = stateMachine.jumpState;
+                    dir.y = data.push.y;
                 }
                 else
                 {
@@ -266,7 +268,7 @@ namespace SkillIssue.CharacterSpace
         {
             if (!landed)
             {
-                transform.position = new Vector3(transform.position.x, 0.39f, 0);
+                transform.position = new Vector3(transform.position.x, 0f, 0);
                 landed = true;
             }
         }

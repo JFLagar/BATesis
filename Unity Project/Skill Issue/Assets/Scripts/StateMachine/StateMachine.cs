@@ -84,21 +84,24 @@ namespace SkillIssue.StateMachineSpace
                 yvalue = 1;
                 ExitState();
             }
-            action = character.stateMachine.currentAction == ActionStates.None;
+            action = (character.stateMachine.currentAction == ActionStates.None || character.stateMachine.currentAction == ActionStates.Hit);
             if (!action)
             {
                 return;
             }
-            if (input.movementInput.direction.y != 0)
+            if (character.stateMachine.currentAction == ActionStates.None)
             {
-                yvalue = input.movementInput.direction.y;
-                if (yvalue > 0)
-                    stateMachine.character.ApplyForce(input.direction, stateMachine.character.jumpPower);
-                //jump
-                ExitState();
+                if (input.movementInput.direction.y != 0)
+                {
+                    yvalue = input.movementInput.direction.y;
+                    if (yvalue > 0)
+                        stateMachine.character.ApplyForce(input.direction, stateMachine.character.jumpPower);
+                    //jump
+                    ExitState();
+                }
+                stateMachine.character.CharacterMove(input.direction);
             }
-         
-            stateMachine.character.CharacterMove(input.direction);
+                      
         }
         public override void EnterState() 
         {

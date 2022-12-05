@@ -54,9 +54,12 @@ Introduce Combos and Combo Display DONE
 -Introduce  Heavy Attacks- DONE
 
 Ver. 0.3:
+Introduce High/Low
 Introduce Rounds
+Introduce Button Mapping
 Player vs Player
-Introduce High/Low 
+
+Introduce Special Attacks
 
 Currently Working on:
 
@@ -74,17 +77,16 @@ Special Attacks
 
 BUGS:
 Jump and Attack at the same time sometimes bug. (Animation)
-Close to wall doesn't get push back (if both characters are walled) -> Fixed
-Character can't change state (Standing Crouching Jumping) for combos. -> Fixed
-MAJOR AI BUG: It can jump down the stage (Disabling crouch)
-MAJOR BUG: Sometimes Recovery doesn't trigger
 
-Can jump backwards outside camera. > Fixed
+MAJOR AI: It can jump down the stage (Disabling crouch)
+MAJOR: Sometimes Recovery doesn't trigger
+Jumping and getting attacked  can cause that the player is considered standing
+
 Can block when whiffing attacks -> Not apparent on build
 
 Saw momentary: Jump and attack cause position override
 
-Light canceling into self don't cancel the animation. -> Fixed
+
 
 
 Fixed:
@@ -97,7 +99,10 @@ Backwards Jump doesnt respect cameraWall/Wall >> FIXED
 Character on wall can swap places with other character (has to push) > FIXED
 Damage/Block: polish prevent state from changing - repeat animation with several hits recovery hits not working properly >
 -> Can't Block after being knockeddown -> FIXED
-
+Can jump backwards outside camera. > Fixed
+Light canceling into self don't cancel the animation. -> Fixed
+Close to wall doesn't get push back (if both characters are walled) -> Fixed
+Character can't change state (Standing Crouching Jumping) for combos. -> Fixed
 
 Goal:
 Combos and combo display
@@ -118,8 +123,9 @@ Feedback v0.2:
 AI too aggressive (Should not hit when far from opponent)
 AI should always close distance first
 Add round end
-(Maybe add walkstart up)
+Maybe add walkstart up
 BUG: Jumping and getting attacked  can cause that the player is considered standing
 Sometimes Damage get done even when blocked
 jL hitbox is too broken (hitbox is too low)
 jumping arc should be more curve
+add shadows to characters
