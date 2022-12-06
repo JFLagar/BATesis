@@ -16,8 +16,8 @@ MonoBehaviour:
   attackAttribute: 1
   attackType: 1
   damage: 15
-  hitstun: 40
-  blockstun: 40
+  hitstun: 5
+  blockstun: 5
   proratio: 1
   push: {x: 1, y: 0}
   launcher: 1

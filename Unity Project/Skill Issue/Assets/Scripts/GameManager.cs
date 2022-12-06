@@ -29,6 +29,11 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    internal void PauseDebug()
+    {
+        Debug.Break();
+    }
+
     // Update is called once per frame
     void Update()
     {

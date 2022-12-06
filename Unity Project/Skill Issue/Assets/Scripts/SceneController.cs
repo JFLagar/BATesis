@@ -25,5 +25,9 @@ public class SceneController : MonoBehaviour
         {
             GameManager.instance.EndGame();
         }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            GameManager.instance.PauseDebug();
+        }
     }
 }

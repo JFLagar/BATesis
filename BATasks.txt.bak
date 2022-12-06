@@ -76,13 +76,12 @@ Button Mapping - Add Controller support -> Moved to FUTURE iteration
 Special Attacks
 
 BUGS:
-Jump and Attack at the same time sometimes bug. (Animation)
+
 MAJOR AI: It can jump down the stage (Disabling crouch)
 Saw momentary: Jump and attack cause position override (can't reproduce)
 MAJOR jumping towards enemy on the corner makes corner switch > attacking then pushes player outside corner (Cant Reproduce)
-Bugs: OTG (in recovery)
-Bugs: Light cancelling ignoring limit
-
+Bug: Jump and Attack at the same time sometimes. (Animation)
+Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 
 
 Fixed:
@@ -104,6 +103,10 @@ Jumping and getting attacked  can cause that the player is considered standing -
 BUILD Combos are not doable or not displayed; (The first hit gets insta deleted) FIXED
 Can block when whiffing attacks -> Not apparent on build > Fixed
 Repeated Cancel bugs not allowing for more than 2 cancels > Fixed
+Bugs: OTG (in recovery) > FIxed
+Bugs: Light cancelling ignoring limit > FIXED
+Bug: Block Recovery can get hit > FIXED
+Bug:Can't Jump forward from screenedge > Fixed
 
 Goal:
 Implement Feedback

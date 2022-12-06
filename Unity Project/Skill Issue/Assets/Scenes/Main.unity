@@ -3844,15 +3844,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: inputs.Array.data[0]
-      value: 0
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: inputs.Array.data[1]
-      value: 0
+      value: 111
       objectReference: {fileID: 0}
     - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: inputs.Array.data[2]
-      value: 0
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 1957316338129269631, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: mask.m_Bits

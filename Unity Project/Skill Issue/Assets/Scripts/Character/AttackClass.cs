@@ -22,19 +22,19 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         {
             if(!Cancelable(data))
             {
-                Debug.Log("Can't cancel " + data + "from: "+ m_data );
                 character.storedAttack = data;
                 return;
             }
                   
         }
+        repeatedAttack = 0;
         character.stateMachine.currentAction = ActionStates.Attack;
         hit = false;
         m_data = data;
         currentAttack = null;
         if (data.animation != null)
         {
-            character.animator.Play(data.animation.name, 0, 0f);
+            character.characterAnimation.AddAnimation(AnimType.Attack,data.animation.name);
         }
         foreach (Hitbox hitbox in hitboxes)
         { 
@@ -51,12 +51,12 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             currentAttack = m_data;
             Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
             hurtbox?.GetHitBy(m_data);
-            character.HitConnect(m_data);
             hit = true;
+            character.HitConnect(m_data);
         }
         if (character.storedAttack != null)
         {
-            Attack(character.storedAttack);         
+            character.PerformAttack(character.storedAttack.attackType);         
         }
 
     }
@@ -98,6 +98,11 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
                     }
                     count--;
                 }
+                if (repeatedAttack >= sameLimit)
+                {
+                    Debug.Log("Reached Limit");
+                    return false;
+                }
             }
         }
         if (data != m_data)
@@ -117,12 +122,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
                 return false;
 
         }
-        if (repeatedAttack > sameLimit)
-        {
-            Debug.Log("Reached Limit");
-            repeatedAttack = 0;
-            return false;
-        }
+      
             foreach (AttackType canceltype in m_data.cancelableTypes)
         {
             if (data.attackType == canceltype)

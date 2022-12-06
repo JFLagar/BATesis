@@ -20,6 +20,7 @@ namespace SkillIssue.CharacterSpace
         public AttackData[] specialAttacks;
         public AttackClass attack;
         public Animator animator;
+        public CharacterAnimationManagar characterAnimation;
         public Pushbox pushbox;
         public bool applyGravity = false;
         public bool wall;
@@ -43,7 +44,7 @@ namespace SkillIssue.CharacterSpace
         public float forceSpeed;
         public float forceLeftOver;
         bool landed;
-
+        bool landingRecovery;
         [Space]
 
         public Transform collisions;
@@ -77,7 +78,6 @@ namespace SkillIssue.CharacterSpace
             {
                 x = 0;
                 wallx = -faceDir;
-
             }
             if (oponent == null)
                 return;
@@ -161,7 +161,7 @@ namespace SkillIssue.CharacterSpace
                         }
                         break;
                     case JumpState:
-                        attack.Attack(jumpAttacks[((int)type)]);
+                        attack.Attack(jumpAttacks[((int)type)]);              
                         break;
                 }
             }
@@ -205,7 +205,7 @@ namespace SkillIssue.CharacterSpace
                 DamageDealt(data);
             }
             //block
-            else if (x == -faceDir && currentAction != ActionStates.Hit && currentState != States.Jumping )
+            else if (inputHandler.direction.x == -faceDir && currentAction != ActionStates.Hit && currentState != States.Jumping )
             {
                 BlockDone(data, blockCheck);
                 
@@ -217,18 +217,19 @@ namespace SkillIssue.CharacterSpace
         }
         private void DamageDealt(AttackData data)
         {
+            Debug.Log(data.name);
             Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
 
             stateMachine.currentAction = ActionStates.Hit;
             if (data.launcher)
             {
-                animator.Play("JumpingHit");
+                characterAnimation.AddAnimation(AnimType.Hit, "JumpingHit");
                 stateMachine.currentState = stateMachine.jumpState;
                 dir.y = data.push.y;
             }
             else
             {
-                animator.Play(currentState.ToString() + "Hit");
+                characterAnimation.AddAnimation(AnimType.Hit, currentState.ToString() + "Hit");
             }
             if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);
@@ -246,7 +247,7 @@ namespace SkillIssue.CharacterSpace
             Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
             Vector2 blockDir = new Vector2(dir.x, 0);
             stateMachine.currentAction = ActionStates.Block;
-            animator.Play(currentState.ToString() + "Block");
+            characterAnimation.AddAnimation(AnimType.Hit, currentState.ToString() + "Block");
             Debug.Log("Blocked");
             if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);
@@ -299,7 +300,10 @@ namespace SkillIssue.CharacterSpace
             if (wall || cameraWall)
             {
                 if (direction.x == 0 || direction.x == wallx)
+
+                {
                     transform.Translate(new Vector2(0, 0) * speed * Time.deltaTime);
+                }
                 else
                 {
                     wall = false;
@@ -329,12 +333,13 @@ namespace SkillIssue.CharacterSpace
             {
                 y = 0;
                 m_bool = counterforce;
-            }
-            
+            }           
             else
             {
                 if (wall && direction.x == wallx || cameraWall && direction.x == wallx)
                     direction.x = 0;
+                else
+                    wall = false;
                 y = direction.y;
                 applyGravity = false;
             }
@@ -356,11 +361,11 @@ namespace SkillIssue.CharacterSpace
             {
                 animator.SetTrigger("JumpEnd");
             }
-            if (!wall || !cameraWall)
-                transform.Translate(new Vector2(x, -1) * (forceSpeed) * Time.deltaTime);
+            if ((wall && x == wallx) || (cameraWall && x == wallx))
+                transform.Translate(new Vector2(0, -1) * (forceSpeed) * Time.deltaTime);
             else
             {
-                transform.Translate(new Vector2(0, -1) * (forceSpeed) * Time.deltaTime);
+                transform.Translate(new Vector2(x, -1) * (forceSpeed) * Time.deltaTime);
             }
             
         }
@@ -389,10 +394,12 @@ namespace SkillIssue.CharacterSpace
         }
         public void AnimEnd()
         {
+            oponent.ResetAttackInfo();
+            characterAnimation.ClearAnimations();
             if (stateMachine.currentAction == ActionStates.None)
                 return;
             stateMachine.currentAction = ActionStates.None;
-            oponent.currentCombo.Clear();
+
         }
         public void OpenHitboxes(int number)
         {
@@ -412,7 +419,7 @@ namespace SkillIssue.CharacterSpace
             {
                 if(!counterForce)
                 {
-                    if (direction.x != 0 && (wall || cameraWall))
+                    if (direction.x != 0 && ((wall && direction.x == wallx) || (cameraWall && direction.x == wallx)))
                         direction.x = 0;
                 }               
                 x = direction.x;
@@ -435,7 +442,9 @@ namespace SkillIssue.CharacterSpace
         }
         public void TestAction()
         {
-            isGrounded = false;
+            if (stateMachine.currentAction == ActionStates.None)
+                return;
+            stateMachine.currentAction = ActionStates.None;
         }
         public void HitboxesEnabled()
         {
@@ -451,6 +460,11 @@ namespace SkillIssue.CharacterSpace
             {
                 currentCombo.Add(data);
             }
+        }
+        public void ResetAttackInfo()
+        {
+            currentCombo.Clear();
+            storedAttack = null;
         }
     }
 }

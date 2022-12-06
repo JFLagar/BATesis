@@ -144,7 +144,7 @@ namespace SkillIssue.StateMachineSpace
 
             stateMachine.currentState = stateMachine.crouchingState;
             stateMachine.character.currentState = States.Crouching;
-            character.animator.Play("StandToCrouch");
+            character.characterAnimation.AddAnimation(AnimType.Movement, "StandToCrouch");
             character.animator.SetBool("Crouching", true);
         }
         public override void ExitState() 
@@ -170,7 +170,7 @@ namespace SkillIssue.StateMachineSpace
             stateMachine.currentState = stateMachine.jumpState;
             stateMachine.character.currentState = States.Jumping;
             if(stateMachine.currentAction == ActionStates.None)
-                character.animator.Play("JumpStart");
+                character.characterAnimation.AddAnimation(AnimType.Movement, "JumpStart");
             character.animator.SetBool("Jumping", true);
         }
         public override void ExitState() 
@@ -178,6 +178,8 @@ namespace SkillIssue.StateMachineSpace
             stateMachine.character.FixPosition();
             stateMachine.standingState.EnterState();
             character.animator.SetBool("Jumping", false);
+            if (stateMachine.currentAction != ActionStates.Hit)
+                    character.characterAnimation.AddAnimation(AnimType.Movement, "LandingRecovery");
         }
     }
 }
