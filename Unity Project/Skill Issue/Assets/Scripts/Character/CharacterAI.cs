@@ -39,6 +39,7 @@ public class CharacterAI : MonoBehaviour
     {
         if (!initiated)
             return;
+
         CheckGameState();
         if (movementTime != null)
         {
@@ -192,10 +193,15 @@ public class CharacterAI : MonoBehaviour
         int i = 0;
         while (i < numberOfFrames)
         {
-            Debug.Log("Frame " + i + "out of" + numberOfFrames);
             i++;
             yield return null;
         }
         movementTime = null;
+    }
+    public void AiReset()
+    {
+        dir = Vector2.zero;
+        initiated = false;
+        handler = null;
     }
 }

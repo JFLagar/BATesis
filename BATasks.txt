@@ -77,15 +77,12 @@ Special Attacks
 
 BUGS:
 Jump and Attack at the same time sometimes bug. (Animation)
-
 MAJOR AI: It can jump down the stage (Disabling crouch)
-MAJOR: Sometimes Recovery doesn't trigger
-Jumping and getting attacked  can cause that the player is considered standing
-
-Can block when whiffing attacks -> Not apparent on build
-
-Saw momentary: Jump and attack cause position override
-
+Saw momentary: Jump and attack cause position override (can't reproduce)
+MAJOR jumping towards enemy on the corner makes corner switch > attacking then pushes player outside corner (Cant Reproduce)
+Bugs: OTG (in recovery)
+Bugs: Light cancelling ignoring limit
+Bug: Block Recovery can get hit
 
 
 
@@ -103,9 +100,14 @@ Can jump backwards outside camera. > Fixed
 Light canceling into self don't cancel the animation. -> Fixed
 Close to wall doesn't get push back (if both characters are walled) -> Fixed
 Character can't change state (Standing Crouching Jumping) for combos. -> Fixed
+MAJOR: Sometimes Recovery doesn't trigger (Fixed with work around)
+Jumping and getting attacked  can cause that the player is considered standing - Fixed
+BUILD Combos are not doable or not displayed; (The first hit gets insta deleted) FIXED
+Can block when whiffing attacks -> Not apparent on build > Fixed
+Repeated Cancel bugs not allowing for more than 2 cancels > Fixed
 
 Goal:
-Combos and combo display
+Implement Feedback
 
 
 Feedback v0.1:
@@ -127,5 +129,17 @@ Maybe add walkstart up
 BUG: Jumping and getting attacked  can cause that the player is considered standing
 Sometimes Damage get done even when blocked
 jL hitbox is too broken (hitbox is too low)
-jumping arc should be more curve
+jumping arc should be more curve (more floaty / gravity)
 add shadows to characters
+Right Side: Can fall from the corner (maybe from jumping)
+5H should be kick (more range)
+2H should be the only low profile (standing should hit crouching opponent)
+Landing needs to be more fluid (jH)
+5L5L but not 5L5L5L
+
+Choose between input or button special
+
+NVidia framecap
+
+
+ENCUESTA al final de projecto o documentacion

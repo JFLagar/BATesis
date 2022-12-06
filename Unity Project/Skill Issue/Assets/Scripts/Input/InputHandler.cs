@@ -182,6 +182,20 @@ namespace SkillIssue.Inputs
             }
             return false;
         }
+        public void ResetAI()
+        {
+            if(!aiControl)
+            {
+                aiControl = true;
+                ai.Initiate(this);
+            }
+            else
+            {
+                aiControl = false;
+                ai.AiReset();            
+            }
+            movementInput.direction = Vector2.zero;
+        }
      
     }
 }

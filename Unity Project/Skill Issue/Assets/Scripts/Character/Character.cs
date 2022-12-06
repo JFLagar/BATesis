@@ -51,6 +51,8 @@ namespace SkillIssue.CharacterSpace
         private Coroutine currentMovementCoroutine;
         public AttackData storedAttack = null;
         public List<AttackData> currentCombo = new List<AttackData>();
+        public bool visualState;
+        public Color32[] stateColors;
    
         private void Awake()
         {
@@ -80,35 +82,42 @@ namespace SkillIssue.CharacterSpace
             if (oponent == null)
                 return;
             xDiff = transform.position.x - oponent.transform.position.x;
-            if ( xDiff < 0)
+            if(currentState != States.Jumping)
             {
-                faceDir = 1;
-                if (render != null)
-                 render.flipX = false;
-                collisions.eulerAngles = new Vector3(0, 0, 0);
-                         
-            }
-            else
-            {
-                faceDir = -1;
-                if (render != null) render.flipX = true;
-                collisions.eulerAngles = new Vector3(0, 180, 0);
-            }
-
-            if(oponent != null)
-            {
-                if (oponent.currentAction != ActionStates.Hit)
+                if (xDiff < 0)
                 {
-                    comboHit = 0;
-                   storedAttack = null;
-                    currentCombo.Clear();
+                    faceDir = 1;
+                    if (render != null)
+                        render.flipX = false;
+                    collisions.eulerAngles = new Vector3(0, 0, 0);
+
+                }
+                else
+                {
+                    faceDir = -1;
+                    if (render != null) render.flipX = true;
+                    collisions.eulerAngles = new Vector3(0, 180, 0);
                 }
             }
+            comboHit = currentCombo.Count;
             //Safety messure against stunlock
             if(currentHitCoroutine == null && currentAction == ActionStates.Hit)
             {
                 currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(10));
             }
+            if(visualState)
+            {
+                switch (currentAction)
+                {
+                    case ActionStates.None:
+                        render.color = stateColors[0];
+                        break;
+                    case ActionStates.Hit:
+                        render.color = stateColors[1];
+                        break;
+                }
+            }
+
         }
         public void PerformAttack(AttackType type)
         {
@@ -189,80 +198,70 @@ namespace SkillIssue.CharacterSpace
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
-            Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
+            
             
             if (currentAction == ActionStates.Attack)
             {
-                stateMachine.currentAction = ActionStates.Hit;
-                if (data.launcher)
-                {
-                    animator.Play("JumpingHit");
-                    stateMachine.currentState = stateMachine.jumpState;
-                    dir.y = data.push.y;
-                }
-                else
-                {
-                    animator.Play(currentState.ToString() + "Hit");
-                }
-                if (currentHitCoroutine != null)
-                    StopCoroutine(currentHitCoroutine);
-                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
-                currentHealth = currentHealth - data.damage;
-                if (wall)
-                {
-                    ApplyCounterPush(-dir, 3f);
-                }
-                else
-                    ApplyForce(dir, 3f);
+                DamageDealt(data);
             }
             //block
             else if (x == -faceDir && currentAction != ActionStates.Hit && currentState != States.Jumping )
             {
-                Vector2 blockDir = new Vector2(dir.x, 0);
-                stateMachine.currentAction = ActionStates.Block;
-                animator.Play(currentState.ToString() + "Block");               
-                Debug.Log("Blocked");
-                if (currentHitCoroutine != null)
-                    StopCoroutine(currentHitCoroutine);
-                if (blockCheck)
-                    currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun/2));
-                else
-                {
-                    currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun));
-                    if (wall)
-                    {
-                        ApplyCounterPush(-blockDir, 3f);
-                    }
-                    else
-                        ApplyForce(blockDir, 3f);
-                }
+                BlockDone(data, blockCheck);
                 
             }
             else if(!blockCheck)
             {
-                stateMachine.currentAction = ActionStates.Hit;
-                if (data.launcher)
-                {
-                    animator.Play("JumpingHit");
-                    stateMachine.currentState = stateMachine.jumpState;
-                    dir.y = data.push.y;
-                }
-                else
-                {
-                    animator.Play(currentState.ToString() + "Hit");
-                }
-                if (currentHitCoroutine != null)
-                    StopCoroutine(currentHitCoroutine);
-                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
-                currentHealth = currentHealth - data.damage;
+                DamageDealt(data);
+            }                     
+        }
+        private void DamageDealt(AttackData data)
+        {
+            Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
+
+            stateMachine.currentAction = ActionStates.Hit;
+            if (data.launcher)
+            {
+                animator.Play("JumpingHit");
+                stateMachine.currentState = stateMachine.jumpState;
+                dir.y = data.push.y;
+            }
+            else
+            {
+                animator.Play(currentState.ToString() + "Hit");
+            }
+            if (currentHitCoroutine != null)
+                StopCoroutine(currentHitCoroutine);
+            currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
+            currentHealth = currentHealth - data.damage;
+            if (wall)
+            {
+                ApplyCounterPush(-dir, 3f);
+            }
+            else
+                ApplyForce(dir, 3f);
+        }
+        private void BlockDone(AttackData data, bool blockCheck = false)
+        {
+            Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
+            Vector2 blockDir = new Vector2(dir.x, 0);
+            stateMachine.currentAction = ActionStates.Block;
+            animator.Play(currentState.ToString() + "Block");
+            Debug.Log("Blocked");
+            if (currentHitCoroutine != null)
+                StopCoroutine(currentHitCoroutine);
+            if (blockCheck)
+                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun / 2));
+            else
+            {
+                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun));
                 if (wall)
                 {
-                    ApplyCounterPush(-dir, 3f);
+                    ApplyCounterPush(-blockDir, 3f);
                 }
                 else
-                    ApplyForce(dir, 3f);
-
-            }                     
+                    ApplyForce(blockDir, 3f);
+            }
         }
         public void FixPosition()
         {
@@ -393,6 +392,7 @@ namespace SkillIssue.CharacterSpace
             if (stateMachine.currentAction == ActionStates.None)
                 return;
             stateMachine.currentAction = ActionStates.None;
+            oponent.currentCombo.Clear();
         }
         public void OpenHitboxes(int number)
         {
@@ -436,6 +436,21 @@ namespace SkillIssue.CharacterSpace
         public void TestAction()
         {
             isGrounded = false;
+        }
+        public void HitboxesEnabled()
+        {
+            visualState = !visualState;
+        }
+        public void HitConnect(AttackData data)
+        {
+            if (oponent.currentAction == ActionStates.Block)
+            {
+                currentCombo.Clear();
+            }
+            else
+            {
+                currentCombo.Add(data);
+            }
         }
     }
 }

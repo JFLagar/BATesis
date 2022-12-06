@@ -13,6 +13,7 @@ public class UIBehaviour : MonoBehaviour
     public TextMeshProUGUI[] comboDisplays;
     public TextMeshProUGUI timerText;
     public float timer = 99;
+    public TextMeshProUGUI debug;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,14 @@ public class UIBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(manager.testing)
+        {
+            debug.text = "Debug: " + characters[0].comboHit + " State:" + characters[1].currentAction ;
+        }
+        else
+        {
+            debug.text = "";
+        }
         for (int i = 0; i < comboDisplays.Length; i++)
         {
             if (characters[i].comboHit <= 1)
@@ -42,7 +51,6 @@ public class UIBehaviour : MonoBehaviour
             sliders[i].value = characters[i].currentHealth;
             if(sliders[i].value <= 0)
             {
-                Debug.Log("Round Should Restart");
                 manager.RestartRound();
             }
         }

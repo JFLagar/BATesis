@@ -16,14 +16,14 @@ MonoBehaviour:
   attackAttribute: 1
   attackType: 0
   damage: 5
-  hitstun: 10
-  blockstun: 10
+  hitstun: 3
+  blockstun: 3
   proratio: 2
   push: {x: 0.5, y: 1}
   launcher: 0
   dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 1
-  cancelableTypes: 
+  cancelableTypes: 000000000100000002000000
   animation: {fileID: 7400000, guid: 7780255bf8e4bcb42aabd1987ac44f35, type: 2}
   message: 
