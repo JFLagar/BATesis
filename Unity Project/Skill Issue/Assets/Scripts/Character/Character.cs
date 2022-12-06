@@ -149,6 +149,7 @@ namespace SkillIssue.CharacterSpace
                             
                         }
                         break;
+
                     case CrouchState:
                         switch (inputHandler.movementInput.direction.y)
                         {
@@ -442,9 +443,7 @@ namespace SkillIssue.CharacterSpace
         }
         public void TestAction()
         {
-            if (stateMachine.currentAction == ActionStates.None)
-                return;
-            stateMachine.currentAction = ActionStates.None;
+            stateMachine.currentAction = ActionStates.Landing;
         }
         public void HitboxesEnabled()
         {

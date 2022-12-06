@@ -5,10 +5,11 @@ using SkillIssue.CharacterSpace;
 namespace SkillIssue.Inputs
 {
     //Template
+    [System.Serializable]
     public class CommandInputs : ICommandInput
     {
         public Character character;
-        private bool pressed = false;
+        public bool pressed = false;
         private float buttonHeld;
         public void Update()
         {
@@ -44,6 +45,7 @@ namespace SkillIssue.Inputs
 
     public class LightInput : CommandInputs
     {
+        public string name = "Light";
         public override void InputPressed() 
         {
             character.PerformAttack(AttackType.Light);
@@ -57,6 +59,7 @@ namespace SkillIssue.Inputs
     }
     public class HeavyInput : CommandInputs
     {
+        public string name = "Heavy";
         public override void InputPressed() 
         { 
             character.PerformAttack(AttackType.Heavy);
@@ -70,6 +73,7 @@ namespace SkillIssue.Inputs
     }
     public class SpecialInput : CommandInputs
     {
+        public string name = "Special";
         public override void InputPressed() 
         {
             character.PerformAttack(AttackType.Special);

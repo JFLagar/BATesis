@@ -20,22 +20,23 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
       //check if can cancel
         if (character.stateMachine.currentAction != ActionStates.None)
         {
+            Debug.Log("Trying to cancel: " + m_data.name + data.name );
             if(!Cancelable(data))
             {
                 character.storedAttack = data;
                 return;
             }
-                  
+            Debug.Log("cancelled: " + m_data.name + data.name);
+        }
+        if (data.animation != null)
+        {
+            character.characterAnimation.AddAnimation(AnimType.Attack, data.animation.name);
         }
         repeatedAttack = 0;
         character.stateMachine.currentAction = ActionStates.Attack;
         hit = false;
         m_data = data;
-        currentAttack = null;
-        if (data.animation != null)
-        {
-            character.characterAnimation.AddAnimation(AnimType.Attack,data.animation.name);
-        }
+        currentAttack = null;      
         foreach (Hitbox hitbox in hitboxes)
         { 
             hitbox.setResponder(this);

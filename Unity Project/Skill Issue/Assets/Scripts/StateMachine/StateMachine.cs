@@ -8,6 +8,7 @@ namespace SkillIssue.StateMachineSpace
     public enum ActionStates
     {
         None, // Default state
+        Landing, //To avoid instawalking
         Attack, //Can go back to None or proper Attack, getting hit here will trigger counterhit
         Block, //Goes back to None
         Hit //King = Overrides all States and Goes back to None

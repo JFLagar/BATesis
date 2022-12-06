@@ -11,7 +11,9 @@ namespace SkillIssue.Inputs
         public CharacterAI ai;
         public bool aiControl = false;
         [SerializeField]
-        public List<string> commands = new List<string>();
+        public List<CommandInputs> directionInputs = new List<CommandInputs>();
+        [SerializeField]
+        public List<CommandInputs> attackInputs = new List<CommandInputs>();
         public KeyCode[] inputs;
         private LightInput lightButton = new LightInput();
         private HeavyInput heavyButton = new HeavyInput();
@@ -71,22 +73,24 @@ namespace SkillIssue.Inputs
                 else
                     movementInput.direction = new Vector2(ai.dir.x * character.faceDir, ai.dir.y);
                 movement.Activate(movementUp);
-                commands.Add(movement.ToString());
             }
 
             //attack
             input = HandleAttackInput();
             if (input != null)
             {
-                input.Activate(AttackUp());
-                commands.Add(input.ToString());
+                input.Activate(AttackUp());               
             }
             if (!aiControl)
                 direction = movementInput.direction;
             else
                 direction = ai.dir * character.faceDir;
+            if(Input.GetKeyDown(KeyCode.Comma))
+            {
+                attackInputs[1].InputPressed();
+            }
         }
-
+      
        public CommandInputs HandleAttackInput()
         {
             if (aiControl)
