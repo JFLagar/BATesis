@@ -141,6 +141,7 @@ namespace SkillIssue.CharacterSpace
                                     attack.Attack(standingAttacks[((int)type)]);
                                     break;
                                 case 1f:
+                                    ApplyForce(inputHandler.direction, jumpPower);
                                     attack.Attack(jumpAttacks[((int)type)]);
                                     break;
                                 case -1f:
