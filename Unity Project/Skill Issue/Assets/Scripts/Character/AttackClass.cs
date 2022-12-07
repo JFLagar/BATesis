@@ -14,15 +14,24 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     private bool hit = false;
     public int repeatedAttack = 0;
     public int sameLimit;
-
+    [SerializeField]
+    public Coroutine landCheck = null;
+    public int waitFrame = 0;
+    public int landFrame = 0;
     public void Attack(AttackData data)
     {
+        Debug.Log("Using " + data + character.currentAction);
+        if (character.stateMachine.currentState == character.stateMachine.jumpState)
+        {
+            Debug.Log("StartedCoroutine");
+            landCheck = StartCoroutine(CheckForLandCancel(data));
+        }
       //check if can cancel
         if (character.stateMachine.currentAction != ActionStates.None)
-        {
-            Debug.Log("Trying to cancel: " + m_data.name + data.name );
+        {   
             if(!Cancelable(data))
             {
+                Debug.Log("Can't cancel");
                 character.storedAttack = data;
                 return;
             }
@@ -77,7 +86,10 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     }
     private bool Cancelable(AttackData data)
     {
-
+        if (character.stateMachine.currentAction == ActionStates.Landing)
+        {
+            return true;
+        }
         if (!hit)
         {
             return false;
@@ -133,5 +145,30 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         }
         return false;
     }
-
+    IEnumerator CheckForLandCancel(AttackData data)
+    {
+        waitFrame = 0;
+        landFrame = 0;
+        while (waitFrame < 10)
+        {
+            Debug.Log("Frame" + waitFrame + character.currentState);
+             if (character.currentState == States.Standing)
+            {
+                while(landFrame < 5)
+                {
+                    Debug.Log("LandFrame" + landFrame + character.currentAction);
+                    if(character.currentAction == ActionStates.Landing)
+                    {
+                        character.PerformAttack(data.attackType);
+                    }         
+                    yield return null;
+                    landFrame++;
+                }
+            }
+               
+            yield return null;
+            waitFrame++;
+        }
+        Debug.Log("Coroutine End");
+    }
 }

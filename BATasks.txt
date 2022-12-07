@@ -82,6 +82,7 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 MAJOR jumping towards enemy on the corner makes corner switch > attacking then pushes player outside corner (Cant Reproduce)
 Bug: Jump and Attack at the same time sometimes. (Animation) > these two issues can be solve with a better input system
 Bug: Comboing from jump to ground makes ground hit hit twice > Recognizes 5L as jL
+Bug: Jumping recognizes as exiting and entering instead of happening once.
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 
 

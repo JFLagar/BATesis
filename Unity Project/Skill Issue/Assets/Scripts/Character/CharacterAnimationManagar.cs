@@ -6,6 +6,7 @@ public enum AnimType
 {
     Hit,
     Attack,
+    Landing,
     Movement
 }
 public class CharacterAnimationManagar : MonoBehaviour
@@ -25,8 +26,9 @@ public class CharacterAnimationManagar : MonoBehaviour
         if(animations.Count != 0)
         {
             animations.TryGetValue(AnimType.Hit, out animNames[0]);
-            animations.TryGetValue(AnimType.Attack, out animNames[1]);
-            animations.TryGetValue(AnimType.Movement, out animNames[2]);
+            animations.TryGetValue(AnimType.Attack, out animNames[2]);
+            animations.TryGetValue(AnimType.Landing, out animNames[1]);
+            animations.TryGetValue(AnimType.Movement, out animNames[3]);
             PlayAnimation(animNames);
 
         }

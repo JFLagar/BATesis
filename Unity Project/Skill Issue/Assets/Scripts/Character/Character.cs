@@ -45,6 +45,7 @@ namespace SkillIssue.CharacterSpace
         public float forceLeftOver;
         bool landed;
         bool landingRecovery;
+        public bool isJumping;
         [Space]
 
         public Transform collisions;
@@ -357,11 +358,13 @@ namespace SkillIssue.CharacterSpace
         {
             if (!applyGravity)
                 return;
-            landed = false;
-            if(stateMachine.currentAction == ActionStates.None)
+            if (stateMachine.currentAction == ActionStates.None && isJumping)
             {
-                animator.SetTrigger("JumpEnd");
+                characterAnimation.AddAnimation(AnimType.Movement, "JumpFall");
             }
+            isJumping = false;
+            landed = false;
+           
             if ((wall && x == wallx) || (cameraWall && x == wallx))
                 transform.Translate(new Vector2(0, -1) * (forceSpeed) * Time.deltaTime);
             else
@@ -441,9 +444,10 @@ namespace SkillIssue.CharacterSpace
             }
             HitRecover();
         }
-        public void TestAction()
+        public void TestAction(string name)
         {
             stateMachine.currentAction = ActionStates.Landing;
+            Debug.Log(stateMachine.currentAction);
         }
         public void HitboxesEnabled()
         {

@@ -115,6 +115,7 @@ namespace SkillIssue.StateMachineSpace
 
             if (yvalue == 1)
             {
+                stateMachine.character.isJumping = true;
                 stateMachine.jumpState.EnterState();
             }
             else
@@ -142,7 +143,6 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void EnterState() 
         {
-
             stateMachine.currentState = stateMachine.crouchingState;
             stateMachine.character.currentState = States.Crouching;
             character.characterAnimation.AddAnimation(AnimType.Movement, "StandToCrouch");
@@ -150,7 +150,6 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void ExitState() 
         {
-
             stateMachine.standingState.EnterState();
             character.animator.SetBool("Crouching", false);
         }
@@ -161,7 +160,7 @@ namespace SkillIssue.StateMachineSpace
         {
            
             stateMachine.character.ApllyGravity();
-            if (stateMachine.character.isGrounded)
+            if (stateMachine.character.isGrounded && !stateMachine.character.isJumping)
                 ExitState();
 
         }
@@ -170,7 +169,7 @@ namespace SkillIssue.StateMachineSpace
             stateMachine.character.isGrounded = false;
             stateMachine.currentState = stateMachine.jumpState;
             stateMachine.character.currentState = States.Jumping;
-            if(stateMachine.currentAction == ActionStates.None)
+            if(stateMachine.currentAction == ActionStates.None || stateMachine.currentAction == ActionStates.Landing)
                 character.characterAnimation.AddAnimation(AnimType.Movement, "JumpStart");
             character.animator.SetBool("Jumping", true);
         }
@@ -180,7 +179,11 @@ namespace SkillIssue.StateMachineSpace
             stateMachine.standingState.EnterState();
             character.animator.SetBool("Jumping", false);
             if (stateMachine.currentAction != ActionStates.Hit)
-                    character.characterAnimation.AddAnimation(AnimType.Movement, "LandingRecovery");
+            {
+                stateMachine.currentAction = ActionStates.Landing;
+                character.characterAnimation.AddAnimation(AnimType.Landing, "LandingRecovery");
+            }
+                    
         }
     }
 }
