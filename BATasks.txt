@@ -80,9 +80,7 @@ BUGS:
 MAJOR AI: It can jump down the stage (Disabling crouch)
 Saw momentary: Jump and attack cause position override (can't reproduce)
 MAJOR jumping towards enemy on the corner makes corner switch > attacking then pushes player outside corner (Cant Reproduce)
-Bug: Jump and Attack at the same time sometimes. (Animation) > these two issues can be solve with a better input system
-Bug: Comboing from jump to ground makes ground hit hit twice > Recognizes 5L as jL
-Bug: Jumping recognizes as exiting and entering instead of happening once.
+
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 
 
@@ -109,10 +107,18 @@ Bugs: OTG (in recovery) > FIxed
 Bugs: Light cancelling ignoring limit > FIXED
 Bug: Block Recovery can get hit > FIXED
 Bug:Can't Jump forward from screenedge > Fixed
+Bug: Jump and Attack at the same time sometimes. (Animation) > these two issues can be solve with a better input system
+Bug: Comboing from jump to ground makes ground hit hit twice > Recognizes 5L as jL > Fixed
+Bug: Jumping recognizes as exiting and entering instead of happening once. > Fixed
 
 Goal:
-Implement Feedback
-
+#Implement Feedback:
+5H should be kick (more range)
+jL hitbox is too broken (hitbox is too low)
+jumping arc should be more curve (more floaty / gravity)
+Add round end
+#Add Features:
+Button Mapping Special Attacks
 
 Feedback v0.1:
 Jump not working in somemachines -> Create Jump Recovery (can do any action but not movement) -work awating new feedback-
@@ -129,21 +135,19 @@ Feedback v0.2:
 AI too aggressive (Should not hit when far from opponent)
 AI should always close distance first
 Add round end
-Maybe add walkstart up
-BUG: Jumping and getting attacked  can cause that the player is considered standing
-Sometimes Damage get done even when blocked
+Maybe add walkstart up > Done
+BUG: Jumping and getting attacked  can cause that the player is considered standing > Fixed
+Sometimes Damage get done even when blocked > Fixed
 jL hitbox is too broken (hitbox is too low)
 jumping arc should be more curve (more floaty / gravity)
-add shadows to characters
-Right Side: Can fall from the corner (maybe from jumping)
+add shadows to characters > Done
+Right Side: Can fall from the corner (maybe from jumping) > Can't reproduce
 5H should be kick (more range)
-2H should be the only low profile (standing should hit crouching opponent)
-Landing needs to be more fluid (jH)
-5L5L but not 5L5L5L
-
+2H should be the only low profile (standing should hit crouching opponent) > Done
+Landing needs to be more fluid (jH) > Done
+5L5L but not 5L5L5L > Done
 Choose between input or button special
-
-NVidia framecap
+NVidia framecap > Done
 
 
 ENCUESTA al final de projecto o documentacion
