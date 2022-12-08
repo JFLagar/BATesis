@@ -62,7 +62,7 @@ Player vs Player
 Introduce Special Attacks
 
 Currently Working on:
-Button Mapping
+Button Mapping > Mapping has to save 
 -
 
 Missing Features:
@@ -85,7 +85,6 @@ MAJOR jumping towards enemy on the corner makes corner switch > attacking then p
 
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 
-Bug: Controller Mapping Bugs
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED

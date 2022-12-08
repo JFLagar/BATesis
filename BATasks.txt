@@ -62,7 +62,7 @@ Player vs Player
 Introduce Special Attacks
 
 Currently Working on:
-Button Mapping > Mapping has to save 
+Button Mapping > Mapping has to save > Going to implement new input system
 -
 
 Missing Features:

@@ -70,7 +70,7 @@ public class InputMapping : MonoBehaviour
                             if (buttonId <= 2)
                                 StartMappingInputs(buttonId);
                             else
-                                SendData(0);
+                                SendData(2);
                         }
                     }
                     else
@@ -80,7 +80,7 @@ public class InputMapping : MonoBehaviour
                         if (buttonId <= 2)
                             StartMappingInputs(buttonId);
                         else
-                            SendData(2);
+                            SendData(0);
                     }
                 }
                 else
@@ -123,8 +123,6 @@ public class InputMapping : MonoBehaviour
 
         }
        
-       
-
         DataManagment.instance.ReWriteData(data);
     }
     public bool GetInput()

@@ -10,6 +10,7 @@ namespace SkillIssue.Inputs
         public bool player2;
         public CharacterAI ai;
         public bool aiControl = false;
+        public bool controllerControl = false;
         [SerializeField]
         public List<CommandInputs> directionInputs = new List<CommandInputs>();
         [SerializeField]
@@ -21,7 +22,6 @@ namespace SkillIssue.Inputs
         public MovementInput movementInput = new MovementInput();
         // Start is called before the first frame update
         private bool movementUp, lightUp, heavyUp, specialUp;
-
         public CommandInputs movement;
         public CommandInputs input;
         public Vector2 direction;
@@ -156,18 +156,36 @@ namespace SkillIssue.Inputs
                 else
                     return null;
             }
-            if (Input.GetButtonDown(horizontal) || Input.GetButtonDown(vertical))
+            if (!controllerControl)
             {
-                movementUp = false;
-                return movementInput;
-            }
+                if (Input.GetButtonDown(horizontal) || Input.GetButtonDown(vertical))
+                {
+                    movementUp = false;
+                    return movementInput;
+                }
 
-            if (Input.GetButtonUp(horizontal) || Input.GetButtonUp(vertical))
-            {
-                movementUp = true;
-                return movementInput;
+                if (Input.GetButtonUp(horizontal) || Input.GetButtonUp(vertical))
+                {
+                    movementUp = true;
+                    return movementInput;
+                }
+                return null;
             }
-            else { return null; }
+            else
+            {
+                horizontal = "ControllerHorizontal";
+                vertical = "ControllerVertical";
+                if(Input.GetAxisRaw(horizontal) == 0 || Input.GetAxisRaw(vertical)!= 0)
+                {
+                    movementUp = false;
+                    return movementInput;
+                }
+                else
+                {
+                    movementUp = true;
+                    return movementInput;
+                }
+            }
 
         }
         bool AttackUp()

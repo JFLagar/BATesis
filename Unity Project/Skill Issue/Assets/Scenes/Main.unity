@@ -4443,6 +4443,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1957316337707236124, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: controllerControl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1957316338143150644, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: m_IsActive
       value: 1

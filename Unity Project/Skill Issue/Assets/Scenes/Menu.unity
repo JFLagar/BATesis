@@ -300,6 +300,11 @@ MonoBehaviour:
   - Press Heavy Button.
   - Press Special Button.
   buttonId: 0
+  data:
+    inputsP1: 000000000000000000000000
+    inputsP2: 000000000000000000000000
+    controllerP1: 000000000000000000000000
+    controllerP2: 000000000000000000000000
 --- !u!4 &279597536
 Transform:
   m_ObjectHideFlags: 0

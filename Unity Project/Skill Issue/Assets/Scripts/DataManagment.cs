@@ -36,6 +36,7 @@ public class DataManagment : MonoBehaviour
     {
         string json = JsonUtility.ToJson(m_data);
         File.WriteAllText(saveData, json);
+        json = File.ReadAllText(saveData);
         data = JsonUtility.FromJson<UserData>(json);
 
 
