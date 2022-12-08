@@ -54,7 +54,7 @@ Introduce Combos and Combo Display DONE
 -Introduce  Heavy Attacks- DONE
 
 Ver. 0.3:
-Introduce High/Low
+Introduce High/Low > DONE
 Introduce Rounds
 Introduce Button Mapping
 Player vs Player
@@ -62,7 +62,7 @@ Player vs Player
 Introduce Special Attacks
 
 Currently Working on:
-
+Button Mapping
 -
 
 Missing Features:

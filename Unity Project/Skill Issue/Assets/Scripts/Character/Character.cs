@@ -201,18 +201,17 @@ namespace SkillIssue.CharacterSpace
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
-            
-            
-            if (currentAction == ActionStates.Attack)
+
+            if (inputHandler.direction.x == -faceDir && currentAction != ActionStates.Hit && IsBlocking(data.attackAttribute))
+            {
+                BlockDone(data, blockCheck);
+
+            }
+           else if (currentAction == ActionStates.Attack)
             {
                 DamageDealt(data);
             }
             //block
-            else if (inputHandler.direction.x == -faceDir && currentAction != ActionStates.Hit && currentState != States.Jumping )
-            {
-                BlockDone(data, blockCheck);
-                
-            }
             else if(!blockCheck)
             {
                 DamageDealt(data);
@@ -469,6 +468,25 @@ namespace SkillIssue.CharacterSpace
         {
             currentCombo.Clear();
             storedAttack = null;
+        }
+        bool IsBlocking(AttackAttribute attack)
+        {
+            switch(currentState)
+            {
+                case States.Standing:
+                    if (attack == AttackAttribute.Low)
+                        return false;
+                    else
+                        return true;
+                case States.Crouching:
+                    if (attack == AttackAttribute.High)
+                        return false;
+                    else
+                        return true;
+                case States.Jumping:
+                    return false;
+            }
+            return false;
         }
     }
 }
