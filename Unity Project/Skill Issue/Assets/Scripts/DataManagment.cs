@@ -29,6 +29,7 @@ public class DataManagment : MonoBehaviour
         else
         {
             Debug.Log("Doesn't Exist");
+            ReWriteData(new UserData());
         }
     }
     public void ReWriteData(UserData m_data)
@@ -56,8 +57,8 @@ public class DataManagment : MonoBehaviour
 [System.Serializable]
 public class UserData
 {
-    public KeyCode[] inputsP1;
-    public KeyCode[] inputsP2;
-    public KeyCode[] controllerP1;
-    public KeyCode[] controllerP2;
+    public KeyCode[] inputsP1 = new KeyCode[3];
+    public KeyCode[] inputsP2 = new KeyCode[3];
+    public KeyCode[] controllerP1 = new KeyCode[3];
+    public KeyCode[] controllerP2 = new KeyCode[3];
 }

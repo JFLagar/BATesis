@@ -62,7 +62,7 @@ Player vs Player
 Introduce Special Attacks
 
 Currently Working on:
-
+Button Mapping
 -
 
 Missing Features:
@@ -74,7 +74,9 @@ Missing Features:
 Button Mapping - Add Controller support -> Moved to FUTURE iteration
 
 Special Attacks
-
+Grabs
+Rounds
+Character Select
 BUGS:
 
 MAJOR AI: It can jump down the stage (Disabling crouch)
@@ -83,6 +85,7 @@ MAJOR jumping towards enemy on the corner makes corner switch > attacking then p
 
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 
+Bug: Controller Mapping Bugs
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED

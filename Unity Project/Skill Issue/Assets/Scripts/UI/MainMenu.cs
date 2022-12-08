@@ -32,13 +32,15 @@ public class MainMenu : MonoBehaviour
             transform.gameObject.SetActive(false);
         }
         uiElements[id].gameObject.SetActive(true);
+        if(uiElements[1].gameObject.activeSelf)
+        {
+            GetInput();
+        }
 
     }
     public void GetInput()
     {
-        text.text = "Press the Key for Light Attack.";      
-            OpenUIElement(0);
-
+        inputMapping.StartMappingInputs();    
     }
     public void StartButton()
     {

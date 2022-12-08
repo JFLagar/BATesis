@@ -288,8 +288,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storedinputs: 00000000
-  storedKeyboardInputs: 00000000
-  storedControllerInputs: 00000000
+  storedKeyboardInputs: 000000000000000000000000
+  storedControllerInputs: 000000000000000000000000
+  currentControllerInputs: 0000000000000000
+  gotInput: 0
+  waitingForInput: 0
+  text: {fileID: 409553674}
+  texts:
+  - Press any button of desired device.
+  - Press Light Button.
+  - Press Heavy Button.
+  - Press Special Button.
+  buttonId: 0
 --- !u!4 &279597536
 Transform:
   m_ObjectHideFlags: 0
@@ -1628,4 +1638,4 @@ MonoBehaviour:
   uiElements:
   - {fileID: 1567012482}
   - {fileID: 863859267}
-  inputMapping: {fileID: 0}
+  inputMapping: {fileID: 279597535}
