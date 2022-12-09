@@ -92,9 +92,9 @@ namespace SkillIssue.StateMachineSpace
             }
             if (character.stateMachine.currentAction == ActionStates.None)
             {
-                if (input.movementInput.direction.y != 0)
+                if (input.direction.y != 0)
                 {
-                    yvalue = input.movementInput.direction.y;
+                    yvalue = input.direction.y;
                     if (yvalue > 0)
                         stateMachine.character.ApplyForce(input.direction, stateMachine.character.jumpPower);
                     //jump
@@ -134,7 +134,7 @@ namespace SkillIssue.StateMachineSpace
             {
                 return;
             }
-            if (input.movementInput.direction.y != -1)
+            if (input.direction.y != -1)
             { 
                 ExitState();
             }

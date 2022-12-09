@@ -96,7 +96,7 @@ namespace SkillIssue.Inputs
         }
         public override void InputReleased() 
         {
-
+            direction = Vector2.zero;
         }
         public override void InputHold(float time)
         {

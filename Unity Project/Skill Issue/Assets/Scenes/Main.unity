@@ -4389,8 +4389,16 @@ PrefabInstance:
       value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8678990244053129701, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678990244053129701, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: m_DefaultControlScheme
       value: Keyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678990244053129701, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}

@@ -135,7 +135,7 @@ namespace SkillIssue.CharacterSpace
                         //}
                         //else
                         {
-                            switch (inputHandler.movementInput.direction.y)
+                            switch (inputHandler.direction.y)
                             {
                                 case 0f:
                                     attack.Attack(standingAttacks[((int)type)]);
@@ -153,7 +153,7 @@ namespace SkillIssue.CharacterSpace
                         break;
 
                     case CrouchState:
-                        switch (inputHandler.movementInput.direction.y)
+                        switch (inputHandler.direction.y)
                         {
                             case 0f:
                                 attack.Attack(standingAttacks[((int)type)]);
@@ -173,7 +173,7 @@ namespace SkillIssue.CharacterSpace
                 switch (stateMachine.currentState)
                 {
                     case StandingState:
-                        if (inputHandler.movementInput.direction.x != 0)
+                        if (inputHandler.direction.x != 0)
                         {
                             Debug.Log(specialAttacks[(int)inputHandler.movementInput.direction.x + 1].ToString());
                         }
@@ -183,7 +183,7 @@ namespace SkillIssue.CharacterSpace
                         }
                         break;
                     case CrouchState:
-                        if (inputHandler.movementInput.direction.x != 0)
+                        if (inputHandler.direction.x != 0)
                         {
                             Debug.Log(specialAttacks[(int)inputHandler.movementInput.direction.x + 1].ToString());
                         }
