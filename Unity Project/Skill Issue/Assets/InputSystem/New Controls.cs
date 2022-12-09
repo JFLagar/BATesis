@@ -22,9 +22,262 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""New Controls"",
-    ""maps"": [],
-    ""controlSchemes"": []
+    ""maps"": [
+        {
+            ""name"": ""StandardMap"",
+            ""id"": ""9581ba1f-5be6-4962-8cbc-9aeb5f63f51c"",
+            ""actions"": [
+                {
+                    ""name"": ""LightButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f49f7e1-a55d-4621-8e0e-689978759d32"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HeavyButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""f266b29a-0256-4cba-93c1-b917b514a6d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpecialButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""782b59c3-5390-423a-be41-c3da82590397"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""2c6d9aab-2d57-4217-8775-2d4276b1739f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""2c1e0852-8d65-437a-a834-43d1a14c4aa6"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""928dac02-2a43-4873-b943-ba74e66dd399"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""984e58e4-ccb6-4c92-88a1-12ce6f100075"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c8efc0c8-5061-4192-a438-6da84e5895d6"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c69d0190-8080-4f0f-80c9-071455836f16"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""7dfe76f6-dd88-490a-a21a-9939665e6801"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""74e1f4cc-b037-4fed-8e81-5d9848392c18"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""51a528ac-002c-447d-b77f-3ef1c7192c90"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""26664211-dcc6-4f25-b274-428e08fb064e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""caceabd1-9e0a-45b3-99b9-ea84bd1a251a"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c464e76-db15-4288-89ec-8797abe251d7"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22420b7c-e957-4578-996a-14c50eef56f9"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""HeavyButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5346f753-a9ae-417a-8002-178d1ecd0284"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SpecialButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Menu"",
+            ""id"": ""b3d21f66-2581-4ef9-8a40-9b5b899eb30d"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""718b1d3f-c4af-404f-9001-83f85c21d4a7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d18c2c9e-03ec-4d47-9942-faf87c81f562"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        }
+    ],
+    ""controlSchemes"": [
+        {
+            ""name"": ""Keyboard"",
+            ""bindingGroup"": ""Keyboard"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Joystick>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
+        // StandardMap
+        m_StandardMap = asset.FindActionMap("StandardMap", throwIfNotFound: true);
+        m_StandardMap_LightButton = m_StandardMap.FindAction("LightButton", throwIfNotFound: true);
+        m_StandardMap_HeavyButton = m_StandardMap.FindAction("HeavyButton", throwIfNotFound: true);
+        m_StandardMap_SpecialButton = m_StandardMap.FindAction("SpecialButton", throwIfNotFound: true);
+        m_StandardMap_Movement = m_StandardMap.FindAction("Movement", throwIfNotFound: true);
+        // Menu
+        m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
+        m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -79,5 +332,124 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     public int FindBinding(InputBinding bindingMask, out InputAction action)
     {
         return asset.FindBinding(bindingMask, out action);
+    }
+
+    // StandardMap
+    private readonly InputActionMap m_StandardMap;
+    private IStandardMapActions m_StandardMapActionsCallbackInterface;
+    private readonly InputAction m_StandardMap_LightButton;
+    private readonly InputAction m_StandardMap_HeavyButton;
+    private readonly InputAction m_StandardMap_SpecialButton;
+    private readonly InputAction m_StandardMap_Movement;
+    public struct StandardMapActions
+    {
+        private @NewControls m_Wrapper;
+        public StandardMapActions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LightButton => m_Wrapper.m_StandardMap_LightButton;
+        public InputAction @HeavyButton => m_Wrapper.m_StandardMap_HeavyButton;
+        public InputAction @SpecialButton => m_Wrapper.m_StandardMap_SpecialButton;
+        public InputAction @Movement => m_Wrapper.m_StandardMap_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_StandardMap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(StandardMapActions set) { return set.Get(); }
+        public void SetCallbacks(IStandardMapActions instance)
+        {
+            if (m_Wrapper.m_StandardMapActionsCallbackInterface != null)
+            {
+                @LightButton.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnLightButton;
+                @LightButton.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnLightButton;
+                @LightButton.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnLightButton;
+                @HeavyButton.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnHeavyButton;
+                @HeavyButton.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnHeavyButton;
+                @HeavyButton.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnHeavyButton;
+                @SpecialButton.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
+                @SpecialButton.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
+                @SpecialButton.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
+                @Movement.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovement;
+            }
+            m_Wrapper.m_StandardMapActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LightButton.started += instance.OnLightButton;
+                @LightButton.performed += instance.OnLightButton;
+                @LightButton.canceled += instance.OnLightButton;
+                @HeavyButton.started += instance.OnHeavyButton;
+                @HeavyButton.performed += instance.OnHeavyButton;
+                @HeavyButton.canceled += instance.OnHeavyButton;
+                @SpecialButton.started += instance.OnSpecialButton;
+                @SpecialButton.performed += instance.OnSpecialButton;
+                @SpecialButton.canceled += instance.OnSpecialButton;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+            }
+        }
+    }
+    public StandardMapActions @StandardMap => new StandardMapActions(this);
+
+    // Menu
+    private readonly InputActionMap m_Menu;
+    private IMenuActions m_MenuActionsCallbackInterface;
+    private readonly InputAction m_Menu_Newaction;
+    public struct MenuActions
+    {
+        private @NewControls m_Wrapper;
+        public MenuActions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_Menu_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_Menu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMenuActions instance)
+        {
+            if (m_Wrapper.m_MenuActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m_MenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+        }
+    }
+    public MenuActions @Menu => new MenuActions(this);
+    private int m_KeyboardSchemeIndex = -1;
+    public InputControlScheme KeyboardScheme
+    {
+        get
+        {
+            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
+            return asset.controlSchemes[m_KeyboardSchemeIndex];
+        }
+    }
+    private int m_ControllerSchemeIndex = -1;
+    public InputControlScheme ControllerScheme
+    {
+        get
+        {
+            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
+            return asset.controlSchemes[m_ControllerSchemeIndex];
+        }
+    }
+    public interface IStandardMapActions
+    {
+        void OnLightButton(InputAction.CallbackContext context);
+        void OnHeavyButton(InputAction.CallbackContext context);
+        void OnSpecialButton(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+    }
+    public interface IMenuActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }

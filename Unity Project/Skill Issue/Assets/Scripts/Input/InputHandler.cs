@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SkillIssue.CharacterSpace;
+using UnityEngine.InputSystem;
 namespace SkillIssue.Inputs
 {
     public class InputHandler : MonoBehaviour
@@ -11,6 +12,8 @@ namespace SkillIssue.Inputs
         public CharacterAI ai;
         public bool aiControl = false;
         public bool controllerControl = false;
+        public PlayerInput playerInput;
+
         [SerializeField]
         public List<CommandInputs> directionInputs = new List<CommandInputs>();
         [SerializeField]
@@ -59,36 +62,37 @@ namespace SkillIssue.Inputs
 
         }
         void Update()
-        {
-            
-            lightButton.Update();
-            heavyButton.Update();
-            specialButton.Update();
-                //movement
-                movement = HandleMovementInput();
-            if (movement != null)
-            {
-                if (!aiControl)
-                    movementInput.direction = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
-                else
-                    movementInput.direction = new Vector2(ai.dir.x * character.faceDir, ai.dir.y);
-                movement.Activate(movementUp);
-            }
+        {                                 
+            ///OLD
+            ///
+            //lightButton.Update();
+            //heavyButton.Update();
+            //specialButton.Update();
+            //    //movement
+            //    movement = HandleMovementInput();
+            //if (movement != null)
+            //{
+            //    if (!aiControl)
+            //        movementInput.direction = new Vector2(Input.GetAxisRaw(horizontal), Input.GetAxisRaw(vertical));
+            //    else
+            //        movementInput.direction = new Vector2(ai.dir.x * character.faceDir, ai.dir.y);
+            //    movement.Activate(movementUp);
+            //}
 
-            //attack
-            input = HandleAttackInput();
-            if (input != null)
-            {
-                input.Activate(AttackUp());               
-            }
-            if (!aiControl)
-                direction = movementInput.direction;
-            else
-                direction = ai.dir * character.faceDir;
-            if(Input.GetKeyDown(KeyCode.Comma))
-            {
-                attackInputs[1].InputPressed();
-            }
+            ////attack
+            //input = HandleAttackInput();
+            //if (input != null)
+            //{
+            //    input.Activate(AttackUp());               
+            //}
+            //if (!aiControl)
+            //    direction = movementInput.direction;
+            //else
+            //    direction = ai.dir * character.faceDir;
+            //if(Input.GetKeyDown(KeyCode.Comma))
+            //{
+            //    attackInputs[1].InputPressed();
+            //}
         }
       
        public CommandInputs HandleAttackInput()
@@ -217,6 +221,18 @@ namespace SkillIssue.Inputs
                 ai.AiReset();            
             }
             movementInput.direction = Vector2.zero;
+        }
+        public void LightButton()
+        {
+            lightButton.InputPressed();
+        }
+        public void HeavyButton()
+        {
+            heavyButton.InputPressed();
+        }
+        public void SpecialButton()
+        {
+            specialButton.InputPressed();
         }
      
     }

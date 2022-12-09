@@ -13,21 +13,6 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager.instance.EnableTrainingMode();
-        }
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            GameManager.instance.ResetRound();
-        }
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            GameManager.instance.EndGame();
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GameManager.instance.PauseDebug();
-        }
+
     }
 }

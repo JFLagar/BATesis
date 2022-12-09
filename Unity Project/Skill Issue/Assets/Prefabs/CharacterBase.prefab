@@ -410,6 +410,8 @@ MonoBehaviour:
   character: {fileID: 1957316337047856815}
   repeatedAttack: 0
   sameLimit: 2
+  waitFrame: 0
+  landFrame: 0
 --- !u!95 &3090942852897552484
 Animator:
   serializedVersion: 4
@@ -862,6 +864,7 @@ GameObject:
   - component: {fileID: 1957316337707236124}
   - component: {fileID: 1957316337707236123}
   - component: {fileID: 2000404767772000394}
+  - component: {fileID: 8678990244053129701}
   m_Layer: 0
   m_Name: Logic
   m_TagString: Untagged
@@ -900,6 +903,8 @@ MonoBehaviour:
   player2: 0
   ai: {fileID: 2000404767772000394}
   aiControl: 0
+  controllerControl: 0
+  playerInput: {fileID: 0}
   directionInputs: []
   attackInputs: []
   inputs: 6a0000006b0000006c000000
@@ -948,6 +953,116 @@ MonoBehaviour:
   generatedNumber: 0
   isMoving: 0
   numberOfFrames: 0
+--- !u!114 &8678990244053129701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957316337707236127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 33d6d7cd2168da449a3271042cf78f72, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1957316337707236127}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1957316337707236124}
+        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
+        m_MethodName: LightButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7f49f7e1-a55d-4621-8e0e-689978759d32
+    m_ActionName: StandardMap/LightButton
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1957316337707236124}
+        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
+        m_MethodName: HeavyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f266b29a-0256-4cba-93c1-b917b514a6d2
+    m_ActionName: StandardMap/HeavyButton
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1957316337707236124}
+        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
+        m_MethodName: SpecialButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 782b59c3-5390-423a-be41-c3da82590397
+    m_ActionName: StandardMap/SpecialButton
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2c6d9aab-2d57-4217-8775-2d4276b1739f
+    m_ActionName: StandardMap/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 718b1d3f-c4af-404f-9001-83f85c21d4a7
+    m_ActionName: Menu/New action
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: StandardMap
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1957316338129269601
 GameObject:
   m_ObjectHideFlags: 0
