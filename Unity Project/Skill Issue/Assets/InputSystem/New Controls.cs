@@ -55,123 +55,194 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""MovementX"",
                     ""type"": ""Value"",
                     ""id"": ""2c6d9aab-2d57-4217-8775-2d4276b1739f"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": ""Normalize(min=-1,max=1),AxisDeadzone"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MovementY"",
+                    ""type"": ""Value"",
+                    ""id"": ""3e197481-09b8-43c0-be32-ca16c8a62ace"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": ""Normalize(min=-1,max=1),AxisDeadzone"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""497387cb-ea8b-45d6-82ea-90d9d0fad2ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""4c10a166-3e3b-4e10-8b98-bec9433aa8ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""2c1e0852-8d65-437a-a834-43d1a14c4aa6"",
+                    ""id"": ""16acb468-8e99-404f-b0f5-da4c24b69080"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""928dac02-2a43-4873-b943-ba74e66dd399"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""984e58e4-ccb6-4c92-88a1-12ce6f100075"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""c8efc0c8-5061-4192-a438-6da84e5895d6"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c69d0190-8080-4f0f-80c9-071455836f16"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""7dfe76f6-dd88-490a-a21a-9939665e6801"",
+                    ""name"": ""2D Vector Arrows"",
+                    ""id"": ""0ac22eed-4f07-40d9-a48f-f9145849b2d2"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""74e1f4cc-b037-4fed-8e81-5d9848392c18"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""f38a89cd-108d-4b5b-847a-f9148dee7e29"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""0a17fd00-68c9-41e9-bf9f-dc63ef00d32d"",
+                    ""path"": ""<Joystick>/stick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""51a528ac-002c-447d-b77f-3ef1c7192c90"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""name"": ""positive"",
+                    ""id"": ""0f7f7c84-1f16-4349-b75c-96358328d064"",
+                    ""path"": ""<Joystick>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""26664211-dcc6-4f25-b274-428e08fb064e"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""04b1cec5-c7e9-429d-8c10-3b2db9e83267"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9b72e226-65cb-4a12-a14d-ce3855d1cb04"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""26962e2e-084c-49c1-81e7-2b153cf53146"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""def7d5ea-29ce-4fd9-a1dc-b4889ebb5ed8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""22506764-d83c-47c7-a544-63a52c097e19"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""547e499d-e8f2-4d11-bede-623ef516b1ec"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""fab22858-a915-4f19-840f-0e00df7ec95c"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""11639995-8c63-4d42-885b-d26434c0adf1"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""caceabd1-9e0a-45b3-99b9-ea84bd1a251a"",
+                    ""name"": ""positive"",
+                    ""id"": ""3cb9da47-372d-49ad-8d76-96a9fa8568aa"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Movement"",
+                    ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -183,6 +254,39 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""LightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91293191-897a-488c-a929-36ed29e4a246"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""LightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8915ed23-50f4-4f16-abcd-cd3849db5009"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""LightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""977bdb87-2ee0-400c-9ea1-a5ec5b0f7dd9"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""HeavyButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -207,6 +311,248 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""action"": ""SpecialButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02425f3d-b63b-42fe-8055-846652dfb555"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7987d9df-ada3-4a9d-80c8-c4985259dda6"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8cef0c4c-f54b-4408-ad2f-267e5ca851a6"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0cab2d11-40d1-4532-b081-5706c3984028"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e040ad7a-2045-4803-a58c-d89169d28fba"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""9e4690c5-b5e4-4aa8-9ffe-df2fcefe8573"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""7d00537e-ba22-47b0-94de-191166dc5b1d"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""af1a7e09-f7b2-44ea-b282-b59c4290f06a"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""54ae4a62-895a-4b73-9138-094381faef98"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""1c936ff4-c448-488d-a68e-93ef110c34df"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""031e3260-bdca-4914-a48a-8bb16ae6e524"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1908452d-3664-4c31-b181-38d323683930"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9eb782f9-349f-4831-bb38-4296ad74308c"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9309d725-de81-4fa0-89c9-5cd84c7a85ad"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""8e6c1438-f54d-43f4-9146-81bd6ce6ac18"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector Arrows"",
+                    ""id"": ""3eda532f-2517-4402-9cff-aa523694f41b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1300ef50-6d48-4f5e-bb5a-8162e72b4f4f"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9afe5fb1-1725-4b13-bbef-edeeda5bf338"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3160774a-63c1-44ce-9a67-e0a28cc7b8f8"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f7fa38d-6abb-400f-8557-9b0f47139140"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""HeavyButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7feccf6-5eb1-40d3-be6b-5aa4c25f518e"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""SpecialButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68ff3885-6b95-4164-9ed5-d7f15a98c5d3"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""SpecialButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -215,9 +561,27 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
             ""id"": ""b3d21f66-2581-4ef9-8a40-9b5b899eb30d"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Navigate"",
+                    ""type"": ""Value"",
+                    ""id"": ""a6df121a-41d2-482c-962b-3bc39d0b830d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""NormalizeVector2"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Confirm"",
                     ""type"": ""Button"",
-                    ""id"": ""718b1d3f-c4af-404f-9001-83f85c21d4a7"",
+                    ""id"": ""e9ccdea8-f811-4a9f-a7d1-76a82eb3d03c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""83b7e624-03b0-4dc5-96c3-c025e27c414f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -227,12 +591,122 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""d18c2c9e-03ec-4d47-9942-faf87c81f562"",
-                    ""path"": """",
+                    ""id"": ""b5b5c560-0d2f-47f9-ab23-7a4b68bc4758"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25b4b515-ba2d-483d-ba8e-dcb626bcb786"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone(min=0.5)"",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""ba3eedc6-4047-4d5a-955e-d253da77ea4a"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""90a4f4d7-971a-4e9e-be46-d05ed5ee1902"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""743d4ea4-dc89-40f2-8fa2-1ac7d6c5b8b1"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""fa6f2150-b969-4aef-8167-469f32c6ff0b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""add1a488-b8ac-4449-bf6e-82d94a04c3f7"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""efb97669-0d7d-4810-81b9-7938350cf7c5"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35ebfe3f-f6d5-4f85-8295-32d022c1ec95"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51bde5e4-f49b-4c74-8460-7b9d5b384db4"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff7ebd47-8afd-46fa-b574-0816391f514c"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -252,16 +726,16 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Controller"",
-            ""bindingGroup"": ""Controller"",
+            ""name"": ""Pad"",
+            ""bindingGroup"": ""Pad"",
             ""devices"": [
                 {
-                    ""devicePath"": ""<Joystick>"",
-                    ""isOptional"": true,
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
                     ""isOR"": false
                 },
                 {
-                    ""devicePath"": ""<Gamepad>"",
+                    ""devicePath"": ""<Joystick>"",
                     ""isOptional"": true,
                     ""isOR"": false
                 }
@@ -274,10 +748,15 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         m_StandardMap_LightButton = m_StandardMap.FindAction("LightButton", throwIfNotFound: true);
         m_StandardMap_HeavyButton = m_StandardMap.FindAction("HeavyButton", throwIfNotFound: true);
         m_StandardMap_SpecialButton = m_StandardMap.FindAction("SpecialButton", throwIfNotFound: true);
-        m_StandardMap_Movement = m_StandardMap.FindAction("Movement", throwIfNotFound: true);
+        m_StandardMap_MovementX = m_StandardMap.FindAction("MovementX", throwIfNotFound: true);
+        m_StandardMap_MovementY = m_StandardMap.FindAction("MovementY", throwIfNotFound: true);
+        m_StandardMap_Start = m_StandardMap.FindAction("Start", throwIfNotFound: true);
+        m_StandardMap_Select = m_StandardMap.FindAction("Select", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
-        m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
+        m_Menu_Navigate = m_Menu.FindAction("Navigate", throwIfNotFound: true);
+        m_Menu_Confirm = m_Menu.FindAction("Confirm", throwIfNotFound: true);
+        m_Menu_Cancel = m_Menu.FindAction("Cancel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -340,7 +819,10 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_StandardMap_LightButton;
     private readonly InputAction m_StandardMap_HeavyButton;
     private readonly InputAction m_StandardMap_SpecialButton;
-    private readonly InputAction m_StandardMap_Movement;
+    private readonly InputAction m_StandardMap_MovementX;
+    private readonly InputAction m_StandardMap_MovementY;
+    private readonly InputAction m_StandardMap_Start;
+    private readonly InputAction m_StandardMap_Select;
     public struct StandardMapActions
     {
         private @NewControls m_Wrapper;
@@ -348,7 +830,10 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         public InputAction @LightButton => m_Wrapper.m_StandardMap_LightButton;
         public InputAction @HeavyButton => m_Wrapper.m_StandardMap_HeavyButton;
         public InputAction @SpecialButton => m_Wrapper.m_StandardMap_SpecialButton;
-        public InputAction @Movement => m_Wrapper.m_StandardMap_Movement;
+        public InputAction @MovementX => m_Wrapper.m_StandardMap_MovementX;
+        public InputAction @MovementY => m_Wrapper.m_StandardMap_MovementY;
+        public InputAction @Start => m_Wrapper.m_StandardMap_Start;
+        public InputAction @Select => m_Wrapper.m_StandardMap_Select;
         public InputActionMap Get() { return m_Wrapper.m_StandardMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -367,9 +852,18 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @SpecialButton.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
                 @SpecialButton.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
                 @SpecialButton.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
-                @Movement.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovement;
+                @MovementX.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementX;
+                @MovementX.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementX;
+                @MovementX.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementX;
+                @MovementY.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementY;
+                @MovementY.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementY;
+                @MovementY.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementY;
+                @Start.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnStart;
+                @Select.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSelect;
             }
             m_Wrapper.m_StandardMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -383,9 +877,18 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @SpecialButton.started += instance.OnSpecialButton;
                 @SpecialButton.performed += instance.OnSpecialButton;
                 @SpecialButton.canceled += instance.OnSpecialButton;
-                @Movement.started += instance.OnMovement;
-                @Movement.performed += instance.OnMovement;
-                @Movement.canceled += instance.OnMovement;
+                @MovementX.started += instance.OnMovementX;
+                @MovementX.performed += instance.OnMovementX;
+                @MovementX.canceled += instance.OnMovementX;
+                @MovementY.started += instance.OnMovementY;
+                @MovementY.performed += instance.OnMovementY;
+                @MovementY.canceled += instance.OnMovementY;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
             }
         }
     }
@@ -394,12 +897,16 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     // Menu
     private readonly InputActionMap m_Menu;
     private IMenuActions m_MenuActionsCallbackInterface;
-    private readonly InputAction m_Menu_Newaction;
+    private readonly InputAction m_Menu_Navigate;
+    private readonly InputAction m_Menu_Confirm;
+    private readonly InputAction m_Menu_Cancel;
     public struct MenuActions
     {
         private @NewControls m_Wrapper;
         public MenuActions(@NewControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Menu_Newaction;
+        public InputAction @Navigate => m_Wrapper.m_Menu_Navigate;
+        public InputAction @Confirm => m_Wrapper.m_Menu_Confirm;
+        public InputAction @Cancel => m_Wrapper.m_Menu_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -409,16 +916,28 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_MenuActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNewaction;
+                @Navigate.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Navigate.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnNavigate;
+                @Confirm.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnConfirm;
+                @Confirm.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnConfirm;
+                @Confirm.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnConfirm;
+                @Cancel.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
+                @Cancel.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
+                @Cancel.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCancel;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @Navigate.started += instance.OnNavigate;
+                @Navigate.performed += instance.OnNavigate;
+                @Navigate.canceled += instance.OnNavigate;
+                @Confirm.started += instance.OnConfirm;
+                @Confirm.performed += instance.OnConfirm;
+                @Confirm.canceled += instance.OnConfirm;
+                @Cancel.started += instance.OnCancel;
+                @Cancel.performed += instance.OnCancel;
+                @Cancel.canceled += instance.OnCancel;
             }
         }
     }
@@ -432,13 +951,13 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    private int m_ControllerSchemeIndex = -1;
-    public InputControlScheme ControllerScheme
+    private int m_PadSchemeIndex = -1;
+    public InputControlScheme PadScheme
     {
         get
         {
-            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
-            return asset.controlSchemes[m_ControllerSchemeIndex];
+            if (m_PadSchemeIndex == -1) m_PadSchemeIndex = asset.FindControlSchemeIndex("Pad");
+            return asset.controlSchemes[m_PadSchemeIndex];
         }
     }
     public interface IStandardMapActions
@@ -446,10 +965,15 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         void OnLightButton(InputAction.CallbackContext context);
         void OnHeavyButton(InputAction.CallbackContext context);
         void OnSpecialButton(InputAction.CallbackContext context);
-        void OnMovement(InputAction.CallbackContext context);
+        void OnMovementX(InputAction.CallbackContext context);
+        void OnMovementY(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnNavigate(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
 }

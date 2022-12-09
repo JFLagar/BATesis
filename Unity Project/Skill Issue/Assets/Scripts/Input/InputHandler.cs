@@ -28,7 +28,7 @@ namespace SkillIssue.Inputs
         // Start is called before the first frame update
         public CommandInputs movement;
         public CommandInputs input;
-        public Vector2 direction;
+        public Vector2  direction = Vector2.zero;
 
         // Update is called once per frame
         private void Awake()
@@ -61,7 +61,7 @@ namespace SkillIssue.Inputs
 
         }
         void Update()
-        {                                 
+        {
 
         }
       
@@ -86,13 +86,31 @@ namespace SkillIssue.Inputs
             inputActions.StandardMap.LightButton.performed += LightButton;
             inputActions.StandardMap.HeavyButton.performed += HeavyButton;
             inputActions.StandardMap.SpecialButton.performed += SpecialButton;
-            inputActions.StandardMap.Movement.performed += MovementeDown;
-            inputActions.StandardMap.Movement.canceled += MovementUp;
+            inputActions.StandardMap.Start.performed += StartButton;
+            inputActions.StandardMap.Select.performed += SelectButton;
+            inputActions.StandardMap.MovementX.performed += MovementXDown;
+            inputActions.StandardMap.MovementX.canceled += MovementXUp;
+            inputActions.StandardMap.MovementY.performed += MovementYDown;
+            inputActions.StandardMap.MovementY.canceled += MovementYUp;
         }
 
-        public void MovementeDown(InputAction.CallbackContext obj)
+        private void MovementXUp(InputAction.CallbackContext context)
         {
-            direction = obj.ReadValue<Vector2>();
+            direction.x = 0;
+        }
+
+        private void MovementXDown(InputAction.CallbackContext context)
+        {
+            direction.x = context.ReadValue<float>();
+        }
+
+        public void MovementYUp(InputAction.CallbackContext context)
+        {
+            direction.y = 0;
+        }
+        public void MovementYDown(InputAction.CallbackContext context)
+        {
+            direction.y = context.ReadValue<float>();
         }
 
         public void LightButton(InputAction.CallbackContext context)
@@ -112,6 +130,13 @@ namespace SkillIssue.Inputs
         {
             direction = Vector2.zero;
         }
-     
+        public void StartButton(InputAction.CallbackContext context)
+        {
+            GameManager.instance.EnableTrainingMode();
+        }
+        public void SelectButton(InputAction.CallbackContext context)
+        {
+            GameManager.instance.ResetRound();
+        }
     }
 }

@@ -36,6 +36,7 @@ public class InputMapping : MonoBehaviour
         {
             MapInput(buttonId);
         }
+        
     }
     public void MapInput(int inputID)
     {
