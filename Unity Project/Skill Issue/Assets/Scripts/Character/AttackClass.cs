@@ -37,6 +37,11 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             }
             Debug.Log("cancelled: " + m_data.name + data.name);
         }
+        foreach (Hitbox hitbox in hitboxes)
+        {
+            hitbox.state = ColliderState.Closed;
+            hitbox.setResponder(this);
+        }
         if (data.animation != null)
         {
             character.characterAnimation.AddAnimation(AnimType.Attack, data.animation.name);
@@ -46,10 +51,6 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         hit = false;
         m_data = data;
         currentAttack = null;      
-        foreach (Hitbox hitbox in hitboxes)
-        { 
-            hitbox.setResponder(this);
-        }
     
         //Attack
     }
@@ -88,6 +89,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     {
         if (character.stateMachine.currentAction == ActionStates.Landing)
         {
+            character.storedAttack = null;
             return true;
         }
         if (!hit)

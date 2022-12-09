@@ -1784,7 +1784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameDisplay: {fileID: 1339393046}
-  testing: 0
+  testing: 1
   character2: {fileID: 699230785}
 --- !u!1 &961373056
 GameObject:

@@ -84,7 +84,7 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 MAJOR jumping towards enemy on the corner makes corner switch > attacking then pushes player outside corner (Cant Reproduce)
 
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
-
+Bug: jH>5H causes combo bug - Fixed
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
