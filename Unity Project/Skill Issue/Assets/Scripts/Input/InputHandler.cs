@@ -15,7 +15,7 @@ namespace SkillIssue.Inputs
         public bool aiControl = false;
         public bool controllerControl = false;
         private PlayerInput playerInput;
-        
+        NewControls inputActions;
         [SerializeField]
         public List<CommandInputs> directionInputs = new List<CommandInputs>();
         [SerializeField]
@@ -36,7 +36,6 @@ namespace SkillIssue.Inputs
             if (aiControl)
                 ai.Initiate(this);
             playerInput = GetComponent<PlayerInput>();
-            
     }
         private void Start()
         {
@@ -57,6 +56,8 @@ namespace SkillIssue.Inputs
                 }
             }
             if(!player2)
+            inputActions = new NewControls();
+            inputActions.StandardMap.Enable();
             MapActions();
 
         }
@@ -80,9 +81,7 @@ namespace SkillIssue.Inputs
             movementInput.direction = Vector2.zero;
         }
         public void MapActions()
-        {
-            NewControls inputActions = new NewControls();
-            inputActions.StandardMap.Enable();
+        {        
             inputActions.StandardMap.LightButton.performed += LightButton;
             inputActions.StandardMap.HeavyButton.performed += HeavyButton;
             inputActions.StandardMap.SpecialButton.performed += SpecialButton;
@@ -92,6 +91,26 @@ namespace SkillIssue.Inputs
             inputActions.StandardMap.MovementX.canceled += MovementXUp;
             inputActions.StandardMap.MovementY.performed += MovementYDown;
             inputActions.StandardMap.MovementY.canceled += MovementYUp;
+
+            inputActions.Menu.Confirm.performed += Confirm;
+            inputActions.Menu.Cancel.performed += Cancel;
+            inputActions.Menu.Navigate.performed += NavigateUI;
+            
+        }
+
+        private void NavigateUI(InputAction.CallbackContext obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Cancel(InputAction.CallbackContext obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Confirm(InputAction.CallbackContext obj)
+        {
+            throw new NotImplementedException();
         }
 
         private void MovementXUp(InputAction.CallbackContext context)

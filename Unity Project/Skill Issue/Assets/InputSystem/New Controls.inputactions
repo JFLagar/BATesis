@@ -109,7 +109,7 @@
                     "path": "<Joystick>/stick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -120,7 +120,7 @@
                     "path": "<Joystick>/stick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -142,7 +142,7 @@
                     "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -153,7 +153,7 @@
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -175,7 +175,7 @@
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -186,7 +186,7 @@
                     "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -208,7 +208,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -219,7 +219,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "MovementX",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -230,7 +230,7 @@
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "LightButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -241,7 +241,7 @@
                     "path": "<Joystick>/trigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "LightButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -252,7 +252,7 @@
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "LightButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -263,7 +263,7 @@
                     "path": "<Joystick>/trigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "HeavyButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -274,7 +274,7 @@
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "HeavyButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -285,7 +285,7 @@
                     "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "SpecialButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -296,7 +296,7 @@
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -307,7 +307,7 @@
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -318,7 +318,7 @@
                     "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -329,7 +329,7 @@
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -340,7 +340,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -351,7 +351,7 @@
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "Normalize(min=-1,max=1)",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": true,
                     "isPartOfComposite": false
@@ -362,7 +362,7 @@
                     "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -373,7 +373,7 @@
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -384,7 +384,7 @@
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "Normalize(min=-1,max=1)",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": true,
                     "isPartOfComposite": false
@@ -395,7 +395,7 @@
                     "path": "<Joystick>/stick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -406,7 +406,7 @@
                     "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -417,7 +417,7 @@
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "Normalize(min=-1,max=1)",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": true,
                     "isPartOfComposite": false
@@ -428,7 +428,7 @@
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -439,7 +439,7 @@
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -450,7 +450,7 @@
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": true,
                     "isPartOfComposite": false
@@ -461,7 +461,7 @@
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "MovementY",
                     "isComposite": true,
                     "isPartOfComposite": false
@@ -483,7 +483,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -494,7 +494,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "MovementY",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -505,7 +505,7 @@
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "HeavyButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -516,7 +516,7 @@
                     "path": "<Joystick>/trigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "SpecialButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -527,7 +527,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "SpecialButton",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -573,7 +573,7 @@
                     "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -584,7 +584,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "StickDeadzone(min=0.5)",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -606,7 +606,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -617,7 +617,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -628,7 +628,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -639,7 +639,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -650,7 +650,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "Confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -661,7 +661,7 @@
                     "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -672,7 +672,7 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pad",
+                    "groups": "PadP1",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -683,7 +683,7 @@
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard",
+                    "groups": "KeyboardP1",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -693,8 +693,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "KeyboardP1",
+            "bindingGroup": "KeyboardP1",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
@@ -704,8 +704,8 @@
             ]
         },
         {
-            "name": "Pad",
-            "bindingGroup": "Pad",
+            "name": "PadP1",
+            "bindingGroup": "PadP1",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
@@ -715,6 +715,44 @@
                 {
                     "devicePath": "<Joystick>",
                     "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "PadP2",
+            "bindingGroup": "PadP2",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Joystick>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "KeyboardP2",
+            "bindingGroup": "KeyboardP2",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
                     "isOR": false
                 }
             ]

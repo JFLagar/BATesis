@@ -131,7 +131,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -142,7 +142,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -164,7 +164,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -175,7 +175,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -197,7 +197,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -208,7 +208,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -230,7 +230,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -241,7 +241,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -252,7 +252,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""LightButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -263,7 +263,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""LightButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -274,7 +274,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""LightButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -285,7 +285,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""HeavyButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -296,7 +296,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""HeavyButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -307,7 +307,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""SpecialButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -318,7 +318,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -329,7 +329,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -340,7 +340,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -351,7 +351,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/backspace"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -362,7 +362,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -373,7 +373,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -384,7 +384,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -395,7 +395,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -406,7 +406,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -417,7 +417,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -428,7 +428,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -439,7 +439,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -450,7 +450,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -461,7 +461,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -472,7 +472,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -483,7 +483,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -505,7 +505,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -516,7 +516,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -527,7 +527,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""HeavyButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -538,7 +538,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""SpecialButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -549,7 +549,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""SpecialButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -595,7 +595,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -606,7 +606,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone(min=0.5)"",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -628,7 +628,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -639,7 +639,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -650,7 +650,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -661,7 +661,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -672,7 +672,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -683,7 +683,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -694,7 +694,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pad"",
+                    ""groups"": ""PadP1"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -705,7 +705,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardP1"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -715,8 +715,8 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Keyboard"",
-            ""bindingGroup"": ""Keyboard"",
+            ""name"": ""KeyboardP1"",
+            ""bindingGroup"": ""KeyboardP1"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
@@ -726,8 +726,8 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
             ]
         },
         {
-            ""name"": ""Pad"",
-            ""bindingGroup"": ""Pad"",
+            ""name"": ""PadP1"",
+            ""bindingGroup"": ""PadP1"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
@@ -737,6 +737,44 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 {
                     ""devicePath"": ""<Joystick>"",
                     ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""PadP2"",
+            ""bindingGroup"": ""PadP2"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Joystick>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""KeyboardP2"",
+            ""bindingGroup"": ""KeyboardP2"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Keyboard"",
+            ""bindingGroup"": ""Keyboard"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -942,6 +980,42 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
+    private int m_KeyboardP1SchemeIndex = -1;
+    public InputControlScheme KeyboardP1Scheme
+    {
+        get
+        {
+            if (m_KeyboardP1SchemeIndex == -1) m_KeyboardP1SchemeIndex = asset.FindControlSchemeIndex("KeyboardP1");
+            return asset.controlSchemes[m_KeyboardP1SchemeIndex];
+        }
+    }
+    private int m_PadP1SchemeIndex = -1;
+    public InputControlScheme PadP1Scheme
+    {
+        get
+        {
+            if (m_PadP1SchemeIndex == -1) m_PadP1SchemeIndex = asset.FindControlSchemeIndex("PadP1");
+            return asset.controlSchemes[m_PadP1SchemeIndex];
+        }
+    }
+    private int m_PadP2SchemeIndex = -1;
+    public InputControlScheme PadP2Scheme
+    {
+        get
+        {
+            if (m_PadP2SchemeIndex == -1) m_PadP2SchemeIndex = asset.FindControlSchemeIndex("PadP2");
+            return asset.controlSchemes[m_PadP2SchemeIndex];
+        }
+    }
+    private int m_KeyboardP2SchemeIndex = -1;
+    public InputControlScheme KeyboardP2Scheme
+    {
+        get
+        {
+            if (m_KeyboardP2SchemeIndex == -1) m_KeyboardP2SchemeIndex = asset.FindControlSchemeIndex("KeyboardP2");
+            return asset.controlSchemes[m_KeyboardP2SchemeIndex];
+        }
+    }
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -949,15 +1023,6 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         {
             if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
             return asset.controlSchemes[m_KeyboardSchemeIndex];
-        }
-    }
-    private int m_PadSchemeIndex = -1;
-    public InputControlScheme PadScheme
-    {
-        get
-        {
-            if (m_PadSchemeIndex == -1) m_PadSchemeIndex = asset.FindControlSchemeIndex("Pad");
-            return asset.controlSchemes[m_PadSchemeIndex];
         }
     }
     public interface IStandardMapActions
