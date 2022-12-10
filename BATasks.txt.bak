@@ -85,7 +85,6 @@ MAJOR jumping towards enemy on the corner makes corner switch > attacking then p
 
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 
-Bug: Vector2 Values are wrong when simulpress > Fixed
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
@@ -114,6 +113,7 @@ Bug: Jump and Attack at the same time sometimes. (Animation) > these two issues 
 Bug: Comboing from jump to ground makes ground hit hit twice > Recognizes 5L as jL > Fixed
 Bug: Jumping recognizes as exiting and entering instead of happening once. > Fixed
 Bug: jH>5H causes combo bug - Fixed
+Bug: Vector2 Values are wrong when simulpress > Fixed
 
 Goal:
 #Implement Feedback:

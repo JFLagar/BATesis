@@ -62,7 +62,8 @@ Player vs Player
 Introduce Special Attacks
 
 Currently Working on:
-Button Mapping > Mapping has to save > Going to implement new input system
+Button Mapping > Mapping has to save > Going to implement new input system 
+> After Rebinding need to check ControlerMap changes
 -
 
 Missing Features:
@@ -116,6 +117,7 @@ Bug: jH>5H causes combo bug - Fixed
 Bug: Vector2 Values are wrong when simulpress > Fixed
 
 Goal:
+
 #Implement Feedback:
 5H should be kick (more range)
 jL hitbox is too broken (hitbox is too low)

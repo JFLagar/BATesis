@@ -24,7 +24,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     ""name"": ""New Controls"",
     ""maps"": [
         {
-            ""name"": ""StandardMap"",
+            ""name"": ""ControlsP1"",
             ""id"": ""9581ba1f-5be6-4962-8cbc-9aeb5f63f51c"",
             ""actions"": [
                 {
@@ -131,7 +131,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -142,7 +142,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -164,7 +164,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -175,7 +175,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -197,7 +197,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -208,7 +208,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -230,7 +230,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -241,7 +241,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""MovementX"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -252,7 +252,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""LightButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -263,7 +263,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""LightButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -274,7 +274,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""LightButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -285,7 +285,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""HeavyButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -296,7 +296,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""HeavyButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -307,7 +307,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""SpecialButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -318,7 +318,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -329,7 +329,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -340,7 +340,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -351,7 +351,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/backspace"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -362,7 +362,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -373,7 +373,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -384,7 +384,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -395,7 +395,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -406,7 +406,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -417,7 +417,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -428,7 +428,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -439,7 +439,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -450,7 +450,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -461,7 +461,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -472,7 +472,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -483,7 +483,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""MovementY"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
@@ -505,7 +505,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -516,7 +516,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""MovementY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -527,7 +527,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""HeavyButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -538,7 +538,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""SpecialButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -549,7 +549,540 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
+                    ""action"": ""SpecialButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""ControlsP2"",
+            ""id"": ""a3d567fb-5b11-4853-a9b2-08c394da57fd"",
+            ""actions"": [
+                {
+                    ""name"": ""LightButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""9911f476-83a1-43ed-90bd-83dd7f7fc0e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HeavyButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""165e421f-0b82-4ba4-ad16-783816af3400"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpecialButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""2ee44432-a756-42ac-8220-0c8c4bb45506"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MovementX"",
+                    ""type"": ""Value"",
+                    ""id"": ""10c00a78-bda4-475c-bb51-761530b3ecb5"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": ""Normalize(min=-1,max=1),AxisDeadzone"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MovementY"",
+                    ""type"": ""Value"",
+                    ""id"": ""752af59a-8b3c-49b4-bf41-54d95c03a012"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": ""Normalize(min=-1,max=1),AxisDeadzone"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""72b54f49-7f63-4cf2-9188-518f4679383b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b410c67-0dd3-4526-a900-395410007931"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""b1b8c5e3-c806-4f90-a57f-95c0fda9b8e1"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector Arrows"",
+                    ""id"": ""8f9f3bf7-b4ed-4b64-a6de-24042920116e"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""bbb543ab-17c8-4800-b0f1-e5780f902310"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""02b2175e-1c5e-49b9-9566-350de60211af"",
+                    ""path"": ""<Joystick>/stick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""cf328214-94af-4ca7-9890-48242a81d3a0"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""b79db9d7-6155-4cc0-a20b-fdbfcc9848a5"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c43f9895-558a-467c-af94-1b4c7982dbf3"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""35d7ec2d-2340-4081-80fe-b99a1ea858d9"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""e51b49a1-3905-48c6-9788-f5584a1a143b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""a842dd87-f655-4808-b6e1-145cc50908af"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b1eca30e-64f4-4991-a9af-54d2b3358df4"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""98845545-b19b-4379-9407-e50c4a25f0c8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c42f24e3-0eb0-4a9e-b989-fe74c1aedad1"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""e57a0df5-f213-489d-8e9e-f5122387bc3f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MovementX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8cbed818-b428-4b61-8854-a409e451d69b"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6168b469-1ef1-4557-bc26-43a6b52ea22f"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""LightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37f18136-4fbd-4b26-84e1-214a246cb76e"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""LightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09d7073a-c637-4374-b88a-435bc0b5907c"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""HeavyButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87447a73-7e5d-4d93-a57a-f5c8eff7f9f4"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""HeavyButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ada03d7c-5277-4cf5-bafc-b628759b7f0c"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SpecialButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5787ada6-6d24-4243-867b-2f2da00bb83e"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45857e74-c77b-4cd1-8808-37b4a35ee041"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61e5b521-1da7-4f38-a8ba-27093a1c6b49"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fdb537b8-6933-46cb-a0c2-59ef87cc1b66"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78fdb4d8-1e0b-4201-a93d-b80bb3ec7315"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""40f3ae94-d93b-4a07-a312-812a57f14019"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""43e95cc8-dc0a-4818-9da7-50695a8beb80"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""be277b20-2e7e-4857-acb9-f181d72f67ac"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""07e072f2-44bc-4b8f-b20b-560a8767c895"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""4842043a-b325-46e1-8fa7-d452fc064ff9"",
+                    ""path"": ""<Joystick>/stick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""f17b1c04-7e36-446b-b172-e59e358e0475"",
+                    ""path"": ""<Joystick>/stick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""6b238ee5-53d5-4aa0-9a7f-e5b5c458e4c5"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-1,max=1)"",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""14b998de-71a1-4304-8774-ea50777b4d39"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""a38164e9-1390-49ae-ab3e-141895c6274a"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""5f8b637d-5499-4267-b46c-4c5728b882ab"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector Arrows"",
+                    ""id"": ""ddf597a8-57e5-4cdc-9b47-b88ebe7965b4"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""7bbd4c68-3969-4e73-b47a-a92394ddfc77"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""d079869b-d9da-4d41-aeb9-379d20b1d861"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3613f856-e03d-4788-b19f-308ae15ddf64"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MovementY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73015446-4ecf-4eb4-bf1f-523dc4838349"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""HeavyButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""408d54ee-9619-41b0-8283-3e92649b1579"",
+                    ""path"": ""<Joystick>/trigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
+                    ""action"": ""SpecialButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d8d69b7-0300-4c51-a866-3f56066c6685"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Pad"",
                     ""action"": ""SpecialButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -595,7 +1128,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -606,7 +1139,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": ""StickDeadzone(min=0.5)"",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -628,7 +1161,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -639,7 +1172,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -650,7 +1183,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -661,7 +1194,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -672,7 +1205,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -683,7 +1216,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Confirm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -694,7 +1227,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PadP1"",
+                    ""groups"": ""Pad"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -705,7 +1238,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardP1"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -714,60 +1247,6 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         }
     ],
     ""controlSchemes"": [
-        {
-            ""name"": ""KeyboardP1"",
-            ""bindingGroup"": ""KeyboardP1"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""PadP1"",
-            ""bindingGroup"": ""PadP1"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Joystick>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""PadP2"",
-            ""bindingGroup"": ""PadP2"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Gamepad>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Joystick>"",
-                    ""isOptional"": true,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""KeyboardP2"",
-            ""bindingGroup"": ""KeyboardP2"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        },
         {
             ""name"": ""Keyboard"",
             ""bindingGroup"": ""Keyboard"",
@@ -778,18 +1257,43 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Pad"",
+            ""bindingGroup"": ""Pad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Joystick>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
-        // StandardMap
-        m_StandardMap = asset.FindActionMap("StandardMap", throwIfNotFound: true);
-        m_StandardMap_LightButton = m_StandardMap.FindAction("LightButton", throwIfNotFound: true);
-        m_StandardMap_HeavyButton = m_StandardMap.FindAction("HeavyButton", throwIfNotFound: true);
-        m_StandardMap_SpecialButton = m_StandardMap.FindAction("SpecialButton", throwIfNotFound: true);
-        m_StandardMap_MovementX = m_StandardMap.FindAction("MovementX", throwIfNotFound: true);
-        m_StandardMap_MovementY = m_StandardMap.FindAction("MovementY", throwIfNotFound: true);
-        m_StandardMap_Start = m_StandardMap.FindAction("Start", throwIfNotFound: true);
-        m_StandardMap_Select = m_StandardMap.FindAction("Select", throwIfNotFound: true);
+        // ControlsP1
+        m_ControlsP1 = asset.FindActionMap("ControlsP1", throwIfNotFound: true);
+        m_ControlsP1_LightButton = m_ControlsP1.FindAction("LightButton", throwIfNotFound: true);
+        m_ControlsP1_HeavyButton = m_ControlsP1.FindAction("HeavyButton", throwIfNotFound: true);
+        m_ControlsP1_SpecialButton = m_ControlsP1.FindAction("SpecialButton", throwIfNotFound: true);
+        m_ControlsP1_MovementX = m_ControlsP1.FindAction("MovementX", throwIfNotFound: true);
+        m_ControlsP1_MovementY = m_ControlsP1.FindAction("MovementY", throwIfNotFound: true);
+        m_ControlsP1_Start = m_ControlsP1.FindAction("Start", throwIfNotFound: true);
+        m_ControlsP1_Select = m_ControlsP1.FindAction("Select", throwIfNotFound: true);
+        // ControlsP2
+        m_ControlsP2 = asset.FindActionMap("ControlsP2", throwIfNotFound: true);
+        m_ControlsP2_LightButton = m_ControlsP2.FindAction("LightButton", throwIfNotFound: true);
+        m_ControlsP2_HeavyButton = m_ControlsP2.FindAction("HeavyButton", throwIfNotFound: true);
+        m_ControlsP2_SpecialButton = m_ControlsP2.FindAction("SpecialButton", throwIfNotFound: true);
+        m_ControlsP2_MovementX = m_ControlsP2.FindAction("MovementX", throwIfNotFound: true);
+        m_ControlsP2_MovementY = m_ControlsP2.FindAction("MovementY", throwIfNotFound: true);
+        m_ControlsP2_Start = m_ControlsP2.FindAction("Start", throwIfNotFound: true);
+        m_ControlsP2_Select = m_ControlsP2.FindAction("Select", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Navigate = m_Menu.FindAction("Navigate", throwIfNotFound: true);
@@ -851,59 +1355,59 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // StandardMap
-    private readonly InputActionMap m_StandardMap;
-    private IStandardMapActions m_StandardMapActionsCallbackInterface;
-    private readonly InputAction m_StandardMap_LightButton;
-    private readonly InputAction m_StandardMap_HeavyButton;
-    private readonly InputAction m_StandardMap_SpecialButton;
-    private readonly InputAction m_StandardMap_MovementX;
-    private readonly InputAction m_StandardMap_MovementY;
-    private readonly InputAction m_StandardMap_Start;
-    private readonly InputAction m_StandardMap_Select;
-    public struct StandardMapActions
+    // ControlsP1
+    private readonly InputActionMap m_ControlsP1;
+    private IControlsP1Actions m_ControlsP1ActionsCallbackInterface;
+    private readonly InputAction m_ControlsP1_LightButton;
+    private readonly InputAction m_ControlsP1_HeavyButton;
+    private readonly InputAction m_ControlsP1_SpecialButton;
+    private readonly InputAction m_ControlsP1_MovementX;
+    private readonly InputAction m_ControlsP1_MovementY;
+    private readonly InputAction m_ControlsP1_Start;
+    private readonly InputAction m_ControlsP1_Select;
+    public struct ControlsP1Actions
     {
         private @NewControls m_Wrapper;
-        public StandardMapActions(@NewControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @LightButton => m_Wrapper.m_StandardMap_LightButton;
-        public InputAction @HeavyButton => m_Wrapper.m_StandardMap_HeavyButton;
-        public InputAction @SpecialButton => m_Wrapper.m_StandardMap_SpecialButton;
-        public InputAction @MovementX => m_Wrapper.m_StandardMap_MovementX;
-        public InputAction @MovementY => m_Wrapper.m_StandardMap_MovementY;
-        public InputAction @Start => m_Wrapper.m_StandardMap_Start;
-        public InputAction @Select => m_Wrapper.m_StandardMap_Select;
-        public InputActionMap Get() { return m_Wrapper.m_StandardMap; }
+        public ControlsP1Actions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LightButton => m_Wrapper.m_ControlsP1_LightButton;
+        public InputAction @HeavyButton => m_Wrapper.m_ControlsP1_HeavyButton;
+        public InputAction @SpecialButton => m_Wrapper.m_ControlsP1_SpecialButton;
+        public InputAction @MovementX => m_Wrapper.m_ControlsP1_MovementX;
+        public InputAction @MovementY => m_Wrapper.m_ControlsP1_MovementY;
+        public InputAction @Start => m_Wrapper.m_ControlsP1_Start;
+        public InputAction @Select => m_Wrapper.m_ControlsP1_Select;
+        public InputActionMap Get() { return m_Wrapper.m_ControlsP1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(StandardMapActions set) { return set.Get(); }
-        public void SetCallbacks(IStandardMapActions instance)
+        public static implicit operator InputActionMap(ControlsP1Actions set) { return set.Get(); }
+        public void SetCallbacks(IControlsP1Actions instance)
         {
-            if (m_Wrapper.m_StandardMapActionsCallbackInterface != null)
+            if (m_Wrapper.m_ControlsP1ActionsCallbackInterface != null)
             {
-                @LightButton.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnLightButton;
-                @LightButton.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnLightButton;
-                @LightButton.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnLightButton;
-                @HeavyButton.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnHeavyButton;
-                @HeavyButton.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnHeavyButton;
-                @HeavyButton.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnHeavyButton;
-                @SpecialButton.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
-                @SpecialButton.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
-                @SpecialButton.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSpecialButton;
-                @MovementX.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementX;
-                @MovementX.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementX;
-                @MovementX.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementX;
-                @MovementY.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementY;
-                @MovementY.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementY;
-                @MovementY.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnMovementY;
-                @Start.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnStart;
-                @Start.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnStart;
-                @Start.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnStart;
-                @Select.started -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_StandardMapActionsCallbackInterface.OnSelect;
+                @LightButton.started -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnLightButton;
+                @LightButton.performed -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnLightButton;
+                @LightButton.canceled -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnLightButton;
+                @HeavyButton.started -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnHeavyButton;
+                @HeavyButton.performed -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnHeavyButton;
+                @HeavyButton.canceled -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnHeavyButton;
+                @SpecialButton.started -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnSpecialButton;
+                @SpecialButton.performed -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnSpecialButton;
+                @SpecialButton.canceled -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnSpecialButton;
+                @MovementX.started -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnMovementX;
+                @MovementX.performed -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnMovementX;
+                @MovementX.canceled -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnMovementX;
+                @MovementY.started -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnMovementY;
+                @MovementY.performed -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnMovementY;
+                @MovementY.canceled -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnMovementY;
+                @Start.started -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnStart;
+                @Select.started -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_ControlsP1ActionsCallbackInterface.OnSelect;
             }
-            m_Wrapper.m_StandardMapActionsCallbackInterface = instance;
+            m_Wrapper.m_ControlsP1ActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @LightButton.started += instance.OnLightButton;
@@ -930,7 +1434,88 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
             }
         }
     }
-    public StandardMapActions @StandardMap => new StandardMapActions(this);
+    public ControlsP1Actions @ControlsP1 => new ControlsP1Actions(this);
+
+    // ControlsP2
+    private readonly InputActionMap m_ControlsP2;
+    private IControlsP2Actions m_ControlsP2ActionsCallbackInterface;
+    private readonly InputAction m_ControlsP2_LightButton;
+    private readonly InputAction m_ControlsP2_HeavyButton;
+    private readonly InputAction m_ControlsP2_SpecialButton;
+    private readonly InputAction m_ControlsP2_MovementX;
+    private readonly InputAction m_ControlsP2_MovementY;
+    private readonly InputAction m_ControlsP2_Start;
+    private readonly InputAction m_ControlsP2_Select;
+    public struct ControlsP2Actions
+    {
+        private @NewControls m_Wrapper;
+        public ControlsP2Actions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LightButton => m_Wrapper.m_ControlsP2_LightButton;
+        public InputAction @HeavyButton => m_Wrapper.m_ControlsP2_HeavyButton;
+        public InputAction @SpecialButton => m_Wrapper.m_ControlsP2_SpecialButton;
+        public InputAction @MovementX => m_Wrapper.m_ControlsP2_MovementX;
+        public InputAction @MovementY => m_Wrapper.m_ControlsP2_MovementY;
+        public InputAction @Start => m_Wrapper.m_ControlsP2_Start;
+        public InputAction @Select => m_Wrapper.m_ControlsP2_Select;
+        public InputActionMap Get() { return m_Wrapper.m_ControlsP2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ControlsP2Actions set) { return set.Get(); }
+        public void SetCallbacks(IControlsP2Actions instance)
+        {
+            if (m_Wrapper.m_ControlsP2ActionsCallbackInterface != null)
+            {
+                @LightButton.started -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnLightButton;
+                @LightButton.performed -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnLightButton;
+                @LightButton.canceled -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnLightButton;
+                @HeavyButton.started -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnHeavyButton;
+                @HeavyButton.performed -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnHeavyButton;
+                @HeavyButton.canceled -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnHeavyButton;
+                @SpecialButton.started -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnSpecialButton;
+                @SpecialButton.performed -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnSpecialButton;
+                @SpecialButton.canceled -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnSpecialButton;
+                @MovementX.started -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnMovementX;
+                @MovementX.performed -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnMovementX;
+                @MovementX.canceled -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnMovementX;
+                @MovementY.started -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnMovementY;
+                @MovementY.performed -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnMovementY;
+                @MovementY.canceled -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnMovementY;
+                @Start.started -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnStart;
+                @Select.started -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_ControlsP2ActionsCallbackInterface.OnSelect;
+            }
+            m_Wrapper.m_ControlsP2ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LightButton.started += instance.OnLightButton;
+                @LightButton.performed += instance.OnLightButton;
+                @LightButton.canceled += instance.OnLightButton;
+                @HeavyButton.started += instance.OnHeavyButton;
+                @HeavyButton.performed += instance.OnHeavyButton;
+                @HeavyButton.canceled += instance.OnHeavyButton;
+                @SpecialButton.started += instance.OnSpecialButton;
+                @SpecialButton.performed += instance.OnSpecialButton;
+                @SpecialButton.canceled += instance.OnSpecialButton;
+                @MovementX.started += instance.OnMovementX;
+                @MovementX.performed += instance.OnMovementX;
+                @MovementX.canceled += instance.OnMovementX;
+                @MovementY.started += instance.OnMovementY;
+                @MovementY.performed += instance.OnMovementY;
+                @MovementY.canceled += instance.OnMovementY;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
+            }
+        }
+    }
+    public ControlsP2Actions @ControlsP2 => new ControlsP2Actions(this);
 
     // Menu
     private readonly InputActionMap m_Menu;
@@ -980,42 +1565,6 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
-    private int m_KeyboardP1SchemeIndex = -1;
-    public InputControlScheme KeyboardP1Scheme
-    {
-        get
-        {
-            if (m_KeyboardP1SchemeIndex == -1) m_KeyboardP1SchemeIndex = asset.FindControlSchemeIndex("KeyboardP1");
-            return asset.controlSchemes[m_KeyboardP1SchemeIndex];
-        }
-    }
-    private int m_PadP1SchemeIndex = -1;
-    public InputControlScheme PadP1Scheme
-    {
-        get
-        {
-            if (m_PadP1SchemeIndex == -1) m_PadP1SchemeIndex = asset.FindControlSchemeIndex("PadP1");
-            return asset.controlSchemes[m_PadP1SchemeIndex];
-        }
-    }
-    private int m_PadP2SchemeIndex = -1;
-    public InputControlScheme PadP2Scheme
-    {
-        get
-        {
-            if (m_PadP2SchemeIndex == -1) m_PadP2SchemeIndex = asset.FindControlSchemeIndex("PadP2");
-            return asset.controlSchemes[m_PadP2SchemeIndex];
-        }
-    }
-    private int m_KeyboardP2SchemeIndex = -1;
-    public InputControlScheme KeyboardP2Scheme
-    {
-        get
-        {
-            if (m_KeyboardP2SchemeIndex == -1) m_KeyboardP2SchemeIndex = asset.FindControlSchemeIndex("KeyboardP2");
-            return asset.controlSchemes[m_KeyboardP2SchemeIndex];
-        }
-    }
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -1025,7 +1574,26 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KeyboardSchemeIndex];
         }
     }
-    public interface IStandardMapActions
+    private int m_PadSchemeIndex = -1;
+    public InputControlScheme PadScheme
+    {
+        get
+        {
+            if (m_PadSchemeIndex == -1) m_PadSchemeIndex = asset.FindControlSchemeIndex("Pad");
+            return asset.controlSchemes[m_PadSchemeIndex];
+        }
+    }
+    public interface IControlsP1Actions
+    {
+        void OnLightButton(InputAction.CallbackContext context);
+        void OnHeavyButton(InputAction.CallbackContext context);
+        void OnSpecialButton(InputAction.CallbackContext context);
+        void OnMovementX(InputAction.CallbackContext context);
+        void OnMovementY(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
+    }
+    public interface IControlsP2Actions
     {
         void OnLightButton(InputAction.CallbackContext context);
         void OnHeavyButton(InputAction.CallbackContext context);

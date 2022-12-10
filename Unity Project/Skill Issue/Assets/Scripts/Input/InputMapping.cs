@@ -34,12 +34,11 @@ public class InputMapping : MonoBehaviour
     }
     public void MapInput(string excludedControl)
     {
-       
+
     }
 
     public void StartMappingInputs(int currentButton =-1)
     {
-
         
     }
     public void SendData()
