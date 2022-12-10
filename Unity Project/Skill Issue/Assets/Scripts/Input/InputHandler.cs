@@ -101,7 +101,19 @@ namespace SkillIssue.Inputs
 
         private void MovementXDown(InputAction.CallbackContext context)
         {
-            direction.x = context.ReadValue<float>();
+            float value = context.ReadValue<float>();
+            switch (value)
+            {
+                case 0:
+                    direction.x = 0;
+                    break;
+                case < 0:
+                    direction.x = -1;
+                    break;
+                case > 0:
+                    direction.x = 1;
+                    break;
+            }
         }
 
         public void MovementYUp(InputAction.CallbackContext context)
@@ -110,7 +122,19 @@ namespace SkillIssue.Inputs
         }
         public void MovementYDown(InputAction.CallbackContext context)
         {
-            direction.y = context.ReadValue<float>();
+            float value = context.ReadValue<float>();
+           switch (value)
+            {
+                case 0:
+                    direction.y = 0;
+                    break;
+                case < 0:
+                    direction.y = -1;
+                    break;
+                case > 0:
+                    direction.y = 1;
+                    break;
+            }
         }
 
         public void LightButton(InputAction.CallbackContext context)
