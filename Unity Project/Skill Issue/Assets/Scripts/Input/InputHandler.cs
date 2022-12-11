@@ -10,7 +10,6 @@ namespace SkillIssue.Inputs
     public class InputHandler : MonoBehaviour
     {
         public Character character;
-        public bool player2;
         public CharacterAI ai;
         public bool aiControl = false;
         public bool controllerControl = false;
@@ -44,22 +43,13 @@ namespace SkillIssue.Inputs
             heavyButton.character = character;
             specialButton.character = character;
 
-            if (DataManagment.instance != null)
+            //MapActions(player2);
+
+            playerInput.SwitchCurrentControlScheme(playerInput.defaultControlScheme, Keyboard.current);
+            foreach(InputDevice device in InputSystem.devices)
             {
-                if (!player2)
-                { 
-                    inputs = DataManagment.instance.data.inputsP1; 
-                }
-                else
-                {
-                    //inputs = DataManagment.instance.data.inputsP2;
-                }
+                Debug.Log(device.displayName + device.deviceId + device.GetType().Name);
             }
-            if(!player2)
-            inputActions = new NewControls();
-
-            MapActions(player2);
-
         }
         void Update()
         {
@@ -82,37 +72,18 @@ namespace SkillIssue.Inputs
         }
         public void MapActions(bool player)
         {
-            if(!player2)
             {
-                inputActions.ControlsP1.Enable();
-                inputActions.ControlsP1.LightButton.performed += LightButton;
-                inputActions.ControlsP1.HeavyButton.performed += HeavyButton;
-                inputActions.ControlsP1.SpecialButton.performed += SpecialButton;
-                inputActions.ControlsP1.Start.performed += StartButton;
-                inputActions.ControlsP1.Select.performed += SelectButton;
-                inputActions.ControlsP1.MovementX.performed += MovementXDown;
-                inputActions.ControlsP1.MovementX.canceled += MovementXUp;
-                inputActions.ControlsP1.MovementY.performed += MovementYDown;
-                inputActions.ControlsP1.MovementY.canceled += MovementYUp;
+                inputActions.Controls.Enable();
+                inputActions.Controls.LightButton.performed += LightButton;
+                inputActions.Controls.HeavyButton.performed += HeavyButton;
+                inputActions.Controls.SpecialButton.performed += SpecialButton;
+                inputActions.Controls.Start.performed += StartButton;
+                inputActions.Controls.Select.performed += SelectButton;
+                inputActions.Controls.MovementX.performed += MovementXDown;
+                inputActions.Controls.MovementX.canceled += MovementXUp;
+                inputActions.Controls.MovementY.performed += MovementYDown;
+                inputActions.Controls.MovementY.canceled += MovementYUp;
             }
-            else
-            {
-                inputActions.ControlsP2.Enable();
-                inputActions.ControlsP2.LightButton.performed += LightButton;
-                inputActions.ControlsP2.HeavyButton.performed += HeavyButton;
-                inputActions.ControlsP2.SpecialButton.performed += SpecialButton;
-                inputActions.ControlsP2.Start.performed += StartButton;
-                inputActions.ControlsP2.Select.performed += SelectButton;
-                inputActions.ControlsP2.MovementX.performed += MovementXDown;
-                inputActions.ControlsP2.MovementX.canceled += MovementXUp;
-                inputActions.ControlsP2.MovementY.performed += MovementYDown;
-                inputActions.ControlsP2.MovementY.canceled += MovementYUp;
-            }
-            
-
-            inputActions.Menu.Confirm.performed += Confirm;
-            inputActions.Menu.Cancel.performed += Cancel;
-            inputActions.Menu.Navigate.performed += NavigateUI;
             
         }
 
@@ -131,12 +102,12 @@ namespace SkillIssue.Inputs
             throw new NotImplementedException();
         }
 
-        private void MovementXUp(InputAction.CallbackContext context)
+        public void MovementXUp(InputAction.CallbackContext context)
         {
             direction.x = 0;
         }
 
-        private void MovementXDown(InputAction.CallbackContext context)
+        public void MovementXDown(InputAction.CallbackContext context)
         {
             float value = context.ReadValue<float>();
             switch (value)

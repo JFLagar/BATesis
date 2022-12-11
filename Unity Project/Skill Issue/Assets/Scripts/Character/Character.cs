@@ -362,6 +362,7 @@ namespace SkillIssue.CharacterSpace
             {
                 characterAnimation.AddAnimation(AnimType.Movement, "JumpFall");
             }
+            if(!isGrounded)
             isJumping = false;
             landed = false;
            

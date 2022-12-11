@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+public enum Controllers
+{
+    keyboard1,
+    keyboard2,
+    controller1,
+    controller2
+}
 public class DataManagment : MonoBehaviour
 {
     public static DataManagment instance;
+    public Controllers controllerP1 , controllerP2;
     private string saveData;
     public UserData data;
     // Start is called before the first frame update

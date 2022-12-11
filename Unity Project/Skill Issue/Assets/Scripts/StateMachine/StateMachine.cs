@@ -96,7 +96,7 @@ namespace SkillIssue.StateMachineSpace
                 {
                     yvalue = input.direction.y;
                     if (yvalue > 0)
-                        stateMachine.character.ApplyForce(input.direction, stateMachine.character.jumpPower);
+                        stateMachine.character.ApplyForce(new Vector2(input.direction.x, 1f), stateMachine.character.jumpPower);
                     //jump
                     ExitState();
                 }

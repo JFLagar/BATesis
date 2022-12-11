@@ -62,7 +62,9 @@ Player vs Player
 Introduce Special Attacks
 
 Currently Working on:
-Button Mapping > Mapping has to save > Going to implement new input system
+Button Mapping > Mapping has to save > Going to implement new input system 
+> After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
+
 -
 
 Missing Features:
@@ -84,7 +86,8 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 MAJOR jumping towards enemy on the corner makes corner switch > attacking then pushes player outside corner (Cant Reproduce)
 
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
-
+Bug: Input mapping dont carry over from scene to scene
+Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
@@ -116,6 +119,7 @@ Bug: jH>5H causes combo bug - Fixed
 Bug: Vector2 Values are wrong when simulpress > Fixed
 
 Goal:
+
 #Implement Feedback:
 5H should be kick (more range)
 jL hitbox is too broken (hitbox is too low)

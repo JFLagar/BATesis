@@ -904,7 +904,6 @@ MonoBehaviour:
   ai: {fileID: 2000404767772000394}
   aiControl: 0
   controllerControl: 0
-  playerInput: {fileID: 0}
   directionInputs: []
   attackInputs: []
   inputs: 6a0000006b0000006c000000
@@ -991,76 +990,81 @@ MonoBehaviour:
         m_CallState: 2
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1957316337707236124}
-        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
-        m_MethodName: LightButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 7f49f7e1-a55d-4621-8e0e-689978759d32
-    m_ActionName: StandardMap/LightButton
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1957316337707236124}
-        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
-        m_MethodName: HeavyButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f266b29a-0256-4cba-93c1-b917b514a6d2
-    m_ActionName: StandardMap/HeavyButton
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1957316337707236124}
-        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
-        m_MethodName: SpecialButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 782b59c3-5390-423a-be41-c3da82590397
-    m_ActionName: StandardMap/SpecialButton
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 2c6d9aab-2d57-4217-8775-2d4276b1739f
-    m_ActionName: StandardMap/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+      m_Calls: []
+    m_ActionId: 12689ecd-5c38-466c-9c60-a31231a94d2d
+    m_ActionName: Controls/LightButton[/Keyboard/numpad7,/6B Controller/trigger,/Performance
+      Designed Products Rock Candy Wired Controller for Nintendo Switch/trigger,/Keyboard/j]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 718b1d3f-c4af-404f-9001-83f85c21d4a7
-    m_ActionName: Menu/New action
+    m_ActionId: 7cca8d26-1583-4690-ac46-651eb4210b19
+    m_ActionName: Controls/HeavyButton[/6B Controller/trigger,/Performance Designed
+      Products Rock Candy Wired Controller for Nintendo Switch/trigger,/Keyboard/numpad8,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d776459f-c10d-4c51-abc7-9f6066a3e4e6
+    m_ActionName: Controls/SpecialButton[/Keyboard/numpad9,/6B Controller/trigger,/Performance
+      Designed Products Rock Candy Wired Controller for Nintendo Switch/trigger,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1957316337707236124}
+        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
+        m_MethodName: MovementXDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 224a8d6e-22a5-4660-a10c-0842415987d6
+    m_ActionName: Controls/MovementX[/6B Controller/stick/left,/Performance Designed
+      Products Rock Candy Wired Controller for Nintendo Switch/stick/left,/6B Controller/stick/right,/Performance
+      Designed Products Rock Candy Wired Controller for Nintendo Switch/stick/right,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1957316337707236124}
+        m_TargetAssemblyTypeName: SkillIssue.Inputs.InputHandler, Assembly-CSharp
+        m_MethodName: MovementYDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d6aaa5b0-7d1d-4ac3-bf3b-6d210c58a356
+    m_ActionName: Controls/MovementY[/6B Controller/stick/down,/Performance Designed
+      Products Rock Candy Wired Controller for Nintendo Switch/stick/down,/6B Controller/stick/up,/Performance
+      Designed Products Rock Candy Wired Controller for Nintendo Switch/stick/up,/Keyboard/downArrow,/Keyboard/upArrow,/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f240a9d-334a-493c-84ce-471afb2dd76d
+    m_ActionName: Controls/Start[/6B Controller/trigger,/Performance Designed Products
+      Rock Candy Wired Controller for Nintendo Switch/trigger,/Keyboard/numpadMinus,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2a2c2a9d-62f7-480e-a308-2c2018eb4173
+    m_ActionName: Controls/Select[/6B Controller/trigger,/Performance Designed Products
+      Rock Candy Wired Controller for Nintendo Switch/trigger,/Keyboard/numpadPlus,/Keyboard/space,/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a6df121a-41d2-482c-962b-3bc39d0b830d
+    m_ActionName: Menu/Navigate
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e9ccdea8-f811-4a9f-a7d1-76a82eb3d03c
+    m_ActionName: Menu/Confirm
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 83b7e624-03b0-4dc5-96c3-c025e27c414f
+    m_ActionName: Menu/Cancel
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: StandardMap
+  m_DefaultControlScheme: Keyboard1
+  m_DefaultActionMap: Controls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1957316338129269601
