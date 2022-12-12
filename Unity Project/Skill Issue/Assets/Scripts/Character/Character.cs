@@ -55,7 +55,8 @@ namespace SkillIssue.CharacterSpace
         public List<AttackData> currentCombo = new List<AttackData>();
         public bool visualState;
         public Color32[] stateColors;
-   
+
+        private Transform origin;
         private void Awake()
         {
             inputHandler.character = this;
@@ -66,6 +67,7 @@ namespace SkillIssue.CharacterSpace
         {
             pushbox.setResponder(this);
             pushbox.character = this;
+            origin = transform;
         }
 
         // Update is called once per frame
@@ -266,6 +268,10 @@ namespace SkillIssue.CharacterSpace
                     ApplyForce(blockDir, 3f);
             }
         }
+        public void ResetPos()
+        {
+            transform.position = origin.position;
+        }
         public void FixPosition()
         {
             if (!landed)
@@ -274,6 +280,7 @@ namespace SkillIssue.CharacterSpace
                 landed = true;
             }
         }
+
         public void CharacterMove(Vector2 direction)
         {
             float speed = movementspeed;

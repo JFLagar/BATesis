@@ -13,21 +13,21 @@ public class GameManager : MonoBehaviour
     public bool testing;
     public Character character2;
     public static GameManager instance;
+    public int p1rounds;
+    public int p2rounds;
+    public UIBehaviour uIBehaviour;
     private void Awake()
     {
+        Debug.Log("GameManager Start)");
+        if (instance != null)
+            return;
+        instance = this;
         Debug.Log("GameManager Awake");
         QualitySettings.vSyncCount = 0;
 
         Application.targetFrameRate = 60;
     }
     // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("GameManager Start)");
-        if (instance != null)
-            return;
-        instance = this;
-    }
 
     internal void PauseDebug()
     {
@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
         frameDisplay.text = Mathf.Ceil(fps).ToString();
+        p1rounds = ScoreTracker.instance.p1score;
+        p2rounds = ScoreTracker.instance.p2score;
 
     }
 
@@ -53,12 +55,14 @@ public class GameManager : MonoBehaviour
     {
         if (testing)
             return;
+
         //for now
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
     public void ResetRound()
     {
+        ScoreTracker.instance.ResetAll();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }

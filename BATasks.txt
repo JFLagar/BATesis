@@ -56,15 +56,15 @@ Introduce Combos and Combo Display DONE
 Ver. 0.3:
 Introduce High/Low > DONE
 Introduce Rounds
-Introduce Button Mapping
-Player vs Player
+Introduce Button Mapping -> Functional
+Player vs Player > DONE
 -
 Introduce Special Attacks
 
 Currently Working on:
 Button Mapping > Mapping has to save > Going to implement new input system 
 > After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
-OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working
+OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > Rebinding removes movement as well
 -
 
 Missing Features:
@@ -88,6 +88,7 @@ MAJOR jumping towards enemy on the corner makes corner switch > attacking then p
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 Bug: Input mapping dont carry over from scene to scene
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled
+Bug: Rounds not displaying with for loop
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED

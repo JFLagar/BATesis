@@ -56,15 +56,15 @@ Introduce Combos and Combo Display DONE
 Ver. 0.3:
 Introduce High/Low > DONE
 Introduce Rounds
-Introduce Button Mapping
-Player vs Player
+Introduce Button Mapping -> Functional
+Player vs Player > DONE
 -
 Introduce Special Attacks
 
 Currently Working on:
 Button Mapping > Mapping has to save > Going to implement new input system 
 > After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
-
+OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > Rebinding removes movement as well
 -
 
 Missing Features:

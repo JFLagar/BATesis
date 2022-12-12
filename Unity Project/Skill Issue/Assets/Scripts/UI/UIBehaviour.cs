@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SkillIssue.CharacterSpace;
 using TMPro;
+using System;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class UIBehaviour : MonoBehaviour
     public TextMeshProUGUI timerText;
     public float timer = 99;
     public TextMeshProUGUI debug;
+    public Image[] p1Rounds, p2Rounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,9 @@ public class UIBehaviour : MonoBehaviour
         {
             sliders[i].maxValue = characters[i].maxHealth;
         }
-       
+    
+ 
+
     }
 
     // Update is called once per frame
@@ -51,6 +55,17 @@ public class UIBehaviour : MonoBehaviour
             sliders[i].value = characters[i].currentHealth;
             if(sliders[i].value <= 0)
             {
+                if (!manager.testing)
+                {
+                    if (i == 0)
+                    {
+                        ScoreTracker.instance.AddP2score();
+                    }
+                    else
+                    {
+                        ScoreTracker.instance.AddP1score();
+                    }
+                }
                 manager.RestartRound();
             }
         }
@@ -59,6 +74,33 @@ public class UIBehaviour : MonoBehaviour
         if (timer <= 0)
         {
             manager.RestartRound();
+        }
+        switch (ScoreTracker.instance.p1score)
+        {
+            case 0: p1Rounds[0].enabled = true;
+                break;
+            case 1: p1Rounds[0].enabled = true;
+                p1Rounds[1].enabled = true;
+                break;
+        }
+        switch (ScoreTracker.instance.p2score)
+        {
+            case 0:
+                p2Rounds[0].enabled = true;
+                break;
+            case 1:
+                p2Rounds[0].enabled = true;
+                p2Rounds[1].enabled = true;
+                break;
+        }
+    }
+
+    internal void ResetAll()
+    {
+        foreach(Slider slider in sliders)
+        {
+            slider.value = slider.maxValue;
+            timer = 99;
         }
     }
 }
