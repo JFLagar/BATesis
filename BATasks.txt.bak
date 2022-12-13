@@ -88,6 +88,7 @@ MAJOR jumping towards enemy on the corner makes corner switch > attacking then p
 Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
 Bug: Input mapping dont carry over from scene to scene
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled
+Bug: Rounds not displaying with for loop
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
