@@ -61,11 +61,18 @@ Player vs Player > DONE
 -
 Introduce Special Attacks
 
+Ver. 0.4:
+Special Attacks (Fire)
+Main Menu
+-
+AI
+
 Currently Working on:
 Button Mapping > Mapping has to save > Going to implement new input system 
 > After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
 OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > Rebinding removes movement as well
 -
+Special Attacks Art (Fire)
 
 Missing Features:
 

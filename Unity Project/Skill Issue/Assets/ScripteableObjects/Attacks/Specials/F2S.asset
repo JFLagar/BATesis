@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8c0269a5515054f88d0d58df109046, type: 3}
   m_Name: F2S
   m_EditorClassIdentifier: 
+  attackState: 0
   attackAttribute: 0
   attackType: 0
   damage: 0
   hitstun: 0
   blockstun: 0
   proratio: 0
-  launcher: 0
+  push: {x: 0, y: 0}
+  movement: {x: 0, y: 0}
+  movementDuration: 0
+  launcher: 1
   dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 0

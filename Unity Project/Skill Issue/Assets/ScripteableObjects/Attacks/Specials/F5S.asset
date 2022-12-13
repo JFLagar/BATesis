@@ -16,13 +16,13 @@ MonoBehaviour:
   attackAttribute: 0
   attackType: 2
   damage: 0
-  hitstun: 0
-  blockstun: 0
+  hitstun: 10
+  blockstun: 10
   proratio: 0
   push: {x: 0, y: 0}
   movement: {x: 0, y: 0}
   movementDuration: 0
-  launcher: 0
+  launcher: 1
   dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 0

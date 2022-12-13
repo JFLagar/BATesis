@@ -96,7 +96,7 @@ Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rew
 Bug: Input mapping dont carry over from scene to scene
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled
 Bug: Rounds not displaying with for loop
-
+Bug: P2 side is bugged and can cause fall into the screen after attacking(and jumping)
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
 Blocking Detection overrides damage > Fixed
