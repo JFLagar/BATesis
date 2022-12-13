@@ -33,6 +33,8 @@ namespace SkillIssue
         public int blockstun;
         public int proratio;
         public Vector2 push;
+        public Vector2 movement;
+        public float movementDuration;
         [Space]
         public bool launcher;
         public bool dashCancel;

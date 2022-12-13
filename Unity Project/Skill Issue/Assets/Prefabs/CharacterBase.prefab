@@ -338,6 +338,7 @@ MonoBehaviour:
   faceDir: 0
   xDiff: 0
   render: {fileID: 1957316337702257311}
+  vfx: {fileID: 7746021680221113552}
   screenCheck: {fileID: 235791260883590438}
   stateMachine: {fileID: 1957316337707236123}
   inputHandler: {fileID: 1957316337707236124}
@@ -1659,7 +1660,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

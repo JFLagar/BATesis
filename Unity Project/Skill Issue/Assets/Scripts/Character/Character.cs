@@ -11,6 +11,7 @@ namespace SkillIssue.CharacterSpace
         public float faceDir;
         public float xDiff;
         public SpriteRenderer render;
+        public SpriteRenderer vfx;
         public SpriteRenderer screenCheck;
         public StateMachine stateMachine;
         public InputHandler inputHandler;
@@ -101,6 +102,7 @@ namespace SkillIssue.CharacterSpace
                     if (render != null) render.flipX = true;
                     collisions.eulerAngles = new Vector3(0, 180, 0);
                 }
+                vfx.flipX = render.flipX;
             }
             comboHit = currentCombo.Count;
             //Safety messure against stunlock
@@ -177,25 +179,28 @@ namespace SkillIssue.CharacterSpace
                     case StandingState:
                         if (inputHandler.direction.x != 0)
                         {
-                            Debug.Log(specialAttacks[(int)inputHandler.movementInput.direction.x + 1].ToString());
+                            int id = ((int)(inputHandler.direction.x * faceDir));
+                            attack.Attack(specialAttacks[id + 2]);
+                            break;
                         }
                         else
                         {
-                            Debug.Log(specialAttacks[1].ToString());
+                            attack.Attack(specialAttacks[2]);
+                            break;
                         }
-                        break;
                     case CrouchState:
                         if (inputHandler.direction.x != 0)
                         {
-                            Debug.Log(specialAttacks[(int)inputHandler.movementInput.direction.x + 1].ToString());
+                            int id = ((int)(inputHandler.direction.x * faceDir));
+                            attack.Attack(specialAttacks[id + 2]);
+                            break;
                         }
                         else
                         {
-                            Debug.Log(specialAttacks[3].ToString());
+                            attack.Attack(specialAttacks[2]);
+                            break;
                         }
-                        break;
                     case JumpState:
-                        Debug.Log(specialAttacks[4].ToString());
                         break;
                 }
             }
@@ -359,6 +364,26 @@ namespace SkillIssue.CharacterSpace
               
             currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction, duration, m_bool));
     
+        }
+        public void ApplyAttackForce(AttackData data)
+        {
+            Vector2 direction = data.movement;
+            float duration = data.movementDuration;
+            {
+                if (wall && direction.x == wallx || cameraWall && direction.x == wallx)
+                    direction.x = 0;
+                else
+                    wall = false;
+                y = direction.y;
+                applyGravity = false;
+            }
+
+
+            if (currentMovementCoroutine != null)
+                StopCoroutine(currentMovementCoroutine);
+
+            currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction * faceDir, duration, false));
+
         }
 
         public void ApllyGravity()
