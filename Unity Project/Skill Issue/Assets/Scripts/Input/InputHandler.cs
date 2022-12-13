@@ -43,10 +43,11 @@ namespace SkillIssue.Inputs
             heavyButton.character = character;
             specialButton.character = character;
 
-            //MapActions(player2);
 
+            inputActions = new NewControls();
             playerInput.SwitchCurrentControlScheme(playerInput.defaultControlScheme, Keyboard.current);
-            foreach(InputDevice device in InputSystem.devices)
+            //MapActions(true);
+            foreach (InputDevice device in InputSystem.devices)
             {
                 Debug.Log(device.displayName + device.deviceId + device.GetType().Name);
             }
@@ -147,15 +148,18 @@ namespace SkillIssue.Inputs
 
         public void LightButton(InputAction.CallbackContext context)
         {
-            lightButton.InputPressed();
+            if (context.started)
+                lightButton.InputPressed();
         }
         public void HeavyButton(InputAction.CallbackContext context)
         {
-            heavyButton.InputPressed();
+            if (context.started)
+                heavyButton.InputPressed();
         }
         public void SpecialButton(InputAction.CallbackContext context)
         {
-            specialButton.InputPressed();
+            if (context.started)
+                specialButton.InputPressed();
         }
 
         public void MovementUp(InputAction.CallbackContext context)
