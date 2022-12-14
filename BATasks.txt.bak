@@ -90,6 +90,7 @@ Special Attacks
 Grabs
 Rounds
 -Character Select-
+
 BUGS:
 
 MAJOR AI: It can jump down the stage (Disabling crouch)
@@ -99,13 +100,7 @@ Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disab
 Bug: Input mapping dont carry over from scene to scene > OBsolete
 
 
-Bug: 6S on corner pushes character down - Fixed
-Bug: P2 side CORNER is bugged and can cause fall into the screen after attacking(and jumping) > Fixed
-	>Rework ground detection > FIxed
-	>jumping towards enemy on the corner makes corner switch > Fixed
-	attacking then pushes player outside corner (Cant Reproduce) > Fixed
-	> Sometimes opponent can't get bellow jumping and steal corner. FIXED
-		> Pushbox rework (when applying gravity) FIXED
+
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
@@ -137,6 +132,13 @@ Bug: jH>5H causes combo bug - Fixed
 Bug: Vector2 Values are wrong when simulpress > Fixed
 Bug: 6S bugs after 2H (maybe pushbloc) > Fixed
 Bug: Round start sometimes bugs - FIXED
+Bug: 6S on corner pushes character down - Fixed
+Bug: P2 side CORNER is bugged and can cause fall into the screen after attacking(and jumping) > Fixed
+	>Rework ground detection > FIxed
+	>jumping towards enemy on the corner makes corner switch > Fixed
+	attacking then pushes player outside corner (Cant Reproduce) > Fixed
+	> Sometimes opponent can't get bellow jumping and steal corner. FIXED
+		> Pushbox rework (when applying gravity) FIXED
 
 Goal:
 

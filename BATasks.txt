@@ -69,9 +69,13 @@ AI
 Grabs
 
 Currently Working on:
-Button Mapping > Mapping has to save > Going to implement new input system 
-> After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
+OBSOLETE Button Mapping > Mapping has to save > Going to implement new input system 
+OBSOLETE > After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
 OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > Rebinding removes movement as well
+
+Working on main Menu
+Spawing fireball from 5S
+Create grabs
 -
 Special Attacks Art (Fire)
 
@@ -182,11 +186,11 @@ NVidia framecap > Done
 Feedback v0.3:
 
 Add Dash (Maybe)
-Combo timing too small (hit stun has to be longer from jumping attacks)
+Combo timing too small (hit stun has to be longer from jumping attacks) Done
 Add Sound
 Add Menu
-6S should have less active frames
+6S should have less active frames Done
 Stage should be smaller
-Jump has to be floatier (verticlar)
+Jump has to be floatier (verticlar) Done
 
 ENCUESTA al final de projecto o documentacion
