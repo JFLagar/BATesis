@@ -53,13 +53,13 @@ public class ScreenLimit : MonoBehaviour
 
     private void CheckCollisions()
     {
-        if (previousColliders.Length != 0)
-        {
-            for (int i = 0; i < previousColliders.Length; i++)
-            {
-                previousColliders[i].GetComponent<Pushbox>()?.character.IsGrounded(false);
-            }
-        }
+        //if (previousColliders.Length != 0)
+        //{
+        //    for (int i = 0; i < previousColliders.Length; i++)
+        //    {
+        //        previousColliders[i].GetComponent<Pushbox>()?.character.IsGrounded(false);
+        //    }
+        //}
         colliders = Physics2D.OverlapBoxAll(m_collider.bounds.center, m_collider.bounds.size, 0, (mask));
        
         if(colliders.Length > 1)
@@ -72,7 +72,11 @@ public class ScreenLimit : MonoBehaviour
             if (!cameraWall)
             {
                 if (!isWall)
-                { collidedbox?.character.IsGrounded(true); }
+                {
+                    bool applyGravity = (bool)(collidedbox?.character.GetGravity());
+                    if(applyGravity)
+                    collidedbox?.character.IsGrounded(true); 
+                }
                 else
                 {
                     collidedbox?.character.SetWall(true, x);

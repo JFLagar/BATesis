@@ -130,6 +130,8 @@ namespace SkillIssue.StateMachineSpace
         public override void Update(InputHandler input)
         {
             action = character.stateMachine.currentAction == ActionStates.None;
+            if (!character.isGrounded)
+                ExitState();
             if (!action)
             {
                 return;
@@ -150,15 +152,24 @@ namespace SkillIssue.StateMachineSpace
         }
         public override void ExitState() 
         {
-            stateMachine.standingState.EnterState();
-            character.animator.SetBool("Crouching", false);
+            if(stateMachine.character.isGrounded)
+            {
+                stateMachine.standingState.EnterState();
+                character.animator.SetBool("Crouching", false);
+            }
+            else
+            {
+                stateMachine.jumpState.EnterState();
+            }           
+
         }
     }
     public class JumpState : State
     {
         public override void Update(InputHandler input)
         {
-           
+            if (!stateMachine.character.IsMoving())
+                stateMachine.character.applyGravity = true;
             stateMachine.character.ApllyGravity();
             if (stateMachine.character.isGrounded && !stateMachine.character.isJumping)
                 ExitState();

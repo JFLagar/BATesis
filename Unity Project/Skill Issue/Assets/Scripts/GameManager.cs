@@ -18,11 +18,9 @@ public class GameManager : MonoBehaviour
     public UIBehaviour uIBehaviour;
     private void Awake()
     {
-        Debug.Log("GameManager Start)");
         if (instance != null)
             return;
         instance = this;
-        Debug.Log("GameManager Awake");
         QualitySettings.vSyncCount = 0;
 
         Application.targetFrameRate = 60;

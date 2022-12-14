@@ -47,10 +47,6 @@ namespace SkillIssue.Inputs
             inputActions = new NewControls();
             playerInput.SwitchCurrentControlScheme(playerInput.defaultControlScheme, Keyboard.current);
             //MapActions(true);
-            foreach (InputDevice device in InputSystem.devices)
-            {
-                Debug.Log(device.displayName + device.deviceId + device.GetType().Name);
-            }
         }
         void Update()
         {

@@ -66,6 +66,7 @@ Special Attacks (Fire)
 Main Menu
 -
 AI
+Grabs
 
 Currently Working on:
 Button Mapping > Mapping has to save > Going to implement new input system 
@@ -75,6 +76,9 @@ OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > 
 Special Attacks Art (Fire)
 
 Missing Features:
+Grabs
+Different Specials
+
 
 >Combos -> Animation Cancel -> Combo Display > Done
 >> Add Proratio
@@ -85,17 +89,23 @@ Button Mapping - Add Controller support -> Moved to FUTURE iteration
 Special Attacks
 Grabs
 Rounds
-Character Select
+-Character Select-
 BUGS:
 
 MAJOR AI: It can jump down the stage (Disabling crouch)
 Saw momentary: Jump and attack cause position override (can't reproduce)
-MAJOR jumping towards enemy on the corner makes corner switch > attacking then pushes player outside corner (Cant Reproduce)
 
-Bug: Sometimes opponent can't get bellow jumping and steal corner. > Pushbox rework
-Bug: Input mapping dont carry over from scene to scene
-Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled
-Bug: Rounds not displaying with for loop
+Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled X
+Bug: Input mapping dont carry over from scene to scene > OBsolete
+
+
+Bug: 6S on corner pushes character down - Fixed
+Bug: P2 side CORNER is bugged and can cause fall into the screen after attacking(and jumping) > Fixed
+	>Rework ground detection > FIxed
+	>jumping towards enemy on the corner makes corner switch > Fixed
+	attacking then pushes player outside corner (Cant Reproduce) > Fixed
+	> Sometimes opponent can't get bellow jumping and steal corner. FIXED
+		> Pushbox rework (when applying gravity) FIXED
 
 Fixed:
 Attacks: Attacks don't wait for the previous one to finish to be done (overwrites value) FIXED
@@ -125,6 +135,8 @@ Bug: Comboing from jump to ground makes ground hit hit twice > Recognizes 5L as 
 Bug: Jumping recognizes as exiting and entering instead of happening once. > Fixed
 Bug: jH>5H causes combo bug - Fixed
 Bug: Vector2 Values are wrong when simulpress > Fixed
+Bug: 6S bugs after 2H (maybe pushbloc) > Fixed
+Bug: Round start sometimes bugs - FIXED
 
 Goal:
 
@@ -165,5 +177,14 @@ Landing needs to be more fluid (jH) > Done
 Choose between input or button special
 NVidia framecap > Done
 
+Feedback v0.3:
+
+Add Dash (Maybe)
+Combo timing too small (hit stun has to be longer from jumping attacks)
+Add Sound
+Add Menu
+6S should have less active frames
+Stage should be smaller
+Jump has to be floatier (verticlar)
 
 ENCUESTA al final de projecto o documentacion

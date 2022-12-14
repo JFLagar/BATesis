@@ -15,7 +15,7 @@ MonoBehaviour:
   attackState: 1
   attackAttribute: 1
   attackType: 1
-  damage: 15
+  damage: 10
   hitstun: 10
   blockstun: 10
   proratio: 1

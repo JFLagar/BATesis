@@ -15,11 +15,13 @@ MonoBehaviour:
   attackState: 2
   attackAttribute: 2
   attackType: 1
-  damage: 15
+  damage: 10
   hitstun: 5
   blockstun: 5
   proratio: 1
   push: {x: 0.5, y: 1.5}
+  movement: {x: 0, y: 0}
+  movementDuration: 0
   launcher: 0
   dashCancel: 0
   jumpCancel: 1

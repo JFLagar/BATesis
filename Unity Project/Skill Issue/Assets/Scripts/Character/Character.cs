@@ -226,7 +226,6 @@ namespace SkillIssue.CharacterSpace
         }
         private void DamageDealt(AttackData data)
         {
-            Debug.Log(data.name);
             Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
 
             stateMachine.currentAction = ActionStates.Hit;
@@ -338,7 +337,8 @@ namespace SkillIssue.CharacterSpace
         public void ApplyCounterPush(Vector2 direction, float duration)
         {
             oponent.wall = false;
-            oponent.ApplyForce(direction, duration, true);
+            Vector2 dir = new Vector2(direction.x, 0f);
+            oponent.ApplyForce(dir, duration, true);
         }
         public void ApplyForce(Vector2 direction, float duration, bool counterforce = false)
         {
@@ -355,6 +355,8 @@ namespace SkillIssue.CharacterSpace
                 else
                     wall = false;
                 y = direction.y;
+                if (y > 0)
+                    isGrounded = false;
                 applyGravity = false;
             }
        
@@ -375,14 +377,16 @@ namespace SkillIssue.CharacterSpace
                 else
                     wall = false;
                 y = direction.y;
+                if (y > 0)
+                isGrounded = false;
                 applyGravity = false;
+                wall = false;
             }
-
 
             if (currentMovementCoroutine != null)
                 StopCoroutine(currentMovementCoroutine);
 
-            currentMovementCoroutine = StartCoroutine(ForceCoroutine(direction * faceDir, duration, false));
+            currentMovementCoroutine =StartCoroutine(ForceAttackCoroutine(new Vector2 (direction.x * faceDir, direction.y), duration, false));
 
         }
 
@@ -449,6 +453,24 @@ namespace SkillIssue.CharacterSpace
         {
             animator.SetTrigger("Recovery");
         }
+        public IEnumerator ForceAttackCoroutine(Vector2 direction, float duration, bool counterForce)
+        {
+            float i = 0f;
+            while (i != duration)
+            {
+                if (!counterForce)
+                {
+                    if (direction.x != 0 && ((wall && direction.x == wallx) || (cameraWall && direction.x == wallx)))
+                        direction.x = 0;
+                }
+                x = direction.x;
+                transform.Translate(direction * forceSpeed * Time.deltaTime);
+                yield return null;
+                i++;
+                forceLeftOver = duration - i;
+            }
+            currentMovementCoroutine = null;
+        }
         public IEnumerator ForceCoroutine(Vector2 direction, float duration, bool counterForce)
         {
             float i = 0f;
@@ -465,7 +487,7 @@ namespace SkillIssue.CharacterSpace
                 i++;
                 forceLeftOver = duration - i;
             }
-            applyGravity = true;
+            currentMovementCoroutine = null;
         }
         public IEnumerator RecoveryFramesCoroutines(int frames)
         {
@@ -477,10 +499,19 @@ namespace SkillIssue.CharacterSpace
             }
             HitRecover();
         }
+        public bool IsMoving()
+        {
+            if (currentMovementCoroutine != null)
+                return true;
+            return false;
+        }
+        public bool GetGravity()
+        {
+            return applyGravity;
+        }
         public void TestAction(string name)
         {
             stateMachine.currentAction = ActionStates.Landing;
-            Debug.Log(stateMachine.currentAction);
         }
         public void HitboxesEnabled()
         {

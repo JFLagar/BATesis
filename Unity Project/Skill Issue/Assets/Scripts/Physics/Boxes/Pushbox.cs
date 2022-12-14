@@ -59,8 +59,7 @@ public class Pushbox : MonoBehaviour
     }
     public void HandleCollision(Pushbox pushbox)
     {
-   
-        
+           
             state = ColliderState.Colliding;
         if(pushbox.character.wall && character.x == pushbox.character.wallx)
         {
@@ -70,16 +69,14 @@ public class Pushbox : MonoBehaviour
         {
             pushbox.character.wall = true;
             pushbox.character.wallx = character.wallx;
-            if (pushbox.character.applyGravity)
-            {
-                pushbox.character.CharacterPush(character.wallx);
-            }
+            if (!pushbox.character.isGrounded)
+                pushbox.character.transform.position = new Vector2(pushbox.character.transform.position.x + 0.18f * -pushbox.character.faceDir, pushbox.character.transform.position.y);
         }
         if (character.x != 0 && character.x == character.faceDir)
         {
             if (character.applyGravity)
             {
-                pushbox.character.CharacterPush(character.faceDir/2 * push * Time.deltaTime);
+                pushbox.character.CharacterPush(-pushbox.character.faceDir/2 * push * Time.deltaTime);
             }
             else
             {

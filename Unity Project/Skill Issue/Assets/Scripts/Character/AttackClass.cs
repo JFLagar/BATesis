@@ -20,10 +20,8 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     public int landFrame = 0;
     public void Attack(AttackData data)
     {
-        Debug.Log("Using " + data + character.currentAction);
         if (character.stateMachine.currentState == character.stateMachine.jumpState)
         {
-            Debug.Log("StartedCoroutine");
             landCheck = StartCoroutine(CheckForLandCancel(data));
         }
       //check if can cancel
@@ -31,11 +29,9 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         {   
             if(!Cancelable(data))
             {
-                Debug.Log("Can't cancel");
                 character.storedAttack = data;
                 return;
             }
-            Debug.Log("cancelled: " + m_data.name + data.name);
         }
         foreach (Hitbox hitbox in hitboxes)
         {
@@ -107,15 +103,12 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
                 {
                     if (data == character.currentCombo[count])
                     {
-
-                        Debug.Log("Same Attack");
                         repeatedAttack++;
                     }
                     count--;
                 }
                 if (repeatedAttack >= sameLimit)
                 {
-                    Debug.Log("Reached Limit");
                     return false;
                 }
             }
@@ -153,12 +146,10 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         landFrame = 0;
         while (waitFrame < 10)
         {
-            Debug.Log("Frame" + waitFrame + character.currentState);
              if (character.currentState == States.Standing)
             {
                 while(landFrame < 5)
                 {
-                    Debug.Log("LandFrame" + landFrame + character.currentAction);
                     if(character.currentAction == ActionStates.Landing)
                     {
                         character.PerformAttack(data.attackType);
@@ -171,6 +162,5 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             yield return null;
             waitFrame++;
         }
-        Debug.Log("Coroutine End");
     }
 }
