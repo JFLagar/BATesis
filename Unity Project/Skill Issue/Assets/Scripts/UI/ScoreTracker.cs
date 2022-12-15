@@ -7,12 +7,13 @@ public class ScoreTracker : MonoBehaviour
     public static ScoreTracker instance;
     public int p1score = -1;
     public int p2score = -1;
+    public bool training = false;
     // Start is called before the first frame update
     private void Awake()
     {
         if(ScoreTracker.instance != null)
         {
-            DestroyImmediate(this);
+            DestroyImmediate(this.gameObject);
             return;
         }
         else

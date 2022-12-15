@@ -73,7 +73,9 @@ OBSOLETE Button Mapping > Mapping has to save > Going to implement new input sys
 OBSOLETE > After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
 OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > Rebinding removes movement as well
 
-Working on main Menu
+Working on main Menu > Done
+Working pause button on main scene
+ADD UI funcionality inputs
 Spawing fireball from 5S
 Create grabs
 -
@@ -147,12 +149,13 @@ Bug: P2 side CORNER is bugged and can cause fall into the screen after attacking
 Goal:
 
 #Implement Feedback:
-5H should be kick (more range)
-jL hitbox is too broken (hitbox is too low)
-jumping arc should be more curve (more floaty / gravity)
-Add round end
+5H should be kick (more range) DONE
+jL hitbox is too broken (hitbox is too low) DONE
+jumping arc should be more curve (more floaty / gravity) DONE
+Add round end DONE
 #Add Features:
-Button Mapping Special Attacks
+Button Mapping OBSOLETE
+Special Attacks 0.66/3
 
 Feedback v0.1:
 Jump not working in somemachines -> Create Jump Recovery (can do any action but not movement) -work awating new feedback-
@@ -187,10 +190,10 @@ Feedback v0.3:
 
 Add Dash (Maybe)
 Combo timing too small (hit stun has to be longer from jumping attacks) Done
-Add Sound
-Add Menu
+Add Sound  Moved for the future
+Add Menu Done
 6S should have less active frames Done
-Stage should be smaller
+Stage should be smaller Done
 Jump has to be floatier (verticlar) Done
 
 ENCUESTA al final de projecto o documentacion

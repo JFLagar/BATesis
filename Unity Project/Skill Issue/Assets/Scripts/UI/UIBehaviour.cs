@@ -8,6 +8,7 @@ using System;
 
 public class UIBehaviour : MonoBehaviour
 {
+    public static UIBehaviour instance;
     public GameManager manager;
     public Character[] characters;
     public Slider[] sliders;
@@ -16,7 +17,14 @@ public class UIBehaviour : MonoBehaviour
     public float timer = 99;
     public TextMeshProUGUI debug;
     public Image[] p1Rounds, p2Rounds;
+    public RectTransform pauseUI;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (instance != null)
+            return;
+        instance = this;
+    }
     void Start()
     {
         for(int i = 0; i< sliders.Length; i++)
@@ -102,5 +110,32 @@ public class UIBehaviour : MonoBehaviour
             slider.value = slider.maxValue;
             timer = 99;
         }
+    }
+    public void OpenUI()
+    {
+        Time.timeScale = 0;
+        foreach(Character character in characters)
+        {
+            character.inputHandler.playerInput.SwitchCurrentActionMap("Menu");
+        }
+        pauseUI.gameObject.SetActive(true);
+    }
+    public void CloseUI()
+    {
+        pauseUI.gameObject.SetActive(false);
+        foreach (Character character in characters)
+        {
+            character.inputHandler.playerInput.SwitchCurrentActionMap("Controls");
+        }
+        Time.timeScale = 1;
+    }
+    public void MainMenu()
+    {
+        manager.BackToMenu();
+    }
+
+    public void Quit()
+    {
+        manager.EndGame();
     }
 }

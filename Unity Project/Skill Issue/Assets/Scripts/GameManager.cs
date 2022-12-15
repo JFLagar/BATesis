@@ -26,7 +26,10 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        testing = ScoreTracker.instance.training;
+    }
     internal void PauseDebug()
     {
         Debug.Break();
@@ -35,9 +38,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
+        if(Time.timeScale == 1)
         frameDisplay.text = Mathf.Ceil(fps).ToString();
         p1rounds = ScoreTracker.instance.p1score;
         p2rounds = ScoreTracker.instance.p2score;

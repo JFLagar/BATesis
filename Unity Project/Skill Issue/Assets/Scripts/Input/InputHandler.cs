@@ -13,7 +13,7 @@ namespace SkillIssue.Inputs
         public CharacterAI ai;
         public bool aiControl = false;
         public bool controllerControl = false;
-        private PlayerInput playerInput;
+        public PlayerInput playerInput;
         NewControls inputActions;
         [SerializeField]
         public List<CommandInputs> directionInputs = new List<CommandInputs>();
@@ -164,11 +164,12 @@ namespace SkillIssue.Inputs
         }
         public void StartButton(InputAction.CallbackContext context)
         {
-            GameManager.instance.EnableTrainingMode();
+            UIBehaviour.instance.OpenUI();
         }
         public void SelectButton(InputAction.CallbackContext context)
         {
-            GameManager.instance.ResetRound();
+            GameManager.instance.EnableTrainingMode();
+            //GameManager.instance.ResetRound();
         }
     }
 }

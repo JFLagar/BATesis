@@ -12,13 +12,12 @@ public class MainMenu : MonoBehaviour
     public RectTransform[] uiElements;
 
     public InputMapping inputMapping;
-
+    public Button[] buttons;
 
 
     private void Start()
     {
-        if (!DataManagment.instance.CheckData())
-            OpenUIElement(1);
+
     }
 
     private void Update()
@@ -32,18 +31,11 @@ public class MainMenu : MonoBehaviour
             transform.gameObject.SetActive(false);
         }
         uiElements[id].gameObject.SetActive(true);
-        if(uiElements[1].gameObject.activeSelf)
-        {
-            GetInput();
-        }
-
+        buttons[id].Select();
     }
-    public void GetInput()
+    public void StartButton(bool training)
     {
-        inputMapping.StartMappingInputs();    
-    }
-    public void StartButton()
-    {
+        ScoreTracker.instance.training = training;
         SceneManager.LoadScene("Main");
     }
     public void QuitButton()
