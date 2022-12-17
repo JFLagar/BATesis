@@ -7,7 +7,8 @@ namespace SkillIssue
     {
         Light,
         Heavy,
-        Special
+        Special,
+        Grab
     }
     public enum AttackAttribute
     {
@@ -39,6 +40,7 @@ namespace SkillIssue
         public bool launcher;
         public bool dashCancel;
         public bool jumpCancel;
+        public bool grab;
         public bool canceleableSelf;
         public AttackType[] cancelableTypes;
         [Space]

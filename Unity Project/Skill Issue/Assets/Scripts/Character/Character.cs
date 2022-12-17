@@ -15,6 +15,7 @@ namespace SkillIssue.CharacterSpace
         public SpriteRenderer screenCheck;
         public StateMachine stateMachine;
         public InputHandler inputHandler;
+        public AttackData grab;
         public AttackData[] standingAttacks;
         public AttackData[] crouchingAttacks;
         public AttackData[] jumpAttacks;
@@ -127,6 +128,11 @@ namespace SkillIssue.CharacterSpace
         }
         public void PerformAttack(AttackType type)
         {
+            Debug.Log("Performing " + type);
+            if(type == AttackType.Grab)
+            {
+                attack.Attack(grab);
+            }
             //here comes the canceable attack
             if ((int)type != 2)
             {
@@ -212,26 +218,34 @@ namespace SkillIssue.CharacterSpace
            Projectile m_projectile = Instantiate(projectile, transform);
             m_projectile.trajectory.x = faceDir;
             m_projectile.transform.position = new Vector2(transform.position.x + (projectile.origin.x * faceDir), transform.position.y + projectile.origin.y);
+            m_projectile.transform.parent = transform.parent;
             m_projectile.hitbox.mask = m_hitbox.mask;
             m_projectile.m_hurtbox.gameObject.layer = m_hurtbox.gameObject.layer;
             m_projectile.parent = this;
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
+            if(data.grab)
+            {
+                DamageDealt(data);
+                return;
+            }
 
             if (inputHandler.direction.x == -faceDir && currentAction != ActionStates.Hit && IsBlocking(data.attackAttribute))
             {
                 BlockDone(data, blockCheck);
-
+                    return;
             }
            else if (currentAction == ActionStates.Attack)
             {
                 DamageDealt(data);
+                    return;
             }
             //block
             else if(!blockCheck)
             {
                 DamageDealt(data);
+                    return;
             }                     
         }
         private void DamageDealt(AttackData data)

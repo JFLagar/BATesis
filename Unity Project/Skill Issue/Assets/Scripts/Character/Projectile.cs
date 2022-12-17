@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour , IHitboxResponder
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(trajectory);
         transform.Translate(trajectory * speed * Time.deltaTime);
         if (!m_renderer.isVisible)
         {

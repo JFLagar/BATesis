@@ -55,7 +55,7 @@ Introduce Combos and Combo Display DONE
 
 Ver. 0.3:
 Introduce High/Low > DONE
-Introduce Rounds
+Introduce Rounds > DONE
 Introduce Button Mapping -> Functional
 Player vs Player > DONE
 -
@@ -68,18 +68,29 @@ Main Menu
 AI
 Grabs
 
+Ver. 0.5:
+Special Attacks (Air)
+Special Attacks (Ground)
+-
+Special Attacks (Water)
+
+Ver 1.0:
+UI overhaul
+AI overhaul
+Character Select
+-
 Currently Working on:
 OBSOLETE Button Mapping > Mapping has to save > Going to implement new input system 
 OBSOLETE > After Rebinding need to check ControlerMap changes > Changes but need to add individual assings to each player
 OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > Rebinding removes movement as well
 
 Working on main Menu > Done
-Working pause button on main scene
-ADD UI funcionality inputs
-Spawing fireball from 5S
+Working pause button on main scene > Done
+ADD UI funcionality inputs > Done
+Spawing fireball from 5S > DOne
 Create grabs
 -
-Special Attacks Art (Fire)
+Special Attacks Art (Fire) > Done
 
 Missing Features:
 Grabs
@@ -104,6 +115,8 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled X
 Bug: Input mapping dont carry over from scene to scene > OBsolete
+
+Bug: Projectile Hitbox not working as intended
 
 
 

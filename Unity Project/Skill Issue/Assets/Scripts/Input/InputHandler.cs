@@ -141,22 +141,27 @@ namespace SkillIssue.Inputs
                     break;
             }
         }
-
-        public void LightButton(InputAction.CallbackContext context)
+        public void GrabButton(InputAction.CallbackContext context)
         {
             if (context.started)
+                character.PerformAttack(AttackType.Grab);
+        }
+        public void LightButton(InputAction.CallbackContext context)
+        {
+            if (context.performed)
                 lightButton.InputPressed();
         }
         public void HeavyButton(InputAction.CallbackContext context)
         {
-            if (context.started)
+            if (context.performed)
                 heavyButton.InputPressed();
         }
         public void SpecialButton(InputAction.CallbackContext context)
         {
-            if (context.started)
+            if (context.performed)
                 specialButton.InputPressed();
         }
+      
 
         public void MovementUp(InputAction.CallbackContext context)
         {

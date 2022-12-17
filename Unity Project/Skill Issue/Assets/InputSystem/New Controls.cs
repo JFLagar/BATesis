@@ -89,6 +89,15 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GrabButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""51ee52b8-2f4f-4135-a23a-e06286355508"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -652,6 +661,72 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""3eb09249-1e09-49bc-b83c-5c1acc14af1c"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GrabButton"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""8aa96ad0-e89d-4307-a8ec-80bbaaf2f8ed"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard1"",
+                    ""action"": ""GrabButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""cf313d38-805e-4bde-92f6-d645abfd3003"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard1"",
+                    ""action"": ""GrabButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""ce7947c7-ba58-4651-9647-f04c631fccc2"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GrabButton"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""9860fb61-a1aa-4074-bf85-5099c445dc59"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard2"",
+                    ""action"": ""GrabButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""57a699d8-c457-401c-a3ab-8c631d7a1bb9"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard2"",
+                    ""action"": ""GrabButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -988,6 +1063,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         m_Controls_MovementY = m_Controls.FindAction("MovementY", throwIfNotFound: true);
         m_Controls_Start = m_Controls.FindAction("Start", throwIfNotFound: true);
         m_Controls_Select = m_Controls.FindAction("Select", throwIfNotFound: true);
+        m_Controls_GrabButton = m_Controls.FindAction("GrabButton", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Navigate = m_Menu.FindAction("Navigate", throwIfNotFound: true);
@@ -1059,6 +1135,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Controls_MovementY;
     private readonly InputAction m_Controls_Start;
     private readonly InputAction m_Controls_Select;
+    private readonly InputAction m_Controls_GrabButton;
     public struct ControlsActions
     {
         private @NewControls m_Wrapper;
@@ -1070,6 +1147,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         public InputAction @MovementY => m_Wrapper.m_Controls_MovementY;
         public InputAction @Start => m_Wrapper.m_Controls_Start;
         public InputAction @Select => m_Wrapper.m_Controls_Select;
+        public InputAction @GrabButton => m_Wrapper.m_Controls_GrabButton;
         public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1100,6 +1178,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Select.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnSelect;
+                @GrabButton.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnGrabButton;
+                @GrabButton.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnGrabButton;
+                @GrabButton.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnGrabButton;
             }
             m_Wrapper.m_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -1125,6 +1206,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @GrabButton.started += instance.OnGrabButton;
+                @GrabButton.performed += instance.OnGrabButton;
+                @GrabButton.canceled += instance.OnGrabButton;
             }
         }
     }
@@ -1223,6 +1307,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         void OnMovementY(InputAction.CallbackContext context);
         void OnStart(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
+        void OnGrabButton(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
