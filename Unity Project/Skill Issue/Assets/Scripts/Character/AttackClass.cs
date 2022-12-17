@@ -40,6 +40,7 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         }
         if (data.animation != null)
         {
+            character.animator.speed = 1;
             character.characterAnimation.AddAnimation(AnimType.Attack, data.animation.name);
         }
         repeatedAttack = 0;

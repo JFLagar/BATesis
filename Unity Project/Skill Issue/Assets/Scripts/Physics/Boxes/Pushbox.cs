@@ -69,7 +69,7 @@ public class Pushbox : MonoBehaviour
         {
             pushbox.character.wall = true;
             pushbox.character.wallx = character.wallx;
-            if (!pushbox.character.isGrounded)
+            if (!pushbox.character.isGrounded && pushbox.character.faceDir == pushbox.character.wallx)
                 pushbox.character.transform.position = new Vector2(pushbox.character.transform.position.x + 0.18f * -pushbox.character.faceDir, pushbox.character.transform.position.y);
         }
         if (character.x != 0 && character.x == character.faceDir)

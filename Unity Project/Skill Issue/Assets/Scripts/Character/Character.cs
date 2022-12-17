@@ -216,12 +216,14 @@ namespace SkillIssue.CharacterSpace
         public void SpawnProjectile(Projectile projectile)
         {
            Projectile m_projectile = Instantiate(projectile, transform);
+            animator.speed = 0;
             m_projectile.trajectory.x = faceDir;
             m_projectile.transform.position = new Vector2(transform.position.x + (projectile.origin.x * faceDir), transform.position.y + projectile.origin.y);
             m_projectile.transform.parent = transform.parent;
             m_projectile.hitbox.mask = m_hitbox.mask;
             m_projectile.m_hurtbox.gameObject.layer = m_hurtbox.gameObject.layer;
             m_projectile.parent = this;
+            currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(projectile.data.hitstun));
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
@@ -479,6 +481,7 @@ namespace SkillIssue.CharacterSpace
         }
         public void HitRecover()
         {
+            animator.speed = 1;
             animator.SetTrigger("Recovery");
         }
         public IEnumerator ForceAttackCoroutine(Vector2 direction, float duration, bool counterForce)
@@ -522,7 +525,9 @@ namespace SkillIssue.CharacterSpace
             int i = 0;
                 while(i != frames)
             {
-                yield return null;
+                if(i == frames/2)
+                    animator.speed = 0;
+                yield return null;              
                 i++;
             }
             HitRecover();
@@ -547,6 +552,8 @@ namespace SkillIssue.CharacterSpace
         }
         public void HitConnect(AttackData data)
         {
+            animator.speed = 0;
+            currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun/2));
             if (oponent.currentAction == ActionStates.Block)
             {
                 currentCombo.Clear();

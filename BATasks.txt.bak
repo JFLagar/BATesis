@@ -62,8 +62,9 @@ Player vs Player > DONE
 Introduce Special Attacks
 
 Ver. 0.4:
-Special Attacks (Fire)
-Main Menu
+Special Attacks (Fire) > Done
+Main Menu > Done
+Hitstop > Done
 -
 AI
 Grabs
@@ -85,12 +86,12 @@ OBSOLETE > After Rebinding need to check ControlerMap changes > Changes but need
 OBSOLETE till next time > Keyboard1 and Keyboard2 are implemented and working > Rebinding removes movement as well
 
 Working on main Menu > Done
-Working pause button on main scene
-ADD UI funcionality inputs
-Spawing fireball from 5S
-Create grabs
+Working pause button on main scene > Done
+ADD UI funcionality inputs > Done
+Spawing fireball from 5S > DOne
+Create grabs > Need to remake InputHandler to allow multiple simulatious inputs
 -
-Special Attacks Art (Fire)
+Special Attacks Art (Fire) > Done
 
 Missing Features:
 Grabs
