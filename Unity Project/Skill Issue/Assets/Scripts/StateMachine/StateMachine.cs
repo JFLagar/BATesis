@@ -168,6 +168,7 @@ namespace SkillIssue.StateMachineSpace
     {
         public override void Update(InputHandler input)
         {
+          
             if (!stateMachine.character.IsMoving())
                 stateMachine.character.applyGravity = true;
             stateMachine.character.ApllyGravity();

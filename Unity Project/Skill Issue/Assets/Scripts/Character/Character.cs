@@ -56,7 +56,8 @@ namespace SkillIssue.CharacterSpace
         public List<AttackData> currentCombo = new List<AttackData>();
         public bool visualState;
         public Color32[] stateColors;
-
+        public Hitbox m_hitbox;
+        public Hurtbox m_hurtbox;
         private Transform origin;
         private void Awake()
         {
@@ -206,6 +207,15 @@ namespace SkillIssue.CharacterSpace
             }
           
         }
+        public void SpawnProjectile(Projectile projectile)
+        {
+           Projectile m_projectile = Instantiate(projectile, transform);
+            m_projectile.trajectory.x = faceDir;
+            m_projectile.transform.position = new Vector2(transform.position.x + (projectile.origin.x * faceDir), transform.position.y + projectile.origin.y);
+            m_projectile.hitbox.mask = m_hitbox.mask;
+            m_projectile.m_hurtbox.gameObject.layer = m_hurtbox.gameObject.layer;
+            m_projectile.parent = this;
+        }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
 
@@ -238,6 +248,10 @@ namespace SkillIssue.CharacterSpace
             else
             {
                 characterAnimation.AddAnimation(AnimType.Hit, currentState.ToString() + "Hit");
+                if(stateMachine.currentState == stateMachine.jumpState)
+                {
+                    dir.y = data.push.y;
+                }
             }
             if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);

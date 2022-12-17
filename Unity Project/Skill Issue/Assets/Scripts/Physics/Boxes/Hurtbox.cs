@@ -16,6 +16,7 @@ namespace SkillIssue
         public Color collisionOpenColor;
         public Color collidingColor;
         public bool blockCheck = false;
+        public bool projectile = false;
 
         public void Update()
         {
@@ -32,6 +33,11 @@ namespace SkillIssue
         }
         public void GetHitBy(AttackData data)
         {
+            if(projectile)
+            {
+                Destroy(this, 0.5f);
+                return;
+            }
             if (state == ColliderState.Closed)
             {
                 return;

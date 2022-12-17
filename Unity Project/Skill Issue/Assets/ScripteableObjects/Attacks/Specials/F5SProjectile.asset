@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c8c0269a5515054f88d0d58df109046, type: 3}
-  m_Name: F5S
+  m_Name: F5SProjectile
   m_EditorClassIdentifier: 
   attackState: 0
   attackAttribute: 0
@@ -22,10 +22,10 @@ MonoBehaviour:
   push: {x: 1, y: 1.5}
   movement: {x: 0, y: 0}
   movementDuration: 0
-  launcher: 0
+  launcher: 1
   dashCancel: 0
   jumpCancel: 0
   canceleableSelf: 0
   cancelableTypes: 
-  animation: {fileID: 7400000, guid: fe381b4781d42c24eacd0f44afade425, type: 2}
-  message: Fire 5 Special
+  animation: {fileID: 0}
+  message: 
