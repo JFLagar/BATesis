@@ -90,12 +90,12 @@ Working on main Menu > Done
 Working pause button on main scene > Done
 ADD UI funcionality inputs > Done
 Spawing fireball from 5S > DOne
-Create grabs > Need to remake InputHandler to allow multiple simulatious inputs
+Create grabs > Need to remake InputHandler to allow multiple simulatious inputs > Done
 -
 Special Attacks Art (Fire) > Done
 
 Missing Features:
-Grabs
+Grabs > Needs special animations
 Different Specials
 
 
@@ -118,7 +118,7 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled X
 Bug: Input mapping dont carry over from scene to scene > OBsolete
 
-Bug: Projectile Hitbox not working as intended
+Bug: Projectile Hitbox not working as intended, neither does grab > Fixed
 
 
 

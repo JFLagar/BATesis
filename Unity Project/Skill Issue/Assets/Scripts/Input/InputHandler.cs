@@ -4,7 +4,6 @@ using UnityEngine;
 using SkillIssue.CharacterSpace;
 using UnityEngine.InputSystem;
 using System;
-using System.Linq;
 
 namespace SkillIssue.Inputs
 {
@@ -57,7 +56,7 @@ namespace SkillIssue.Inputs
         {
             if(attackInputs.Count == 1)
             {
-                PerformInput(attackInputs.LastOrDefault());
+                PerformInput(attackInputs[0]);
             }
         }
       
