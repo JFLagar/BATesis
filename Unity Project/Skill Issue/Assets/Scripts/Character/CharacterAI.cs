@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SkillIssue.Inputs;
 using SkillIssue.CharacterSpace;
+using UnityEngine.InputSystem;
 
 public enum AIAction
 {
@@ -11,9 +12,16 @@ public enum AIAction
     Move,
     Attack
 }
+public enum AIState
+{
+    Close,
+    MidRange,
+    Far
+}
 public class CharacterAI : MonoBehaviour
 {
     public AIAction aIAction;
+    public AIState aIState;
     InputHandler handler;
     Character character;
     public bool initiated = false;
@@ -69,14 +77,17 @@ public class CharacterAI : MonoBehaviour
             //close by should move more away and less often and attack more often
 
             case <= 0.5f:
+                aIState = AIState.Close;
                 ActionSwitch(AIAction.None, AIAction.Attack,AIAction.Move);
                 directionBool = false;
                 break;
             case >= 1.5f:
+                aIState = AIState.Far;
                 ActionSwitch(AIAction.None, AIAction.Move,AIAction.Attack);
                 directionBool = true;
                 break;
             default:
+                aIState = AIState.MidRange;
                 ActionSwitch(AIAction.None, AIAction.Move,AIAction.Attack);
                 directionBool = true;
                 break;
@@ -115,60 +126,68 @@ public class CharacterAI : MonoBehaviour
         }
     }
     void SimulateAttackInput()
-    {       
-        if(movementTime != null)
+    {
+        dir.y = 0;
+        int randomId = 0;
+        if (aIState == AIState.Close)
+            randomId = Random.Range(0, 4);
+        else
+            randomId = Random.Range(0, 3);
+        switch (randomId)
         {
-            StopCoroutine(movementTime);
+            case 0:
+                handler.LightFunction();
+                break;
+            case 1:
+                handler.HeavyFunction();
+                break;
+            case 2:
+                handler.SpecialFunction();
+                break;
+            case 4:
+                handler.GrabFunction();
+                break;
         }
-            attackInput = Random.Range(1, 3);
-            int isButtonUp = Random.Range(0, 2);
-            if (isButtonUp == 0)
-            {
-                buttonUp = false;
-            }
-            else
-            {
-                buttonUp = true;
-            }    
+        dir.y = 0;
     }
     void SimulateMovementInput()
     {
         randomTime = Random.Range(15, 101);
         int randomX = 0;
 
-            if (directionBool)
-            {
-                randomX = Random.Range(-1, 4);
-            }
-            else
-            {
-                randomX = Random.Range(-4, 2);
-            }
-            switch (randomX)
-            {
-                case < 0:
-                    x = -1;
-                    break;
-                case > 0:
-                    x = 1;
-                    break;
-            }
-            //check if jump
-            int randomY = Random.Range(0, 101);
-            int y = 0;
-            switch (randomY)
-            {
-                //case > 95:
-                //   y = 1;
-                //    break;
-                //case < 10:
-                //    y = -1;
-                //   break;
-                default:
-                    y = 0;
-                    break;
-            }
-        if(movementTime != null && x == dir.x)
+        if (directionBool)
+        {
+            randomX = Random.Range(-1, 4);
+        }
+        else
+        {
+            randomX = Random.Range(-4, 2);
+        }
+        switch (randomX)
+        {
+            case < 0:
+                x = -1;
+                break;
+            case > 0:
+                x = 1;
+                break;
+        }
+        //check if jump
+        int randomY = Random.Range(0, 101);
+        int y = 0;
+        switch (randomY)
+        {
+            case > 95:
+                y = 1;
+                break;
+            case < 10:
+                y = -1;
+                break;
+            default:
+                y = 0;
+                break;
+        }
+        if (movementTime != null && x == dir.x)
         {
             numberOfFrames += randomTime / 2;
         }
@@ -178,15 +197,13 @@ public class CharacterAI : MonoBehaviour
             movementTime = StartCoroutine(MovementTimeCoroutine());
         }
         dir = new Vector2(x, y);
-
-
     }
     void SimulateNothing()
     {
         if (movementTime != null)
             numberOfFrames = numberOfFrames / 2;
         else
-        dir = Vector2.zero;
+            dir = Vector2.zero;
     }
     IEnumerator MovementTimeCoroutine()
     {

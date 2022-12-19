@@ -6453,6 +6453,14 @@ PrefabInstance:
       propertyPath: m_hurtbox
       value: 
       objectReference: {fileID: 791315341}
+    - target: {fileID: 1957316337047856815, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: visualState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957316337047856815, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
+      propertyPath: stateColors.Array.data[0].rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1957316337498685955, guid: a3c7f16a62ad81f49ae41215575bff0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

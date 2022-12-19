@@ -36,9 +36,12 @@ namespace SkillIssue.Inputs
         // Update is called once per frame
         private void Awake()
         {
-            if (aiControl)
-                ai.Initiate(this);
             playerInput = GetComponent<PlayerInput>();
+            if (aiControl)
+            {
+                ai.Initiate(this);
+            }                
+
     }
         private void Start()
         {
@@ -49,6 +52,7 @@ namespace SkillIssue.Inputs
 
 
             inputActions = new NewControls();
+            if(!aiControl)
             playerInput.SwitchCurrentControlScheme(playerInput.defaultControlScheme, Keyboard.current);
             //MapActions(true);
         }
@@ -57,6 +61,14 @@ namespace SkillIssue.Inputs
             if(attackInputs.Count == 1)
             {
                 PerformInput(attackInputs[0]);
+            }
+            if(aiControl)
+            {
+                direction = ai.dir;
+            }
+            if(character.currentAction == StateMachineSpace.ActionStates.Hit || character.currentAction == StateMachineSpace.ActionStates.Block)
+            {
+                attackInputs.Clear();
             }
         }
       
@@ -157,20 +169,37 @@ namespace SkillIssue.Inputs
             }
               
         }
+        public void GrabFunction()
+        {
+            character.PerformAttack(AttackType.Grab);
+            attackInputs.Clear();
+        }
         public void LightButton(InputAction.CallbackContext context)
         {
             if (context.performed)
                 lightButton.InputPressed();
+        }
+        public void LightFunction()
+        {
+            lightButton.InputPressed();
         }
         public void HeavyButton(InputAction.CallbackContext context)
         {
             if (context.performed)
                 heavyButton.InputPressed();
         }
+        public void HeavyFunction()
+        {
+            heavyButton.InputPressed();
+        }
         public void SpecialButton(InputAction.CallbackContext context)
         {
             if (context.performed)
                 specialButton.InputPressed();
+        }
+        public void SpecialFunction()
+        {
+            specialButton.InputPressed();
         }
       
 

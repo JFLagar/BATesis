@@ -30,4 +30,4 @@ MonoBehaviour:
   cancelableTypes: 
   animation: {fileID: 7400000, guid: a9cd800257eb2d94f8f84d93d5b2b055, type: 2}
   message: 
-  followUpAttack: {fileID: 11400000, guid: 541377dcf03bbb941ab57cfae40c74e3, type: 2}
+  followUpAttack: {fileID: 11400000, guid: 4de02a34df6f0324a8ee868014e0de84, type: 2}

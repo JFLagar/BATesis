@@ -32,8 +32,27 @@ public class UIBehaviour : MonoBehaviour
         {
             sliders[i].maxValue = characters[i].maxHealth;
         }
-    
- 
+
+        switch (ScoreTracker.instance.p1score)
+        {
+            case 0:
+                p1Rounds[0].enabled = true;
+                break;
+            case 1:
+                p1Rounds[0].enabled = true;
+                p1Rounds[1].enabled = true;
+                break;
+        }
+        switch (ScoreTracker.instance.p2score)
+        {
+            case 0:
+                p2Rounds[0].enabled = true;
+                break;
+            case 1:
+                p2Rounds[0].enabled = true;
+                p2Rounds[1].enabled = true;
+                break;
+        }
 
     }
 
@@ -82,26 +101,19 @@ public class UIBehaviour : MonoBehaviour
         timerText.text = Mathf.FloorToInt(timer).ToString();
         if (timer <= 0)
         {
+            if(sliders[0].value > sliders[1].value)
+            {
+                if(!manager.testing)
+                ScoreTracker.instance.AddP1score();
+            }
+            else if(sliders[1].value > sliders[0].value)
+            {
+                    if (!manager.testing)
+                        ScoreTracker.instance.AddP1score();
+            }
             manager.RestartRound();
         }
-        switch (ScoreTracker.instance.p1score)
-        {
-            case 0: p1Rounds[0].enabled = true;
-                break;
-            case 1: p1Rounds[0].enabled = true;
-                p1Rounds[1].enabled = true;
-                break;
-        }
-        switch (ScoreTracker.instance.p2score)
-        {
-            case 0:
-                p2Rounds[0].enabled = true;
-                break;
-            case 1:
-                p2Rounds[0].enabled = true;
-                p2Rounds[1].enabled = true;
-                break;
-        }
+    
     }
 
     internal void ResetAll()
