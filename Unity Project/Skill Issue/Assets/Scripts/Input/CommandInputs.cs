@@ -48,7 +48,7 @@ namespace SkillIssue.Inputs
         public string name = "Light";
         public override void InputPressed() 
         {
-            character.PerformAttack(AttackType.Light);
+            character.inputHandler.attackInputs.Add(AttackInputs.Light);
         }
         public override void InputReleased() 
         {
@@ -61,8 +61,8 @@ namespace SkillIssue.Inputs
     {
         public string name = "Heavy";
         public override void InputPressed() 
-        { 
-            character.PerformAttack(AttackType.Heavy);
+        {
+            character.inputHandler.attackInputs.Add(AttackInputs.Heavy);
         }
         public override void InputReleased() 
         {
@@ -76,7 +76,7 @@ namespace SkillIssue.Inputs
         public string name = "Special";
         public override void InputPressed() 
         {
-            character.PerformAttack(AttackType.Special);
+            character.inputHandler.attackInputs.Add(AttackInputs.Special);
         }
         public override void InputReleased() 
         { 

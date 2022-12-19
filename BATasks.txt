@@ -118,7 +118,7 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled X
 Bug: Input mapping dont carry over from scene to scene > OBsolete
 
-Bug: Projectile Hitbox not working as intended
+Bug: Projectile Hitbox not working as intended, neither does grab
 
 
 

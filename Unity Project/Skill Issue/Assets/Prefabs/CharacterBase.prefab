@@ -369,7 +369,7 @@ MonoBehaviour:
   wall: 0
   cameraWall: 0
   wallx: 0
-  isGrounded: 0
+  isGrounded: 1
   x: 0
   y: 0
   currentAction: 0

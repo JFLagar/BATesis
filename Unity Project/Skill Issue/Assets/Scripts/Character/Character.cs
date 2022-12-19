@@ -128,7 +128,6 @@ namespace SkillIssue.CharacterSpace
         }
         public void PerformAttack(AttackType type)
         {
-            Debug.Log("Performing " + type);
             if(type == AttackType.Grab)
             {
                 attack.Attack(grab);

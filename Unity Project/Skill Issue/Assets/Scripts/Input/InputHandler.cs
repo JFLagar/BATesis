@@ -4,9 +4,16 @@ using UnityEngine;
 using SkillIssue.CharacterSpace;
 using UnityEngine.InputSystem;
 using System;
+using System.Linq;
 
 namespace SkillIssue.Inputs
 {
+    public enum AttackInputs
+    {
+        Light,
+        Heavy,
+        Special
+    }
     public class InputHandler : MonoBehaviour
     {
         public Character character;
@@ -17,8 +24,6 @@ namespace SkillIssue.Inputs
         NewControls inputActions;
         [SerializeField]
         public List<CommandInputs> directionInputs = new List<CommandInputs>();
-        [SerializeField]
-        public List<CommandInputs> attackInputs = new List<CommandInputs>();
         public KeyCode[] inputs;
         private LightInput lightButton = new LightInput();
         private HeavyInput heavyButton = new HeavyInput();
@@ -28,7 +33,7 @@ namespace SkillIssue.Inputs
         public CommandInputs movement;
         public CommandInputs input;
         public Vector2  direction = Vector2.zero;
-
+        public List<AttackInputs> attackInputs = new List<AttackInputs>();
         // Update is called once per frame
         private void Awake()
         {
@@ -50,7 +55,10 @@ namespace SkillIssue.Inputs
         }
         void Update()
         {
-
+            if(attackInputs.Count == 1)
+            {
+                PerformInput(attackInputs.LastOrDefault());
+            }
         }
       
         public void ResetAI()
@@ -144,7 +152,11 @@ namespace SkillIssue.Inputs
         public void GrabButton(InputAction.CallbackContext context)
         {
             if (context.started)
+            {
                 character.PerformAttack(AttackType.Grab);
+                attackInputs.Clear();   
+            }
+              
         }
         public void LightButton(InputAction.CallbackContext context)
         {
@@ -175,6 +187,22 @@ namespace SkillIssue.Inputs
         {
             GameManager.instance.EnableTrainingMode();
             //GameManager.instance.ResetRound();
+        }
+        public void PerformInput(AttackInputs input)
+        {
+            switch (input)
+            {
+                case AttackInputs.Light:
+                    character.PerformAttack(AttackType.Light);
+                    break;
+                case AttackInputs.Heavy:
+                    character.PerformAttack(AttackType.Heavy);
+                    break;
+                case AttackInputs.Special:
+                    character.PerformAttack(AttackType.Special);
+                    break;
+            }
+            attackInputs.Clear();
         }
     }
 }
