@@ -18,14 +18,14 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
     public Coroutine landCheck = null;
     public int waitFrame = 0;
     public int landFrame = 0;
-    public void Attack(AttackData data)
+    public void Attack(AttackData data, bool followup = false)
     {
         if (character.stateMachine.currentState == character.stateMachine.jumpState)
         {
             landCheck = StartCoroutine(CheckForLandCancel(data));
         }
       //check if can cancel
-        if (character.stateMachine.currentAction != ActionStates.None)
+        if (character.stateMachine.currentAction != ActionStates.None && !followup)
         {   
             if(!Cancelable(data))
             {
@@ -62,9 +62,15 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
             hit = true;
             character.HitConnect(m_data);
         }
+        if(m_data.followUpAttack != null)
+        {
+            Attack(m_data.followUpAttack, true);
+            return;
+        }
         if (character.storedAttack != null)
         {
-            character.PerformAttack(character.storedAttack.attackType);         
+            character.PerformAttack(character.storedAttack.attackType);
+            return;
         }
 
     }

@@ -85,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4533751030677233818, guid: 3468b9d3d455cfc4dbc9bce40419eef5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4533751030677233818, guid: 3468b9d3d455cfc4dbc9bce40419eef5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4533751030677233818, guid: 3468b9d3d455cfc4dbc9bce40419eef5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -105,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5704084674945241029, guid: 3468b9d3d455cfc4dbc9bce40419eef5, type: 3}
       propertyPath: hitboxSize.x
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5704084674945241029, guid: 3468b9d3d455cfc4dbc9bce40419eef5, type: 3}
       propertyPath: hitboxSize.y
-      value: 0.25
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5799845803560279509, guid: 3468b9d3d455cfc4dbc9bce40419eef5, type: 3}
       propertyPath: m_Controller

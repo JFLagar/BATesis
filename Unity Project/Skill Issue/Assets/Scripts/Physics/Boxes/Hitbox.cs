@@ -43,7 +43,6 @@ namespace SkillIssue
                     {
                         if (collidedbox?.blockCheck == false)
                             state = ColliderState.Colliding;
-                        Debug.Log(name + collidedbox.name);
                         responder.CollisionedWith(aCollider);
                         return;
                     }

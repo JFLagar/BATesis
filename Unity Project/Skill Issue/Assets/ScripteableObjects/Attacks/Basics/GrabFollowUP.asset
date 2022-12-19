@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c8c0269a5515054f88d0d58df109046, type: 3}
-  m_Name: Grab
+  m_Name: GrabFollowUP
   m_EditorClassIdentifier: 
   attackState: 0
   attackAttribute: 0
-  attackType: 3
-  damage: 0
-  hitstun: 10
-  blockstun: 10
+  attackType: 1
+  damage: 10
+  hitstun: 15
+  blockstun: 15
   proratio: 0
-  push: {x: 0, y: 0}
+  push: {x: 1, y: 1.5}
   movement: {x: 0, y: 0}
   movementDuration: 0
-  launcher: 0
+  launcher: 1
   dashCancel: 0
   jumpCancel: 0
-  grab: 1
+  grab: 0
   canceleableSelf: 0
   cancelableTypes: 
-  animation: {fileID: 7400000, guid: a9cd800257eb2d94f8f84d93d5b2b055, type: 2}
+  animation: {fileID: 7400000, guid: ed421dfe0a5bc7b41a54c53188a169a5, type: 2}
   message: 
-  followUpAttack: {fileID: 11400000, guid: 541377dcf03bbb941ab57cfae40c74e3, type: 2}
+  followUpAttack: {fileID: 0}

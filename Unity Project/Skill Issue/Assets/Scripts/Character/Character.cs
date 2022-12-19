@@ -228,7 +228,9 @@ namespace SkillIssue.CharacterSpace
         {
             if(data.grab)
             {
-                DamageDealt(data);
+                if (currentState == States.Jumping)
+                    return;
+                DamageDealt(data);               
                 return;
             }
 
@@ -262,7 +264,15 @@ namespace SkillIssue.CharacterSpace
             }
             else
             {
-                characterAnimation.AddAnimation(AnimType.Hit, currentState.ToString() + "Hit");
+                if(data.grab)
+                {
+                    characterAnimation.AddAnimation(AnimType.Hit, "StandingHit");
+                }
+                else
+                {
+                    characterAnimation.AddAnimation(AnimType.Hit, currentState.ToString() + "Hit");
+                }
+                
                 if(stateMachine.currentState == stateMachine.jumpState)
                 {
                     dir.y = data.push.y;
@@ -482,6 +492,7 @@ namespace SkillIssue.CharacterSpace
         {
             animator.speed = 1;
             animator.SetTrigger("Recovery");
+            stateMachine.currentState.EnterState();
         }
         public IEnumerator ForceAttackCoroutine(Vector2 direction, float duration, bool counterForce)
         {

@@ -46,5 +46,6 @@ namespace SkillIssue
         [Space]
         public AnimationClip animation;
         public string message;
+        public AttackData followUpAttack;
     }
 }
