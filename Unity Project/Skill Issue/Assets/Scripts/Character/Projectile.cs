@@ -37,7 +37,6 @@ public class Projectile : MonoBehaviour , IHitboxResponder
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(trajectory);
         transform.Translate(trajectory * speed * Time.deltaTime);
         if (!m_renderer.isVisible)
         {
@@ -49,7 +48,6 @@ public class Projectile : MonoBehaviour , IHitboxResponder
     {
         if(currentAttack != data)
         {
-            Debug.Log(collider.name);
             Hurtbox hurtbox = collider.GetComponent<Hurtbox>();
             hurtbox?.GetHitBy(data);
             if (hurtbox.blockCheck)

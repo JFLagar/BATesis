@@ -110,7 +110,7 @@ namespace SkillIssue.CharacterSpace
             //Safety messure against stunlock
             if(currentHitCoroutine == null && currentAction == ActionStates.Hit)
             {
-                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(10));
+                currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(5));
             }
             if(visualState)
             {
@@ -280,9 +280,9 @@ namespace SkillIssue.CharacterSpace
             }
             if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);
-            currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun));
+            currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.hitstun, data.launcher));
             currentHealth = currentHealth - data.damage;
-            if (wall)
+            if (wall && faceDir != wallx)
             {
                 ApplyCounterPush(-dir, 3f);
             }
@@ -295,7 +295,6 @@ namespace SkillIssue.CharacterSpace
             Vector2 blockDir = new Vector2(dir.x, 0);
             stateMachine.currentAction = ActionStates.Block;
             characterAnimation.AddAnimation(AnimType.Hit, currentState.ToString() + "Block");
-            Debug.Log("Blocked");
             if (currentHitCoroutine != null)
                 StopCoroutine(currentHitCoroutine);
             if (blockCheck)
@@ -303,7 +302,7 @@ namespace SkillIssue.CharacterSpace
             else
             {
                 currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(data.blockstun));
-                if (wall)
+                if (wall && faceDir != wallx)
                 {
                     ApplyCounterPush(-blockDir, 3f);
                 }
@@ -530,12 +529,12 @@ namespace SkillIssue.CharacterSpace
             }
             currentMovementCoroutine = null;
         }
-        public IEnumerator RecoveryFramesCoroutines(int frames)
+        public IEnumerator RecoveryFramesCoroutines(int frames, bool knockdown = false)
         {
             int i = 0;
                 while(i != frames)
             {
-                if(i == frames/2)
+                if(i == frames/2 && !knockdown)
                     animator.speed = 0;
                 yield return null;              
                 i++;

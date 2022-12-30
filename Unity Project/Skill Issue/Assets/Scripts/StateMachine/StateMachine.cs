@@ -147,6 +147,7 @@ namespace SkillIssue.StateMachineSpace
         {
             stateMachine.currentState = stateMachine.crouchingState;
             stateMachine.character.currentState = States.Crouching;
+            if (stateMachine.currentAction == ActionStates.None)
             character.characterAnimation.AddAnimation(AnimType.Movement, "StandToCrouch");
             character.animator.SetBool("Crouching", true);
         }

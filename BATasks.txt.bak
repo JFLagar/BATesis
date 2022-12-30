@@ -67,7 +67,7 @@ Main Menu > Done
 Hitstop > Done
 -
 AI
-Grabs
+Grabs> Done
 
 Ver. 0.5:
 Special Attacks (Air)
@@ -111,16 +111,15 @@ Rounds
 -Character Select-
 
 BUGS:
-
-MAJOR AI: It can jump down the stage (Disabling crouch)
 Saw momentary: Jump and attack cause position override (can't reproduce)
 
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled X
 Bug: Input mapping dont carry over from scene to scene > OBsolete
 
-Bug: Projectile Hitbox not working as intended, neither does grab > Fixed
-
-
+Bug: Attacking on an attack (Counter hit) freezes the opponent in hit animation
+Bug: Round state carries over after going back to menu > Fixed
+Bug: Jumping sometimes overrides other play jump arc
+Bug: Attacking from corner pushes char outside screen > Fixed
 
 
 Fixed:
@@ -160,6 +159,10 @@ Bug: P2 side CORNER is bugged and can cause fall into the screen after attacking
 	attacking then pushes player outside corner (Cant Reproduce) > Fixed
 	> Sometimes opponent can't get bellow jumping and steal corner. FIXED
 		> Pushbox rework (when applying gravity) FIXED
+
+Bug: Projectile Hitbox not working as intended, neither does grab > Fixed
+MAJOR AI: It can jump down the stage (Disabling crouch) > Fixed
+Bug: 2A doesn't cancel properly > Fixed
 
 Goal:
 
@@ -212,3 +215,19 @@ Stage should be smaller Done
 Jump has to be floatier (verticlar) Done
 
 ENCUESTA al final de projecto o documentacion
+
+Feedback v0.4:
+Menos recovery / mas recovery en projectil
+No mas de dos projectiles
+Shoryu mas horizontal > Done
+Mas tiempo en knockdown > added
+2A no comba > Fixed
+combar desde el aire mas hitstun en jH > Fixed
+
+More visual clarity (add visual state for iddle and attacking)
+Bug Attacking on an attack (Counter hit) freezes the opponent in hit animation
+Bug Round state carries over after going back to menu
+Bug Jumping sometimes overrides other play jump arc
+Bug Attacking from corner pushes char outside screen
+Fireball needs to disappear when hit and only one projectile active at time
+

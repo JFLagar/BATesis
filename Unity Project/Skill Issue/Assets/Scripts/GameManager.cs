@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void BackToMenu()
     {
+        ScoreTracker.instance.ResetAll();
         SceneManager.LoadScene("Menu");
     }
 
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
     public void EnableTrainingMode()
     {
         testing = !testing;
-        character2.inputHandler.ResetAI();
+        //character2.inputHandler.ResetAI();
     }
     public void EndGame()
     {

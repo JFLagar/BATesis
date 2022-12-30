@@ -17,7 +17,7 @@ MonoBehaviour:
   attackType: 1
   damage: 10
   hitstun: 15
-  blockstun: 10
+  blockstun: 15
   proratio: 1
   push: {x: 1, y: 1.5}
   movement: {x: 0, y: 0}
@@ -25,7 +25,9 @@ MonoBehaviour:
   launcher: 0
   dashCancel: 0
   jumpCancel: 0
+  grab: 0
   canceleableSelf: 0
   cancelableTypes: 0100000002000000
   animation: {fileID: 7400000, guid: f11e36ab14a8d6c41acd4f71907d40a5, type: 2}
   message: 5H
+  followUpAttack: {fileID: 0}
