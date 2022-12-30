@@ -343,6 +343,7 @@ MonoBehaviour:
   screenCheck: {fileID: 235791260883590438}
   stateMachine: {fileID: 1957316337707236123}
   inputHandler: {fileID: 1957316337707236124}
+  element: 0
   grab: {fileID: 11400000, guid: 8e3ad760882efc14c88e792be929cd46, type: 2}
   standingAttacks:
   - {fileID: 11400000, guid: f6b2a54ddae839844ba013de6f1f6231, type: 2}
@@ -355,12 +356,22 @@ MonoBehaviour:
   jumpAttacks:
   - {fileID: 11400000, guid: 9cbdebe578f89ea4cb92cdc45ec96226, type: 2}
   - {fileID: 11400000, guid: 87faf07684e07a54ea3ade46c148ef56, type: 2}
-  specialAttacks:
-  - {fileID: 11400000, guid: c70f79f26e7b46c4bbf69f91e1c90537, type: 2}
+  fireAttacks:
   - {fileID: 11400000, guid: 21599fe186a1a64469fa326ec193c5f5, type: 2}
   - {fileID: 11400000, guid: 165881236b4bcd14ab070ef19c67c2cf, type: 2}
   - {fileID: 11400000, guid: fa9993516e6280d4d8da7ba01b3fa054, type: 2}
-  - {fileID: 11400000, guid: c71464cac25fd2b4da69dd8d68eb25ec, type: 2}
+  waterAttacks:
+  - {fileID: 11400000, guid: 7f50a9bf31806d847b9986a8b03f3c4c, type: 2}
+  - {fileID: 11400000, guid: f695a494bc0085442ba385855dba3f10, type: 2}
+  - {fileID: 11400000, guid: 5b6681c07de511540bd266737e9d4011, type: 2}
+  windAttacks:
+  - {fileID: 11400000, guid: 6249a6c8d6348ad45981681469cdc719, type: 2}
+  - {fileID: 11400000, guid: b69a3d15f199938498e2491868d6592e, type: 2}
+  - {fileID: 11400000, guid: 0f8c5b78cc3811b43abfb34b6b5f1a8b, type: 2}
+  earthAttacks:
+  - {fileID: 11400000, guid: 837d5a4abb2916347845f06f6f7b9d75, type: 2}
+  - {fileID: 11400000, guid: abe4bc4c5d44850438d47087ad81b3fe, type: 2}
+  - {fileID: 11400000, guid: f4d36e7381c3d804ea3cc737eac664bf, type: 2}
   attack: {fileID: 7515142340994233024}
   animator: {fileID: 3090942852897552484}
   characterAnimation: {fileID: 2597134761694115151}
@@ -913,7 +924,6 @@ MonoBehaviour:
   controllerControl: 0
   playerInput: {fileID: 0}
   directionInputs: []
-  attackInputs: []
   inputs: 6a0000006b0000006c000000
   movement:
     character: {fileID: 0}
@@ -922,6 +932,7 @@ MonoBehaviour:
     character: {fileID: 0}
     pressed: 0
   direction: {x: 0, y: 0}
+  attackInputs: 
 --- !u!114 &1957316337707236123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aIAction: 0
+  aIState: 0
   initiated: 0
   dir: {x: 0, y: 0}
   attackInput: 0

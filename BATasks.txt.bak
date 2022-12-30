@@ -116,9 +116,10 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled X
 Bug: Input mapping dont carry over from scene to scene > OBsolete
 
-Bug: Attacking on an attack (Counter hit) freezes the opponent in hit animation
+Bug: Attacking on an attack (Counter hit) freezes the opponent in hit animation > Cant reproduce
 Bug: Round state carries over after going back to menu > Fixed
 Bug: Jumping sometimes overrides other play jump arc
+Bug: Landing with 6S doesn't push opponent
 Bug: Attacking from corner pushes char outside screen > Fixed
 
 

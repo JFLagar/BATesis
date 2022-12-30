@@ -264,9 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00250fed4ead4c64eb253bfbde4080a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 0}
   hitPoints: 0
   m_renderer: {fileID: 3266110120672912304}
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: ef560c8e48af2554cbfd0c854f509dd2, type: 2}
   origin: {x: 0, y: 0}
   trajectory: {x: 0, y: 0}
   hitbox: {fileID: 5704084674945241029}

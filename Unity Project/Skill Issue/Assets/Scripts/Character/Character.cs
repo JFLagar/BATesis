@@ -5,6 +5,13 @@ using SkillIssue.Inputs;
 using SkillIssue.StateMachineSpace;
 namespace SkillIssue.CharacterSpace
 {
+    public enum Element
+    {
+        Fire,
+        Water,
+        Wind,
+        Earth
+    }
     public class Character : MonoBehaviour, IPhysics, IHitboxResponder
     {
         public Character oponent;
@@ -15,12 +22,20 @@ namespace SkillIssue.CharacterSpace
         public SpriteRenderer screenCheck;
         public StateMachine stateMachine;
         public InputHandler inputHandler;
+
+        [Space]
+
+        public Element element;
         public AttackData grab;
         public AttackData[] standingAttacks;
         public AttackData[] crouchingAttacks;
         public AttackData[] jumpAttacks;
-        public AttackData[] specialAttacks;
+        public AttackData[] fireAttacks, waterAttacks, windAttacks, earthAttacks;
+        private AttackData[] specialAttacks;
         public AttackClass attack;
+        
+        [Space]
+        
         public Animator animator;
         public CharacterAnimationManagar characterAnimation;
         public Pushbox pushbox;
@@ -71,12 +86,27 @@ namespace SkillIssue.CharacterSpace
             pushbox.setResponder(this);
             pushbox.character = this;
             origin = transform;
+         
         }
 
         // Update is called once per frame
         void Update()
         {
-    
+            switch (element)
+            {
+                case Element.Fire:
+                    specialAttacks = fireAttacks;
+                    break;
+                case Element.Water:
+                    specialAttacks = waterAttacks;
+                    break;
+                case Element.Wind:
+                    specialAttacks = windAttacks;
+                    break;
+                case Element.Earth:
+                    specialAttacks = earthAttacks;
+                    break;
+            }
             currentAction = stateMachine.currentAction;
             stateMachine.StateMachineUpdate();
             cameraWall = !screenCheck.isVisible;
@@ -180,32 +210,17 @@ namespace SkillIssue.CharacterSpace
             }
             else
             {
+                int id = ((int)(inputHandler.direction.x * faceDir));
                 switch (stateMachine.currentState)
                 {
+                  
                     case StandingState:
-                        if (inputHandler.direction.x != 0)
-                        {
-                            int id = ((int)(inputHandler.direction.x * faceDir));
-                            attack.Attack(specialAttacks[id + 2]);
-                            break;
-                        }
-                        else
-                        {
-                            attack.Attack(specialAttacks[2]);
-                            break;
-                        }
+                        attack.Attack(specialAttacks[id + 1]);
+                        break;
+                        
                     case CrouchState:
-                        if (inputHandler.direction.x != 0)
-                        {
-                            int id = ((int)(inputHandler.direction.x * faceDir));
-                            attack.Attack(specialAttacks[id + 2]);
-                            break;
-                        }
-                        else
-                        {
-                            attack.Attack(specialAttacks[2]);
-                            break;
-                        }
+                        attack.Attack(specialAttacks[id + 1]);
+                        break;
                     case JumpState:
                         break;
                 }
@@ -216,7 +231,7 @@ namespace SkillIssue.CharacterSpace
         {
            Projectile m_projectile = Instantiate(projectile, transform);
             animator.speed = 0;
-            m_projectile.trajectory.x = faceDir;
+            m_projectile.trajectory.x = m_projectile.trajectory.x * faceDir;
             m_projectile.transform.position = new Vector2(transform.position.x + (projectile.origin.x * faceDir), transform.position.y + projectile.origin.y);
             m_projectile.transform.parent = transform.parent;
             m_projectile.hitbox.mask = m_hitbox.mask;

@@ -117,9 +117,10 @@ Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disab
 Bug: Input mapping dont carry over from scene to scene > OBsolete
 
 Bug: Attacking on an attack (Counter hit) freezes the opponent in hit animation > Cant reproduce
-Bug: Round state carries over after going back to menu > Fixed
+
 Bug: Jumping sometimes overrides other play jump arc
-Bug: Attacking from corner pushes char outside screen > Fixed
+Bug: Landing with 6S doesn't push opponent
+
 
 
 Fixed:
@@ -163,7 +164,8 @@ Bug: P2 side CORNER is bugged and can cause fall into the screen after attacking
 Bug: Projectile Hitbox not working as intended, neither does grab > Fixed
 MAJOR AI: It can jump down the stage (Disabling crouch) > Fixed
 Bug: 2A doesn't cancel properly > Fixed
-
+Bug: Attacking from corner pushes char outside screen > Fixed
+Bug: Round state carries over after going back to menu > Fixed
 Goal:
 
 #Implement Feedback:
