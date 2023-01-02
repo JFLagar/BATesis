@@ -59,22 +59,22 @@ Introduce Rounds > DONE
 Introduce Button Mapping -> Functional
 Player vs Player > DONE
 -
-Introduce Special Attacks
+Introduce Special Attacks > Done
 
 Ver. 0.4:
 Special Attacks (Fire) > Done
 Main Menu > Done
 Hitstop > Done
 -
-AI
+AI > Done
 Grabs> Done
 
 Ver. 0.5:
-Special Attacks (Air)
-Special Attacks (Ground)
+Special Attacks (Air) > Done
+Special Attacks (Ground) > Done
 -
-Character Select
-Special Attacks (Water)
+Character Select > Works on Training
+Special Attacks (Water) >Done
 
 Ver 1.0:
 UI overhaul

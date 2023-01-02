@@ -18,6 +18,9 @@ public class Projectile : MonoBehaviour , IHitboxResponder
     public Animator animator;
     private AttackData currentAttack;
     public Transform collisions;
+    public bool ending;
+    public int endingTime;
+    public Projectile followUpProjectile;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,8 @@ public class Projectile : MonoBehaviour , IHitboxResponder
             m_renderer.flipX = false;
             collisions.eulerAngles = new Vector3(0, 0, 0);
         }
+        if (ending)
+        StartCoroutine(EndingCoroutine());
         hitbox.setResponder(this);
     }
 
@@ -54,10 +59,33 @@ public class Projectile : MonoBehaviour , IHitboxResponder
                 return;
             trajectory = Vector2.zero;
             animator.SetTrigger("Collided");
+            if (followUpProjectile != null)
+                SpawnProjectile();
+            if (parent != null)
             parent.HitConnect(data);
             Destroy(this.gameObject, 0.5f);
             currentAttack = data;
         }
       
+    }
+    public void SpawnProjectile()
+    {
+        Projectile m_projectile = Instantiate(followUpProjectile, transform);
+        m_projectile.trajectory.x = 0;
+        m_projectile.origin.x = 0;
+        m_projectile.transform.position = new Vector2(transform.position.x , transform.position.y);
+        m_projectile.transform.parent = transform.parent;
+        m_projectile.hitbox.mask = gameObject.layer;
+        m_projectile.m_hurtbox.gameObject.layer = m_hurtbox.gameObject.layer;
+    }
+    IEnumerator EndingCoroutine()
+    {
+        int i = 0;
+        while (i != endingTime)
+        {
+            i++;
+            yield return null;
+        }
+        Destroy(this.gameObject, 0f);
     }
 }

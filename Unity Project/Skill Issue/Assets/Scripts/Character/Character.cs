@@ -7,13 +7,14 @@ namespace SkillIssue.CharacterSpace
 {
     public enum Element
     {
-        Fire,
-        Water,
-        Wind,
-        Earth
+        Fire = 0,
+        Water = 1,
+        Wind = 2,
+        Earth = 3
     }
     public class Character : MonoBehaviour, IPhysics, IHitboxResponder
     {
+        public bool p2;
         public Character oponent;
         public float faceDir;
         public float xDiff;
@@ -75,6 +76,7 @@ namespace SkillIssue.CharacterSpace
         public Hitbox m_hitbox;
         public Hurtbox m_hurtbox;
         private Transform origin;
+        private Projectile currentProjectile;
         private void Awake()
         {
             inputHandler.character = this;
@@ -86,7 +88,10 @@ namespace SkillIssue.CharacterSpace
             pushbox.setResponder(this);
             pushbox.character = this;
             origin = transform;
-         
+            if (!p2)
+                element = ScoreTracker.instance.p1Element;
+            else
+                element = ScoreTracker.instance.p2Element;
         }
 
         // Update is called once per frame
@@ -137,6 +142,13 @@ namespace SkillIssue.CharacterSpace
                 vfx.flipX = render.flipX;
             }
             comboHit = currentCombo.Count;
+            if (currentAction == ActionStates.Hit)
+            {
+                if(currentProjectile != null)
+                {
+                    DestroyImmediate(currentProjectile);
+                }
+            }
             //Safety messure against stunlock
             if(currentHitCoroutine == null && currentAction == ActionStates.Hit)
             {
@@ -229,6 +241,10 @@ namespace SkillIssue.CharacterSpace
         }
         public void SpawnProjectile(Projectile projectile)
         {
+            if(currentProjectile != null)
+            {
+                return;
+            }           
            Projectile m_projectile = Instantiate(projectile, transform);
             animator.speed = 0;
             m_projectile.trajectory.x = m_projectile.trajectory.x * faceDir;
@@ -238,6 +254,7 @@ namespace SkillIssue.CharacterSpace
             m_projectile.m_hurtbox.gameObject.layer = m_hurtbox.gameObject.layer;
             m_projectile.parent = this;
             currentHitCoroutine = StartCoroutine(RecoveryFramesCoroutines(projectile.data.hitstun));
+            currentProjectile = m_projectile;
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {

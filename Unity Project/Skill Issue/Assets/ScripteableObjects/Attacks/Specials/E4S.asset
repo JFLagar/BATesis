@@ -20,7 +20,7 @@ MonoBehaviour:
   blockstun: 15
   proratio: 0
   push: {x: 1, y: 1.5}
-  movement: {x: 1, y: 0}
+  movement: {x: 0.5, y: 0}
   movementDuration: 10
   launcher: 1
   dashCancel: 0

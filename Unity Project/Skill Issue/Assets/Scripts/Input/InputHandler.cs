@@ -213,8 +213,8 @@ namespace SkillIssue.Inputs
         }
         public void SelectButton(InputAction.CallbackContext context)
         {
-            GameManager.instance.EnableTrainingMode();
-            //GameManager.instance.ResetRound();
+            if(GameManager.instance.testing)
+            GameManager.instance.ResetRound();
         }
         public void PerformInput(AttackInputs input)
         {

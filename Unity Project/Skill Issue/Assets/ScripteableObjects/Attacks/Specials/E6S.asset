@@ -15,17 +15,17 @@ MonoBehaviour:
   attackState: 0
   attackAttribute: 0
   attackType: 2
-  damage: 5
+  damage: 0
   hitstun: 30
   blockstun: 15
   proratio: 0
   push: {x: 1, y: 3}
-  movement: {x: 0.3, y: 2}
+  movement: {x: 0.3, y: 0}
   movementDuration: 10
-  launcher: 1
+  launcher: 0
   dashCancel: 0
   jumpCancel: 0
-  grab: 0
+  grab: 1
   canceleableSelf: 0
   cancelableTypes: 
   animation: {fileID: 7400000, guid: 3a6119d1091525d40acf3a0c6ef6af3c, type: 2}

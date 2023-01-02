@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SkillIssue.CharacterSpace;
 
 public class ScoreTracker : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ScoreTracker : MonoBehaviour
     public int p1score = -1;
     public int p2score = -1;
     public bool training = false;
+    public Element p1Element;
+    public Element p2Element;
     // Start is called before the first frame update
     private void Awake()
     {
