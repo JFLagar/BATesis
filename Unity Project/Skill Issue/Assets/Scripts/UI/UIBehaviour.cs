@@ -13,6 +13,8 @@ public class UIBehaviour : MonoBehaviour
     public Character[] characters;
     public Slider[] sliders;
     public Slider[] elementSliders;
+    public Image[] elementIcon;
+    public Sprite[] elementSprites;
     public TextMeshProUGUI[] comboDisplays;
     public TextMeshProUGUI timerText;
     public float timer = 99;
@@ -56,6 +58,7 @@ public class UIBehaviour : MonoBehaviour
         {
             sliders[i].maxValue = characters[i].maxHealth;
             elementSliders[i].value = (float)characters[i].element;
+            elementIcon[i].sprite = elementSprites[(int)characters[i].element];
         }
 
     }
@@ -188,6 +191,7 @@ public class UIBehaviour : MonoBehaviour
                     characters[0].element = Element.Earth;
                     break;
             }
+            elementIcon[0].sprite = elementSprites[(int)characters[0].element];
         }
         else
         {
@@ -206,6 +210,7 @@ public class UIBehaviour : MonoBehaviour
                     characters[1].element = Element.Earth;
                     break;
             }
+            elementIcon[1].sprite = elementSprites[(int)characters[1].element];
         }
     }
 }

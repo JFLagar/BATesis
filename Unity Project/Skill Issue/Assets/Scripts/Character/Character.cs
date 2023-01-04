@@ -81,6 +81,10 @@ namespace SkillIssue.CharacterSpace
         {
             inputHandler.character = this;
             stateMachine.character = this;
+            if (!p2)
+                element = ScoreTracker.instance.p1Element;
+            else
+                element = ScoreTracker.instance.p2Element;
         }
         // Start is called before the first frame update
         void Start()
@@ -88,10 +92,7 @@ namespace SkillIssue.CharacterSpace
             pushbox.setResponder(this);
             pushbox.character = this;
             origin = transform;
-            if (!p2)
-                element = ScoreTracker.instance.p1Element;
-            else
-                element = ScoreTracker.instance.p2Element;
+         
         }
 
         // Update is called once per frame
