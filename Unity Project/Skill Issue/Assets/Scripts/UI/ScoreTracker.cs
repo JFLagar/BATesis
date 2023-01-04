@@ -11,6 +11,7 @@ public class ScoreTracker : MonoBehaviour
     public bool training = false;
     public Element p1Element;
     public Element p2Element;
+    public bool vsCPU;
     // Start is called before the first frame update
     private void Awake()
     {

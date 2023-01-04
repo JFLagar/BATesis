@@ -37,14 +37,15 @@ namespace SkillIssue.Inputs
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();
-            if (aiControl)
-            {
-                ai.Initiate(this);
-            }                
+                      
 
     }
         private void Start()
         {
+            if (aiControl)
+            {
+                ai.Initiate(this);
+            }
             movementInput.character = character;
             lightButton.character = character;
             heavyButton.character = character;

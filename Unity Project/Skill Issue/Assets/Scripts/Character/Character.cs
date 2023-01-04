@@ -84,7 +84,11 @@ namespace SkillIssue.CharacterSpace
             if (!p2)
                 element = ScoreTracker.instance.p1Element;
             else
+            {
                 element = ScoreTracker.instance.p2Element;
+                inputHandler.aiControl = ScoreTracker.instance.vsCPU;
+            }
+                
         }
         // Start is called before the first frame update
         void Start()
@@ -147,7 +151,7 @@ namespace SkillIssue.CharacterSpace
             {
                 if(currentProjectile != null)
                 {
-                    DestroyImmediate(currentProjectile);
+                    DestroyImmediate(currentProjectile.gameObject);
                 }
             }
             //Safety messure against stunlock
