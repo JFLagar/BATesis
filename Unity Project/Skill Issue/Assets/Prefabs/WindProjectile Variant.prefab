@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5246216176145040537, guid: e4a3da06ba1082244a1d3523a780fa4d, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246216176145040537, guid: e4a3da06ba1082244a1d3523a780fa4d, type: 3}
       propertyPath: trajectory.y
       value: 0
       objectReference: {fileID: 0}

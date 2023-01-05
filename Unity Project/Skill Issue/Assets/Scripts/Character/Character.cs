@@ -234,7 +234,10 @@ namespace SkillIssue.CharacterSpace
                 {
                   
                     case StandingState:
-                        attack.Attack(specialAttacks[id + 1]);
+                        if (id == 0 && currentProjectile != null)
+                            return;
+                            attack.Attack(specialAttacks[id + 1]);
+                       
                         break;
                         
                     case CrouchState:
@@ -306,6 +309,7 @@ namespace SkillIssue.CharacterSpace
                 if(data.grab)
                 {
                     characterAnimation.AddAnimation(AnimType.Hit, "StandingHit");
+                    characterAnimation.animator.SetBool("Crouching", false);
                 }
                 else
                 {
@@ -531,7 +535,6 @@ namespace SkillIssue.CharacterSpace
         {
             animator.speed = 1;
             animator.SetTrigger("Recovery");
-            stateMachine.currentState.EnterState();
         }
         public IEnumerator ForceAttackCoroutine(Vector2 direction, float duration, bool counterForce)
         {

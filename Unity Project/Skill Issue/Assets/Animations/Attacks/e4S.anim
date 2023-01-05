@@ -1619,7 +1619,7 @@ AnimationClip:
   - time: 0
     functionName: ApplyAttackForce
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 21599fe186a1a64469fa326ec193c5f5, type: 2}
+    objectReferenceParameter: {fileID: 11400000, guid: 837d5a4abb2916347845f06f6f7b9d75, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

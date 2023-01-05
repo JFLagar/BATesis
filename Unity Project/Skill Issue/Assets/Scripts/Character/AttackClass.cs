@@ -99,6 +99,10 @@ public class AttackClass : MonoBehaviour, IHitboxResponder
         {
             return false;
         }
+        if(data.grab)
+        {
+            return false;
+        }
            
 
         if (data.canceleableSelf && data == m_data)

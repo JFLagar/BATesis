@@ -117,10 +117,10 @@ Saw momentary: Jump and attack cause position override (can't reproduce)
 Bug: Jumping is bug with new input system (Jump fall) ONLY BUGS When P2 Is disabled X
 Bug: Input mapping dont carry over from scene to scene > OBsolete
 
-Bug: Attacking on an attack (Counter hit) freezes the opponent in hit animation > Cant reproduce
+Bug: Attacking on an attack (Counter hit) freezes the opponent in hit animation > FIXED
 
 Bug: Jumping sometimes overrides other play jump arc
-Bug: Landing with 6S doesn't push opponent
+Bug: Landing with 6S doesn't push opponent > FIXED
 
 
 
@@ -235,10 +235,13 @@ Bug Attacking from corner pushes char outside screen
 Fireball needs to disappear when hit and only one projectile active at time
 
 Feedback v.0.5:
-jH gets too much push on the corner
-Water should be more horizontal
-earth can move during command grab > More damage > More recovery
-6S earth not clear enoguht
-Wind projectile should be faster
-Wind not clear identity
-grabs should just be shoryuu
+jH gets too much push on the corner > FIXED
+Water should be more horizontal > Done
+earth can move during command grab > More damage > More recovery > Should not be a hit > Done
+Projectiles should prevent attack from happening > Done
+Projectiles should not hit knockeddown opponent > Fixed
+6S earth not clear enoguht > Done(?) 
+Wind projectile should be faster > Done
+Wind not clear identity > FIXED
+grabs should just be shoryuu > Done
+jumping 6S doesn't appy pushbox logic > FIXED

@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 788717910718105106, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: f4d36e7381c3d804ea3cc737eac664bf, type: 2}
+    - target: {fileID: 788717910718105106, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
@@ -21,11 +25,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 788717910718105106, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
       propertyPath: origin.y
-      value: 0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 788717910718105106, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
       propertyPath: endingTime
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 788717910718105106, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
+      propertyPath: trajectory.x
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 788717910718105106, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
       propertyPath: trajectory.y
@@ -85,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2068455638719577910, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2068455638719577910, guid: a70ce860f7cbe314a858e21e7830b0bd, type: 3}
       propertyPath: m_LocalPosition.y
