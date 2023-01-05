@@ -77,6 +77,7 @@ namespace SkillIssue.CharacterSpace
         public Hurtbox m_hurtbox;
         private Transform origin;
         private Projectile currentProjectile;
+        private int id = 0;
         private void Awake()
         {
             inputHandler.character = this;
@@ -87,6 +88,7 @@ namespace SkillIssue.CharacterSpace
             {
                 element = ScoreTracker.instance.p2Element;
                 inputHandler.aiControl = ScoreTracker.instance.vsCPU;
+                id = 1;
             }
                 
         }
@@ -291,7 +293,7 @@ namespace SkillIssue.CharacterSpace
         private void DamageDealt(AttackData data)
         {
             Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
-
+            PlaySound(data.collideSound);
             stateMachine.currentAction = ActionStates.Hit;
             if (data.launcher)
             {
@@ -328,6 +330,7 @@ namespace SkillIssue.CharacterSpace
         }
         private void BlockDone(AttackData data, bool blockCheck = false)
         {
+            PlaySound(data.collideSound);
             Vector2 dir = new Vector2(data.push.x * -faceDir, 0);
             Vector2 blockDir = new Vector2(dir.x, 0);
             stateMachine.currentAction = ActionStates.Block;
@@ -633,5 +636,11 @@ namespace SkillIssue.CharacterSpace
             }
             return false;
         }
+        public void PlaySound(AudioClip clip = null)
+        {
+            if(clip != null)
+            AudioManager.instance.PlayAnimationEffect(clip, id);
+        }
     }
+   
 }

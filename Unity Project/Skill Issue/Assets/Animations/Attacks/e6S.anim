@@ -720,6 +720,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.13333334
+    functionName: PlaySound
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: b520d8f23778d04459265f8f0a954ddf, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.13333334
     functionName: SpawnProjectile
     data: 
     objectReferenceParameter: {fileID: 6469991109377158735, guid: 00a178779c76f33419d1a6895c054d4b, type: 3}

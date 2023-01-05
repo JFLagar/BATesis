@@ -20,10 +20,15 @@ MonoBehaviour:
   blockstun: 5
   proratio: 2
   push: {x: 0.5, y: 1}
+  movement: {x: 0, y: 0}
+  movementDuration: 0
   launcher: 0
   dashCancel: 0
   jumpCancel: 0
+  grab: 0
   canceleableSelf: 1
   cancelableTypes: 000000000100000002000000
   animation: {fileID: 7400000, guid: 7780255bf8e4bcb42aabd1987ac44f35, type: 2}
   message: 
+  followUpAttack: {fileID: 0}
+  collideSound: {fileID: 8300000, guid: 4c2ae3c55c54abc4db6abdd5523f8b38, type: 3}

@@ -47,5 +47,6 @@ namespace SkillIssue
         public AnimationClip animation;
         public string message;
         public AttackData followUpAttack;
+        public AudioClip collideSound;
     }
 }

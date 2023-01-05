@@ -817,7 +817,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Juan Franco Lagar
+  m_text: 'Game - Juan Franco Lagar
+
+    Music - Artyom Gulyaev'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7405,3 +7407,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d502283a7a2d31542af48d09625c72db, type: 3}
+--- !u!1001 &4533742554904664010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4533742554314404021, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb09e9139fe97ff48b3db8c2d652414b, type: 3}
+    - target: {fileID: 4533742554343155944, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_Name
+      value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 722.6469
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 472.87796
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.258265
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533742554343155945, guid: d9fab97679ecd554dab601291022e5b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9fab97679ecd554dab601291022e5b7, type: 3}

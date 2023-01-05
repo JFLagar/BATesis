@@ -153,15 +153,18 @@ public class UIBehaviour : MonoBehaviour
     }
     public void MainMenu()
     {
+        AudioManager.instance.PlaySoundEffect(0);
         manager.BackToMenu();
     }
 
     public void Quit()
     {
+        AudioManager.instance.PlaySoundEffect(0);
         manager.EndGame();
     }
     public void OpenCharacterSelect()
     {
+        AudioManager.instance.PlaySoundEffect(0);
         pauseUI.gameObject.SetActive(false);
         characterSelectUI.gameObject.SetActive(true);
         elementSliders[0].Select();
@@ -169,13 +172,15 @@ public class UIBehaviour : MonoBehaviour
     }
     public void CloseCharacterSelect()
     {
+        AudioManager.instance.PlaySoundEffect(0);
         pauseUI.gameObject.SetActive(true);
         characterSelectUI.gameObject.SetActive(false);
         characterSelect.Select();
     }
     public void OnSliderChange(bool p2)
     {
-        if(!p2)
+        AudioManager.instance.PlaySoundEffect(1);
+        if (!p2)
         {
             switch (elementSliders[0].value)
             {

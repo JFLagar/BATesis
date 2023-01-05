@@ -25,7 +25,10 @@ MonoBehaviour:
   launcher: 0
   dashCancel: 0
   jumpCancel: 0
+  grab: 0
   canceleableSelf: 0
   cancelableTypes: 
   animation: {fileID: 7400000, guid: fe381b4781d42c24eacd0f44afade425, type: 2}
   message: Fire 5 Special
+  followUpAttack: {fileID: 0}
+  collideSound: {fileID: 8300000, guid: fedb050f01945b544957d78c3b7134b3, type: 3}

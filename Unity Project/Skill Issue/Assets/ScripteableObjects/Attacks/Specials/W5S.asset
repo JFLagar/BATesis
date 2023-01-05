@@ -31,3 +31,4 @@ MonoBehaviour:
   animation: {fileID: 7400000, guid: ce16b0cbd0d208143b472be8d53716ba, type: 2}
   message: Fire 5 Special
   followUpAttack: {fileID: 0}
+  collideSound: {fileID: 8300000, guid: fedb050f01945b544957d78c3b7134b3, type: 3}

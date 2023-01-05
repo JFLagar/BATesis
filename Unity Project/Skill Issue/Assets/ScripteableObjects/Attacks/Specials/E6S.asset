@@ -31,3 +31,4 @@ MonoBehaviour:
   animation: {fileID: 7400000, guid: 3a6119d1091525d40acf3a0c6ef6af3c, type: 2}
   message: 
   followUpAttack: {fileID: 0}
+  collideSound: {fileID: 8300000, guid: fedb050f01945b544957d78c3b7134b3, type: 3}
