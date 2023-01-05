@@ -73,13 +73,14 @@ Ver. 0.5:
 Special Attacks (Air) > Done
 Special Attacks (Ground) > Done
 -
-Character Select > Works on Training
+Character Select > Works on Training > Done
 Special Attacks (Water) >Done
 
 Ver 1.0:
 UI overhaul
 AI overhaul
-
+Music
+SFX - From Freesound.org / Modified in Audacity
 -
 Currently Working on:
 OBSOLETE Button Mapping > Mapping has to save > Going to implement new input system 
@@ -233,3 +234,11 @@ Bug Jumping sometimes overrides other play jump arc
 Bug Attacking from corner pushes char outside screen
 Fireball needs to disappear when hit and only one projectile active at time
 
+Feedback v.0.5:
+jH gets too much push on the corner
+Water should be more horizontal
+earth can move during command grab > More damage > More recovery
+6S earth not clear enoguht
+Wind projectile should be faster
+Wind not clear identity
+grabs should just be shoryuu
