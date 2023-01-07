@@ -86,7 +86,7 @@ public class Pushbox : MonoBehaviour
         else
         {
             pushbox.character.CharacterPush(0);
-            if(pushbox.character.x == 0)
+            if(pushbox.character.x == 0 && !pushbox.character.wall)
             pushbox.character.transform.position = new Vector2(pushbox.character.transform.position.x + 0.08f * -pushbox.character.faceDir, pushbox.character.transform.position.y);
         }
 

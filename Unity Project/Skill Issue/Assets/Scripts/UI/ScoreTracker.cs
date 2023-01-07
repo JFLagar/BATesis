@@ -28,12 +28,10 @@ public class ScoreTracker : MonoBehaviour
     }
     void Start()
     {
-        
-        
+        Cursor.visible = false;
     }
-
     // Update is called once per frame
-   public void AddP1score()
+    public void AddP1score()
     {
         if(p1score == -1)
         {

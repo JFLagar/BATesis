@@ -245,3 +245,9 @@ Wind projectile should be faster > Done
 Wind not clear identity > FIXED
 grabs should just be shoryuu > Done
 jumping 6S doesn't appy pushbox logic > FIXED
+
+-> Removed
+MAJOR: Can push opponent away in corner after 6S by just walking
+MAJOR: 4S can block during animation
+Main Menu use Arrows as well to move + Enter
+Disable mouse

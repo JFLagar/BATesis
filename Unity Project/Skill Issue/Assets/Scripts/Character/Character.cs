@@ -268,7 +268,12 @@ namespace SkillIssue.CharacterSpace
         }
         public void GetHit(AttackData data, bool blockCheck = false)
         {
-            if(data.grab)
+            if (currentAction == ActionStates.Attack)
+            {
+                DamageDealt(data);
+                return;
+            }
+            if (data.grab)
             {
                 if (currentState == States.Jumping)
                     return;
@@ -280,12 +285,7 @@ namespace SkillIssue.CharacterSpace
             {
                 BlockDone(data, blockCheck);
                     return;
-            }
-           else if (currentAction == ActionStates.Attack)
-            {
-                DamageDealt(data);
-                    return;
-            }
+            } 
             //block
             else if(!blockCheck)
             {
