@@ -68,7 +68,7 @@ public class UIBehaviour : MonoBehaviour
     {
         if(manager.testing)
         {
-            debug.text = "Debug: " + characters[0].comboHit + " State:" + characters[1].currentAction ;
+            //debug.text = "Debug: " + characters[0].comboHit + " State:" + characters[1].currentAction ;
             characterSelect.gameObject.SetActive(true);
         }
         else

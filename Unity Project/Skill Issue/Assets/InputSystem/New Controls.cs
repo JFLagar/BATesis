@@ -1007,6 +1007,17 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0b0c9fe7-1e7e-4527-b0c2-7cc6ae1cfbb9"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard1"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""51bde5e4-f49b-4c74-8460-7b9d5b384db4"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
