@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
         if(Time.timeScale == 1)
-        frameDisplay.text = Mathf.Ceil(fps).ToString();
+        //frameDisplay.text = Mathf.Ceil(fps).ToString();
         p1rounds = ScoreTracker.instance.p1score;
         p2rounds = ScoreTracker.instance.p2score;
 
